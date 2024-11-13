@@ -158,6 +158,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 }
 </style>
 
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -466,117 +489,140 @@ div.tocify {
 
 
 <div id="relevancia-temática-y-objetivos-de-estudio"
-class="section level1">
-<h1>1.Relevancia temática y objetivos de estudio</h1>
-<br>
-<div style="text-align: justify">
-Sin duda alguna, la delincuencia es una preocupación diaria para los
-colombianos, pues noticias sobre hurtos y demás actos delictivos están
-al orden del día, tan solo hay que observar los datos publicados por
-Probogotá Región en 2023, los cuales mostraron que la extorsión, el
-hurto a personas, el homicidio, el hurto de automotores y el hurto a
-residencias son delitos en crecimiento en las diversas regiones del
-país, lo cual supone un gran desafío para las autoridades y una amplia
-preocupación para los ciudadanos. Por tanto, analizar una base de datos
-que comprenda información sobre esta cuestión supone un punto de partida
-beneficioso que puede llegar a aportar mayor compresión sobre las
-modalidades de hurto y delincuencia que predominan en el territorio
-nacional y posibles soluciones para disipar la presente problemática.
-<div/>
-<br>
-<div style="text-align: justify">
-Teniendo en cuenta lo anterior, el objetivo principal de esta pagina
-web, es realizar un análisis estadístico descriptivo a partir del
-Dataset <strong>hurtos2.csv</strong>, mediante la realización de tablas
-de frecuencias, gráficos estadísticos y análisis de asimetría y
-dispersión que permitan obtener conclusiones coherentes y objetivas con
-la realidad que exponen los datos.
-<div/>
-<p><br></p>
+class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Relevancia temática y
+objetivos de estudio</h1>
+<p>La violencia de género, entendida como cualquier acto que cause daño
+físico, psicológico o sexual a una persona debido a su género,
+representa una de las problemáticas más urgentes y complejas a nivel
+mundial, pues este tipo de violencia, que abarca abusos físicos,
+psicológicos, sexuales y económicos, está profundamente ligado a las
+desigualdades de poder y los estereotipos de género en la sociedad,
+perpetuando ciclos de sufrimiento y exclusión para quienes la
+padecen<span class="citation">(Naciones Unidas 2023)</span>. Según la
+Organización Mundial de la Salud (OMS), aproximadamente una de cada tres
+mujeres, o el 30%, ha sufrido violencia física o sexual por parte de su
+pareja en algún momento de su vida, lo que subraya la gravedad de esta
+crisis en términos de salud pública y derechos humanos <span
+class="citation">(Naciones Unidas 2021)</span>.</p>
+<p>En América Latina, la situación es igualmente alarmante. La Comisión
+Económica para América Latina y el Caribe (CEPAL) informó que en 2022 al
+menos 4.050 mujeres fueron víctimas de femicidio o feminicidio en 26
+países y territorios de la región, lo que equivale a una mujer asesinada
+por razones de género cada dos horas <span class="citation">(Comisión
+Económica para América Latina y el Caribe (CEPAL) 2023)</span>. Aunque
+la violencia de género afecta desproporcionadamente a las mujeres, los
+hombres también son víctimas, especialmente en contextos
+intrafamiliares; sin embargo, estos casos suelen recibir menos
+visibilidad y atención en los estudios y políticas<span
+class="citation">(Instituto Nacional de Salud (INS) 2021)</span>.</p>
+<p>En Colombia, la violencia de género es considerada una de las mayores
+preocupaciones en términos de salud pública y desarrollo social. Según
+el Instituto Nacional de Medicina Legal y Ciencias Forenses, en 2021 se
+registraron 116.302 casos de violencia de género e intrafamiliar, de
+estos, el 79,1% (92.020 casos) correspondieron a mujeres, mientras que
+el 20,9% (24.282 casos) correspondieron a hombres <span
+class="citation">(Instituto Nacional de Salud (INS) 2021)</span>. Estas
+cifras evidencian que, aunque la violencia de género afecta
+principalmente a mujeres, no es exclusiva de ellas, y afecta también a
+una proporción significativa de hombres, lo que resalta la necesidad de
+un enfoque inclusivo y amplio para abordar esta problemática.</p>
+<p>Además de causar sufrimiento directo a las víctimas, la violencia de
+género genera efectos profundos en el conjunto de la sociedad, tanto en
+términos económicos como sociales. Según el Banco Interamericano de
+Desarrollo (BID), el impacto económico de la violencia de género en
+América Latina alcanza hasta el 3.44% del PIB de la región, debido a los
+elevados costos en servicios de salud, justicia y la pérdida de
+productividad asociada a las secuelas de esta violencia <span
+class="citation">(Banco Interamericano de Desarrollo (BID) 2024)</span>.
+En Colombia, estos efectos se ven agravados por factores como el
+conflicto armado, la desigualdad económica y los estereotipos de género,
+que incrementan la prevalencia de la violencia de género en sus diversas
+manifestaciones, según señala el Ministerio de Salud y Protección Social
+<span class="citation">(Comisión Económica para América Latina y el
+Caribe (CEPAL) 2020)</span>.</p>
+<p>Por tanto, para abordar de manera integral la violencia de género en
+Colombia y desarrollar intervenciones efectivas, es fundamental basarse
+en un análisis detallado de los datos disponibles. En este contexto, el
+presente estudio se centra en el análisis de los datos sobre violencia
+de género en Colombia entre 2015 y 2023, con el objetivo general de
+<strong>identificar los perfiles de riesgo de víctimas y agresores, así
+como los factores situacionales asociados a la violencia de género e
+intrafamiliar en el país, para comprender los patrones demográficos y
+contextuales que aumentan la probabilidad de estos incidentes</strong>.
+A través de este estudio, se plantea responder a la pregunta de
+investigación: ¿Cuáles son los perfiles de riesgo demográficos y
+situacionales asociados a las víctimas y agresores en los casos de
+violencia de género en Colombia entre 2015 y 2023? Para responder a esta
+cuestión, se establecen los siguientes objetivos específicos:</p>
+<p><strong>-</strong> Identificar los perfiles de riesgo
+sociodemográficos de las víctimas de violencia de género en Colombia,
+evaluando factores como edad, sexo, ciclo de vida y otros elementos que
+indiquen los grupos más vulnerables.</p>
+<p><strong>-</strong> Definir los perfiles de riesgo de los agresores,
+analizando edad, sexo, ciclo de vida, parentesco con la víctima,
+antecedentes de violencia y estado de captura.</p>
+<p><strong>-</strong> Examinar factores situacionales de los incidentes,
+como el lugar y la influencia del consumo de sustancias en las víctimas,
+para identificar entornos y circunstancias de mayor riesgo.</p>
 <style type="text/css">
 .column {display:flex;}
 h1{color:rgb(26, 72, 112)}
 h2{color:rgb(26, 72, 112)}
+h3{color:rgb(26, 72, 112)}
 </style>
 </div>
 <div id="descripción-técnica-del-dataset-y-contextualización"
-class="section level1">
-<h1>2. Descripción técnica del dataset y contextualización</h1>
-<br>
-<div style="text-align: justify">
-Este estudio utiliza una base de datos robusta y detallada sobre
-violencia de género e intrafamiliar en Colombia, abarcando incidentes
-registrados semanalmente entre enero de 2015 y marzo de 2023. Esta base
-de datos, con 12,193 registros y 32 variables en su versión original,
-constituye un recurso invaluable para el análisis de un fenómeno de alta
-complejidad social y relevancia, permitiendo investigar en profundidad
-los factores demográficos, socioeconómicos y contextuales asociados a
-los incidentes de violencia de género. La amplitud y riqueza de las
-variables, que incluyen características detalladas de víctimas y
-agresores, la relación entre ambos, y las circunstancias específicas de
-cada evento, aportan una perspectiva integral sobre los perfiles y
-patrones subyacentes en estos casos. Sin embargo, algunas variables son
-redundantes, otras tienen bajo valor explicativo para identificar
-patrones de violencia o perfiles de riesgo,algunas columnas se
-encuentran incomplentas y algunas contienen datos administrativos o
-contextuales que no contribuyen de manera significativa al análisis de
-la violencia de género e intrafamiliar. Simplificar el conjunto de datos
-permite concentrarse en la información esencial, optimizando la claridad
-y precisión analítica para responder a las preguntas de investigación de
-manera eficaz.
-<div/>
-<br>
-<div style="text-align: justify">
-Para maximizar la relevancia y aplicabilidad de la base de datos en el
-contexto de los objetivos y preguntas de investigación, se realizó una
-depuración exhaustiva de las variables. Este proceso implicó la
-eliminación de columnas redundantes y de baja contribución analítica,
+class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Descripción técnica del
+dataset y contextualización</h1>
+<p>Este estudio utiliza una base de datos robusta y detallada sobre
+violencia de género en Colombia, abarcando incidentes registrados
+semanalmente entre enero de 2015 y marzo de 2023. Esta base de datos
+tomada de datos abiertos Colombia, con 12,193 registros y 32 variables
+en su versión original, constituye un recurso invaluable para el
+análisis de un fenómeno de alta complejidad social y relevancia,
+permitiendo investigar en profundidad los factores demográficos,
+socioeconómicos y contextuales asociados a los incidentes de violencia
+de género. La amplitud y riqueza de las variables, que incluyen
+características detalladas de víctimas y agresores, la relación entre
+ambos, y las circunstancias específicas de cada evento, aportan una
+perspectiva integral sobre los perfiles y patrones subyacentes en estos
+casos <span class="citation">(Salud y Ambiente 2024)</span>. Sin
+embargo, algunas variables de la base de datos original son redundantes,
+otras tienen bajo valor explicativo para identificar patrones de
+violencia o perfiles de riesgo, algunas columnas se encuentran
+incompletas y algunas contienen datos administrativos o contextuales que
+no contribuyen de manera significativa al análisis de la violencia de
+género.</p>
+<p>Por ende, para maximizar la relevancia y aplicabilidad de la base de
+datos en el contexto de los objetivos y preguntas de investigación, se
+realizó una depuración exhaustiva de las variables. Este proceso implicó
+la eliminación de columnas redundantes y de baja contribución analítica,
 preservando solo aquellas que resultan críticas para el análisis.
 Además, se transformaron codificaciones complejas en etiquetas
 descriptivas, mejorando así la accesibilidad y claridad interpretativa
 de los datos. El conjunto depurado, compuesto ahora por 12,193 registros
 y 19 variables clave, se centra en la información esencial que permite
 una exploración precisa de patrones, factores de riesgo, y contextos de
-violencia en los distintos incidentes registrados.A continuación se
-exponen las variables a estudiar de la base de datos modificada, las
-cuales se configuran como parametros bajo estudio bajo estudio que
-capturan una gama de aspectos de los individuos y las circunstancias que
-rodean cada incidente de violencia de género, permitiendo explorar temas
-como los perfiles sociodemográficos de víctimas y agresores, las
-condiciones y escenarios de los eventos, y el rol de factores como la
-relación entre víctima y agresor, el entorno del incidente y las
-condiciones de salud y seguridad social de los involucrados. Además, se
-incluye información clave sobre antecedentes de agresión, estados de
-captura y la presencia de sustancias, aportando una base integral para
-estudiar la violencia desde múltiples dimensiones y comprender sus
-patrones y determinantes:
-<div/>
-<p><br></p>
+violencia en los distintos incidentes registrados.</p>
+<p>A continuación se exponen las variables a estudiar de la base de
+datos modificada, las cuales se configuran como parámetros bajo estudio
+bajo estudio que capturan una gama de aspectos de los individuos y las
+circunstancias que rodean cada incidente de violencia de género,
+permitiendo explorar temas como los perfiles sociodemográficos de
+víctimas y agresores:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">names</span>(violencia_genero) <span class="co">#Nombre de las columnas y por tanto de las variables</span></span></code></pre></div>
-<pre><code>##  [1] &quot;Departamento&quot;            
-##  [2] &quot;año&quot;                     
-##  [3] &quot;edad_victima&quot;            
-##  [4] &quot;Ciclo de vida&quot;           
-##  [5] &quot;sexo_victima&quot;            
-##  [6] &quot;estrato&quot;                 
-##  [7] &quot;Tipo de Seguridad Social&quot;
-##  [8] &quot;pac_hos_&quot;                
-##  [9] &quot;con_fin_&quot;                
-## [10] &quot;naturaleza&quot;              
-## [11] &quot;def_naturaleza&quot;          
-## [12] &quot;edad_agre&quot;               
-## [13] &quot;sexo_agre&quot;               
-## [14] &quot;parentezco_vict&quot;         
-## [15] &quot;escenario&quot;               
-## [16] &quot;captura_agresor&quot;         
-## [17] &quot;hora_hecho&quot;              
-## [18] &quot;antecedentes_agresor&quot;    
+<pre><code>##  [1] &quot;Departamento&quot;             &quot;año&quot;                      &quot;edad_victima&quot;            
+##  [4] &quot;Ciclo de vida&quot;            &quot;sexo_victima&quot;             &quot;estrato&quot;                 
+##  [7] &quot;Tipo de Seguridad Social&quot; &quot;pac_hos_&quot;                 &quot;con_fin_&quot;                
+## [10] &quot;naturaleza&quot;               &quot;def_naturaleza&quot;           &quot;edad_agre&quot;               
+## [13] &quot;sexo_agre&quot;                &quot;parentezco_vict&quot;          &quot;escenario&quot;               
+## [16] &quot;captura_agresor&quot;          &quot;hora_hecho&quot;               &quot;antecedentes_agresor&quot;    
 ## [19] &quot;sust_vic&quot;</code></pre>
-<br>
-<div style="text-align: justify">
-Por otro lado, como bien se mencionó, el conjunto de datos actual cuenta
-con 12,193 filas, que corresponden al total de observaciones o unidades
-experimentales en el dataset. Cada fila representa una unidad
+<p>Por otro lado, como bien se mencionó, el conjunto de datos actual
+cuenta con 12,193 filas, que corresponden al total de observaciones o
+unidades experimentales en el dataset. Cada fila representa una unidad
 experimental, es decir, un incidente específico de violencia de género o
 intrafamiliar, documentado con datos detallados en cada una de las 19
 variables, lo que permite construir un perfil exhaustivo que incluye
@@ -585,9 +631,7 @@ incidente y otros factores relevantes. Con 12,193 unidades
 experimentales y 19 variables, el conjunto de datos contiene un total de
 231,667 entradas, lo cual habilita un análisis estadístico tanto
 descriptivo como inferencial sobre los patrones y factores asociados a
-la violencia de género.
-<div/>
-<p><br></p>
+la violencia de género.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>num_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(violencia_genero) <span class="co">#Número de observaciones (filas)</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>num_colums <span class="ot">&lt;-</span> <span class="fu">ncol</span>(violencia_genero) <span class="co">#Número de variables (columnas)</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>total_values <span class="ot">&lt;-</span> num_rows<span class="sc">*</span>num_colums <span class="co">#Total de datos </span></span>
@@ -598,202 +642,99 @@ la violencia de género.
 <pre><code>## [1] 19</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>total_values</span></code></pre></div>
 <pre><code>## [1] 231667</code></pre>
-<br>
-<div style="text-align: justify">
-La descripción técnica inicial de nuestra base de datos modificada es
-relevante porque define su capacidad y alcance en términos de número de
-observaciones y variables. Con 12,193 observaciones y 19 variables, este
-conjunto de datos ofrece un volumen adecuado para realizar análisis
-significativos y permite explorar patrones, perfiles y relaciones clave
-en el contexto de la violencia de género e intrafamiliar. El número de
-observaciones asegura suficiente representatividad y robustez
-estadística, mientras que la selección de variables permite un enfoque
-directo en aspectos críticos del fenómeno, alineándose con los objetivos
-y las preguntas de investigación del estudio.
-<div/>
-<p><br></p>
-</div>
-<div id="clasificación-de-variables" class="section level1">
-<h1>2.1 Clasificación de variables</h1>
-<br>
-<div style="text-align: justify">
-Para realizar un análisis descriptivo adecuado del conjunto de datos
-seleccionado, es esencial clasificar las variables en función de su
-tipo. Esta base de datos sobre violencia de género incluye tanto
-variables categóricas como numéricas, una distinción fundamental para
-seleccionar las herramientas y métodos analíticos apropiados. Las
-variables categóricas permiten examinar la distribución de frecuencias
-en categorías clave, como el género, el parentesco entre víctima y
-agresor, y el escenario del incidente. Por su parte, las variables
-numéricas se analizan mediante medidas de tendencia central y dispersión
-(media, mediana y desviación estándar), lo cual facilita la comprensión
-de patrones en factores como la edad de los involucrados. Esta
-clasificación asegura que las técnicas analíticas aplicadas sean
-adecuadas para describir de manera precisa las características y
-patrones presentes en los datos. A continuación, se presenta la
-clasificación principal de las variables:
-<div/>
-<p><br></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">str</span>(Violenciae_df) <span class="co">#Visualización de la estructura interna del conjunto de datos</span></span></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    12193 obs. of  19 variables:
-##  $ Departamento            : chr  &quot;QUINDÍO&quot; &quot;CAUCA&quot; &quot;VALLE DEL CAUCA&quot; &quot;MAGDALENA&quot; ...
-##  $ año                     : num  2015 2015 2015 2015 2015 ...
-##  $ edad_victima            : num  16 17 16 16 13 14 13 16 7 20 ...
-##  $ Ciclo.de.vida           : chr  &quot;Adolescencia&quot; &quot;Adolescencia&quot; &quot;Adolescencia&quot; &quot;Adolescencia&quot; ...
-##  $ sexo_victima            : chr  &quot;Masculino&quot; &quot;Masculino&quot; &quot;Femenino&quot; &quot;Femenino&quot; ...
-##  $ estrato                 : num  1 1 2 2 1 3 1 3 3 1 ...
-##  $ Tipo.de.Seguridad.Social: chr  &quot;No asegurado&quot; &quot;Subsidiado&quot; &quot;Subsidiado&quot; &quot;Subsidiado&quot; ...
-##  $ pac_hos_                : chr  &quot;No&quot; &quot;No&quot; &quot;Sí&quot; &quot;No&quot; ...
-##  $ con_fin_                : chr  &quot;Desconocido&quot; &quot;Desconocido&quot; &quot;Vivo&quot; &quot;Desconocido&quot; ...
-##  $ naturaleza              : chr  &quot;Daño psicológico o emocional&quot; &quot;Lesión física leve&quot; &quot;Daño psicológico o emocional&quot; &quot;Lesión física leve&quot; ...
-##  $ def_naturaleza          : chr  &quot;Negligencia y abandono&quot; &quot;Violencia física&quot; &quot;Negligencia y abandono&quot; &quot;Violencia física&quot; ...
-##  $ edad_agre               : num  33 27 39 14 46 15 32 38 36 27 ...
-##  $ sexo_agre               : chr  &quot;Masculino&quot; &quot;Masculino&quot; &quot;Femenino&quot; &quot;Femenino&quot; ...
-##  $ parentezco_vict         : chr  &quot;Padre&quot; &quot;Otros&quot; &quot;Madre&quot; &quot;Otros&quot; ...
-##  $ escenario               : chr  &quot;Vía pública&quot; &quot;Vía pública&quot; &quot;Hogar o domicilio&quot; &quot;Vía pública&quot; ...
-##  $ captura_agresor         : chr  &quot;Desconocido&quot; &quot;Sí&quot; &quot;Sí&quot; &quot;No&quot; ...
-##  $ hora_hecho              : &#39;hms&#39; num  06:51:28 14:42:07 20:38:57 18:22:10 ...
-##   ..- attr(*, &quot;units&quot;)= chr &quot;secs&quot;
-##  $ antecedentes_agresor    : chr  &quot;No&quot; &quot;Sí&quot; &quot;No&quot; &quot;Sí&quot; ...
-##  $ sust_vic                : num  2 2 2 2 2 2 2 2 2 2 ...</code></pre>
-<br>
-<div style="text-align: justify">
-La función str() revela que el conjunto de datos contiene dos tipos
-principales de variables: char() y num(), correspondientes a variables
-cualitativas y cuantitativas, respectivamente. Esta distinción guía el
-tipo de análisis que puede realizarse, ya que las variables cualitativas
-(char()) se prestan al análisis de frecuencias y categorías, mientras
-que las cuantitativas (num()) permiten el uso de estadísticas de
-tendencia central y dispersión.
-<div/>
-<p><br></p>
-<div id="variables-categóricas" class="section level2">
-<h2>2.1.1 Variables Categóricas</h2>
-<br>
-<div style="text-align: justify">
-Las variables cualitativas describen características no numéricas y
-permiten clasificar los datos en distintas categorías. Son esenciales
-para comprender los perfiles y contextos específicos de cada incidente
-de violencia. En este conjunto de datos, estas variables se centran en
-características de ubicación, relación, y condiciones de los
-involucrados y el incidente.
-<div/>
-<p><br></p>
+<div id="clasificación-de-variables" class="section level2"
+number="2.1">
+<h2><span class="header-section-number">2.1</span> Clasificación de
+variables</h2>
+<p>Para un análisis descriptivo adecuado, es crucial clasificar las
+variables en función de su tipo. En esta base de datos sobre violencia
+de género, se distinguen variables categóricas y numéricas, lo cual
+facilita la elección de métodos analíticos específicos. Las variables
+categóricas se analizan mediante distribuciones de frecuencia en
+aspectos como género, parentesco y escenario del incidente. Las
+variables numéricas, en cambio, se describen usando medidas de tendencia
+central y dispersión (media, mediana, desviación estándar), lo que ayuda
+a identificar patrones en la edad de los involucrados. Esta
+clasificación asegura la precisión en la descripción de características
+y patrones en los datos.</p>
+<div id="variables-categóricas" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Variables
+Categóricas</h3>
+<p>Son esenciales para comprender los perfiles y contextos específicos
+de cada incidente de violencia. En este conjunto de datos, estas
+variables se centran en características de ubicación, relación, y
+condiciones de los involucrados y el incidente.</p>
 <ul>
 <li><p><strong>Departamento:</strong>: es una <strong>etiqueta
-geográfica</strong> que clasifica el lugar donde ocurrió cada incidente,
-sin aportar un valor cuantitativo. Su importancia radica en permitir la
-identificación de patrones regionales, lo que es crucial para entender
-si existen áreas con mayor incidencia de violencia y, por tanto, para
-orientar políticas y recursos específicos a esas regiones.</p></li>
+geográfica</strong> que identifica la ubicación de cada incidente,
+permitiendo analizar patrones regionales de violencia y enfocar recursos
+en áreas con mayor incidencia.</p></li>
 <li><p><strong>Ciclo de vida</strong>: representa una <strong>categoría
-de etapa de vida</strong> de la víctima, como infancia, adolescencia o
-adultez. Esta clasificación permite analizar cómo el riesgo de sufrir
-violencia puede variar a lo largo de distintas etapas, sin que estas
-tengan un orden numérico. Es particularmente útil para enfocar las
-medidas de prevención y atención en función de la edad y etapa de
-desarrollo de la víctima.</p></li>
+de etapa de vida</strong> que indica la etapa de vida de la víctima
+(infancia, adolescencia, adultez), ayudando a entender cómo varía el
+riesgo de violencia según la edad y desarrollo.</p></li>
 <li><p><strong>Sexo de la víctima</strong>: es una <strong>categoría de
-género</strong> que identifica si la víctima es masculina o femenina.
-Como variable cualitativa, es clave para analizar cómo la violencia de
-género se distribuye entre diferentes géneros, ayudando a entender las
-dinámicas y particularidades de la violencia contra cada
-género.</p></li>
-<li><p><strong>Estrato socioeconómico</strong>: se presenta en la base
-de datos como un indicador categórico numérico. Aunque está registrado
-con valores numéricos (por ejemplo, 1, 2, 3), estos valores no implican
-un orden o magnitud cuantitativa, sino que funcionan como
-<strong>etiquetas para diferentes niveles socioeconómicos</strong>
-(bajo, medio, alto, etc.). Su importancia radica en la posibilidad de
-analizar cómo el contexto económico afecta la vulnerabilidad y el riesgo
-de las víctimas de violencia, permitiendo identificar patrones de
-incidencia en función del nivel socioeconómico y orientar programas de
-apoyo a sectores específicos que puedan estar en mayor riesgo.</p></li>
-<li><p><strong>Tipo de Seguridad Social </strong>: es una variable
-cualitativa que clasifica el tipo de cobertura de seguridad social de la
-víctima, indicando si pertenece a un sistema de cobertura público o
-privado. Esta distinción es fundamental, ya que permite evaluar si el
-tipo de cobertura influye en el acceso a recursos de atención y apoyo
-tras un incidente de violencia, así como en la calidad y rapidez de la
-respuesta sanitaria y social que la víctima puede recibir.</p></li>
+género</strong> que identifica si la víctima es masculina o femenina, es
+clave para analizar a distribución y dinámica de la violencia entre
+géneros.</p></li>
+<li><p><strong>Estrato socioeconómico</strong>: <strong>etiquetas para
+diferentes niveles socioeconómicos</strong> (bajo, medio, alto, etc.)
+que permite analizar cómo el contexto económico afecta la vulnerabilidad
+y el riesgo de las víctimas de violencia.</p></li>
+<li><p><strong>Tipo de Seguridad Social </strong>: Indica el sistema de
+cobertura (público o privado) de la víctima, lo cual ayuda a entender el
+acceso a recursos de atención y calidad de respuesta.</p></li>
 <li><p><strong>Paciente hospitalizado</strong>: actúa como un
 <strong>indicador de gravedad</strong> del incidente al señalar si la
-víctima requirió hospitalización como consecuencia de la agresión. Esta
-variable binaria (con opciones de “sí” o “no”) permite diferenciar entre
-casos que necesitaron atención médica de emergencia y aquellos que no,
-proporcionando información esencial sobre la severidad del incidente. Su
-análisis es crucial para evaluar el impacto de la violencia en la salud
-física de las víctimas, además de permitir identificar patrones en la
-intensidad de los incidentes y las necesidades de atención médica
-derivadas..</p></li>
-<li><p><strong>Condición final</strong>: describe el <strong>estado de
-la víctima</strong> tras el incidente, con posibles valores como “vivo”,
-“muerto” o “desconocido”. Esta variable cualitativa proporciona
-información clave sobre el desenlace inmediato de cada caso, permitiendo
-evaluar la gravedad del incidente en términos de riesgo de mortalidad.
-La inclusión de la categoría “desconocido” también indica situaciones
-donde el resultado no fue registrado o es incierto, lo cual puede
-reflejar limitaciones en el seguimiento del caso o falta de
-información.</p></li>
-<li><p><strong>Naturaleza de la violencia</strong>: proporciona una
-<strong>clasificación</strong> detallada del tipo de violencia ejercida
-en cada incidente, con categorías como “física”, “psicológica”,
-“sexual”, entre otras. Esta variable cualitativa es fundamental para
-desglosar y entender los diferentes tipos de agresión que experimentan
-las víctimas, permitiendo observar cuáles son las formas de violencia
-más prevalentes y cómo se distribuyen entre los casos.</p></li>
-<li><p><strong>Descripción de naturaleza</strong>: proporciona un
-detalle específico sobre los daños o efectos concretos derivados del
-acto de violencia, como “amenaza”, “lesión física”, “abuso psicológico”,
-entre otros. A diferencia de la categoría general de “Naturaleza de la
-violencia”, que clasifica el tipo amplio de agresión (física,
-psicológica, etc.), esta variable cualitativa permite profundizar en el
-resultado directo o la manifestación específica de la violencia
-ejercida.</p></li>
+víctima requirió hospitalización como consecuencia de la agresión,
+señalando la gravedad del incidente y proporcionando información sobre
+la severidad del caso.</p></li>
+<li><p><strong>Condición final</strong>: Describe el estado de la
+víctima tras el incidente (“vivo”, “muerto”, “desconocido”), permitiendo
+evaluar el riesgo de mortalidad y limitaciones en el seguimiento de
+casos.</p></li>
+<li><p><strong>Naturaleza de la violencia</strong>: Clasifica el tipo de
+violencia (física, psicológica, sexual), fundamental para entender las
+formas más comunes de agresión.</p></li>
+<li><p><strong>Descripción de naturaleza</strong>: Detalla los efectos
+específicos de la violencia (lesión, abuso psicológico), profundizando
+en las manifestaciones directas del daño.</p></li>
 <li><p><strong>Sexo del agresor</strong>: es una categoría de género
-para el agresor (masculino, femenino,intersexual). Es clave en el
-análisis de violencia de género, ya que permite observar los patrones de
-agresión según el género del agresor, proporcionando datos útiles para
-estrategias de prevención y perfilamiento.</p></li>
+para el agresor (masculino, femenino,intersexual), la cual permite
+observar los patrones de agresión según el género del agresor,
+proporcionando datos útiles para estrategias de prevención y
+perfilamiento.</p></li>
 <li><p><strong>Parentesco con la víctima</strong>: es una
 <strong>categoría de relación</strong> que define el tipo de vínculo
-entre la víctima y el agresor (pareja, familiar, desconocido). Esto
-permite un análisis específico de cómo los lazos familiares o cercanos
-pueden influir en la dinámica de la violencia, aspecto crucial para
-entender los contextos en los que ocurre.</p></li>
+entre la víctima y el agresor (pareja, familiar, desconocido)lo cual
+permite entender cómo los lazos familiares o cercanos pueden influir en
+la dinámica de la violencia, aspecto crucial para entender los contextos
+en los que ocurre.</p></li>
 <li><p><strong>Escenario del incidente</strong>: describe el
-<strong>contexto físico</strong> del incidente (hogar, espacio público).
-Esta variable cualitativa permite identificar los lugares más comunes
-donde ocurre la violencia, lo que es importante para desarrollar
-estrategias de prevención y seguridad adaptadas a esos
-entornos.</p></li>
+<strong>contexto físico</strong> del incidente (hogar, espacio público),
+la cual permite identificar los lugares más comunes donde ocurre la
+violencia, lo que es importante para desarrollar estrategias de
+prevención y seguridad adaptadas a esos entornos.</p></li>
 <li><p><strong>Captura del agresor</strong>: es un <strong>indicador
 legal</strong> que señala si el agresor fue detenido tras el incidente
-(sí, no o desconocido). Este indicador es relevante para evaluar la
-respuesta institucional frente a los casos de violencia, permitiendo
-analizar la efectividad y rapidez de las intervenciones
-legales.</p></li>
+(sí, no o desconocido), el cual es relevante para evaluar la respuesta
+institucional frente a los casos de violencia, permitiendo analizar la
+efectividad y rapidez de las intervenciones legales.</p></li>
 <li><p><strong>Antecedentes del agresor</strong>: es un
 <strong>historial de comportamiento</strong> que muestra si el agresor
-tenía un historial previo de violencia. Esta variable cualitativa es
-útil para entender patrones de reincidencia, contribuyendo a la
-identificación de perfiles de riesgo y la necesidad de medidas
-preventivas específicas.</p></li>
+tenía un historial previo de violencia, útil para entender patrones de
+reincidencia, contribuyendo a la identificación de perfiles de
+riesgo.</p></li>
 <li><p><strong>Sustancias en la víctima</strong>: Sustancias en la
 víctima es una variable cualitativa que actúa como un <strong>indicador
 binario de influencia de sustancias</strong> en la víctima al momento
-del incidente. Aunque en la base de datos está codificada con valores
-numéricos (1 o 2), estos representan categorías cualitativas donde 1
-indica “sí” (la víctima estaba bajo la influencia de sustancias) y 2
-indica “no” (la víctima no estaba bajo la influencia de sustancias).
-Este indicador es importante para explorar la posible relación entre el
-consumo de sustancias y la ocurrencia de incidentes de violencia,
-ayudando a identificar factores de riesgo adicionales en el
-perfilamiento de casos.</p></li>
+del incidente, lo cual ayuda a explorar la relación entre consumo y
+violencia, aportando al perfil de riesgo.</p></li>
 </ul>
 </div>
-<div id="variables-cuantitativas" class="section level2">
-<h2>2.1.2 Variables Cuantitativas</h2>
+<div id="variables-cuantitativas" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Variables
+Cuantitativas</h3>
 <ul>
 <li><p><strong>Año</strong>: es una <strong>dimensión temporal</strong>
 que indica el año en que ocurrió el incidente. Al tratarse de un valor
@@ -814,18 +755,17 @@ asociados a comportamientos violentos.</p></li>
 </div>
 </div>
 <div id="subclasificación-de-variables-y-escalas-de-medición"
-class="section level1">
-<h1>2.2 Subclasificación de variables y escalas de medición</h1>
-<div style="text-align: justify">
-Si bien las variables se clasifican principalmente en cualitativas y
+class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Subclasificación de
+variables y escalas de medición</h2>
+<p>Si bien las variables se clasifican principalmente en cualitativas y
 cuantitativas, estás también se pueden dividir en subcategorías
 dependiendo si son numéricas o categóricas y, además, pueden adaptar
 diversas escalas de medición. A continuación, se presentan 2 tablas que
-resumen esta información.
-<div/>
-
-<div id="variables-categóricas-1" class="section level2">
-<h2>2.2.1 Variables Categóricas</h2>
+resumen esta información.</p>
+<div id="variables-categóricas-1" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Variables
+Categóricas</h3>
 <center>
 <div class="float">
 <img src="Variable_violencia1.png" width="700"
@@ -833,51 +773,25 @@ alt="Nota: Tabla de elaboración propia" />
 <div class="figcaption">Nota: Tabla de elaboración propia</div>
 </div>
 </center>
-<br>
-<div style="text-align: justify">
-Las variables categóricas en este conjunto de datos se clasifican en
-nominales y ordinales, cada una con un rol específico en el análisis de
-los incidentes de violencia de género. Las variables nominales, como
-“Departamento”, “Sexo de la víctima”, “Tipo de Seguridad Social” y
-“Escenario del incidente”, permiten agrupar los datos en categorías sin
-un orden jerárquico. Estas variables son esenciales para identificar
-patrones de distribución geográfica, perfiles de género y tipos de
-cobertura social en los casos, además de analizar los contextos en los
-que ocurren los incidentes. La naturaleza nominal de estas variables
-facilita el uso de análisis de frecuencia y distribución, que son
-cruciales para describir cómo se agrupan los incidentes en función de
-estos atributos sin asumir progresión o jerarquía entre las categorías.
-<div/>
-<br>
-<div style="text-align: justify">
-Por otro lado, las variables ordinales, como “Ciclo de vida”, “Estrato
-socioeconómico” y “Condición final”, poseen un orden implícito que
-permite jerarquizar las categorías. Por ejemplo, “Ciclo de vida”
-organiza a las víctimas en etapas como infancia, adolescencia y adultez,
-lo que facilita el análisis de cómo el riesgo de violencia puede variar
-en función de la etapa de desarrollo. De manera similar, “Estrato
-socioeconómico” categoriza el nivel económico en niveles de menor a
-mayor, permitiendo estudiar la relación entre el estatus socioeconómico
-y la vulnerabilidad ante la violencia. Aunque estas variables no
-cuantifican la distancia exacta entre las categorías, el orden
-jerárquico permite realizar análisis de tendencias y comparaciones
-relativas, proporcionando una visión de cómo ciertos factores sociales y
-económicos se correlacionan con la incidencia de la violencia.
-<div/>
-<br>
-<div style="text-align: justify">
-La distinción entre variables nominales y ordinales es esencial para
-aplicar métodos estadísticos adecuados y para obtener conclusiones
-significativas sobre los perfiles y factores de riesgo en la violencia
-de género e intrafamiliar. Las nominales permiten identificar patrones
-generales de pertenencia, mientras que las ordinales ofrecen una base
-para el análisis de jerarquías y tendencias, ambos aspectos
-fundamentales para una comprensión integral de los datos.
-<div/>
-<p><br></p>
+<p>Las variables categóricas en este conjunto de datos se dividen en
+nominales y ordinales, cada una con un rol en el análisis de violencia
+de género. Las variables nominales (“Departamento”, “Sexo de la
+víctima”, “Tipo de Seguridad Social”, “Escenario del incidente”)
+permiten agrupar datos sin un orden específico, siendo clave para
+observar patrones de distribución geográfica, género y contextos de los
+incidentes mediante análisis de frecuencia. En cambio, las variables
+ordinales (“Ciclo de vida”, “Estrato socioeconómico”, “Condición final”)
+tienen un orden implícito que permite jerarquizar categorías,
+facilitando el análisis de tendencias y la relación entre el nivel
+socioeconómico o la etapa de vida y la vulnerabilidad ante la violencia.
+Distinguir entre nominales y ordinales es crucial para aplicar análisis
+estadísticos adecuados y obtener conclusiones significativas sobre los
+perfiles de riesgo en violencia de género.</p>
 </div>
-<div id="variables-cuantitativas-1" class="section level2">
-<h2>2.2.2 Variables Cuantitativas</h2>
+<div id="variables-cuantitativas-1" class="section level3"
+number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Variables
+Cuantitativas</h3>
 <center>
 <div class="float">
 <img src="variable_violencia2.png" width="700"
@@ -885,47 +799,70 @@ alt="Nota: Tabla de elaboración propia" />
 <div class="figcaption">Nota: Tabla de elaboración propia</div>
 </div>
 </center>
-<br>
-<div style="text-align: justify">
-Las variables cuantitativas en este conjunto de datos se dividen en
-discretas y se miden en escalas adecuadas para el análisis de patrones
-temporales y demográficos en el contexto de violencia de género. Las
-variables Edad de la víctima y Edad del agresor son discretas, ya que se
-miden en años enteros, sin decimales, y están clasificadas en una escala
-de razón. Esta escala cuenta con un cero absoluto que representa la
-ausencia de edad, permitiendo comparaciones proporcionales, como decir
-que una persona de 40 años es el doble de mayor que alguien de 20 años.
-Este tipo de análisis facilita la identificación de patrones de edad en
-víctimas y agresores, ayudando a explorar cómo el riesgo o la tendencia
-a comportamientos violentos pueden variar con la edad.
-<div/>
-<br>
-<div style="text-align: justify">
-Por otro lado, la variable Año también es discreta, ya que se registra
-en años específicos, pero se clasifica en una escala de intervalo.
-Aunque permite calcular la diferencia entre años para observar
-tendencias temporales, no tiene un cero absoluto que indique ausencia de
-tiempo; el año “0” es simplemente un punto de referencia en la
-cronología, no una ausencia de tiempo. Esta escala de intervalo permite
-analizar la evolución de los incidentes a lo largo de los años,
-identificando patrones temporales y cambios en la incidencia de
-violencia.
-<div/>
-<br>
-<div style="text-align: justify">
-Esta clasificación entre escala de razón y escala de intervalo es
-esencial para aplicar técnicas analíticas apropiadas. Las variables de
-razón (edad) permiten cálculos proporcionales y detallados análisis
-demográficos, mientras que la variable de intervalo (año) facilita el
-estudio de tendencias y patrones a lo largo del tiempo, proporcionando
-una visión integral sobre cómo la violencia de género e intrafamiliar se
-relaciona tanto con factores demográficos como temporales.
-<div/>
-<p><br></p>
+<p>Las variables cuantitativas en este conjunto son discretas y útiles
+para analizar patrones temporales y demográficos. La Edad de la víctima
+y Edad del agresor se miden en años enteros en una escala de razón,
+permitiendo comparaciones proporcionales (por ejemplo, una persona de 40
+años es el doble de mayor que alguien de 20), lo que ayuda a identificar
+patrones de edad en violencia. La variable Año también es discreta, pero
+en una escala de intervalo. Esto permite observar cambios a lo largo del
+tiempo, aunque sin un “cero absoluto” de tiempo, útil para analizar
+tendencias anuales en la violencia de género. Distinguir entre escala de
+razón y de intervalo permite aplicar técnicas analíticas precisas: edad
+para análisis proporcionales y año para estudiar patrones temporales,
+proporcionando una visión completa de los factores de riesgo en
+violencia de género.</p>
+</div>
+</div>
+</div>
+<div id="bibliografía" class="section level1 unnumbered">
+<h1 class="unnumbered">Bibliografía</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
+<div id="ref-bid2024costos" class="csl-entry">
+Banco Interamericano de Desarrollo (BID). 2024. <span>“Altos Costos Del
+Crimen Afectan a América Latina y El Caribe.”</span> November 11, 2024.
+<a
+href="https://www.iadb.org/es/noticias/altos-costos-del-crimen-afectan-america-latina-y-el-caribe">https://www.iadb.org/es/noticias/altos-costos-del-crimen-afectan-america-latina-y-el-caribe</a>.
+</div>
+<div id="ref-cepal2020brechas" class="csl-entry">
+Comisión Económica para América Latina y el Caribe (CEPAL). 2020.
+<span>“Mujeres y Hombres: Brechas de Género En Colombia.”</span>
+September 2020. <a
+href="https://oig.cepal.org/sites/default/files/mujeres_y_hombres_brechas_de_genero.pdf">https://oig.cepal.org/sites/default/files/mujeres_y_hombres_brechas_de_genero.pdf</a>.
+</div>
+<div id="ref-cepal2023femicidio" class="csl-entry">
+———. 2023. <span>“En 2022, Al Menos 4.050 Mujeres Fueron Víctimas de
+Femicidio o Feminicidio En América Latina y El Caribe: CEPAL.”</span>
+November 23, 2023. <a
+href="https://www.cepal.org/es/comunicados/2022-al-menos-4050-mujeres-fueron-victimas-femicidio-o-feminicidio-america-latina-caribe">https://www.cepal.org/es/comunicados/2022-al-menos-4050-mujeres-fueron-victimas-femicidio-o-feminicidio-america-latina-caribe</a>.
+</div>
+<div id="ref-ins2021violencia" class="csl-entry">
+Instituto Nacional de Salud (INS). 2021. <span>“Violencia de Género e
+Intrafamiliar: Informe Final 2021.”</span> 2021. <a
+href="https://www.ins.gov.co/buscador-eventos/Informesdeevento/VIOLENCIA%20DE%20GENERO%20E%20INTRAFAMILIAR%20INFORME%20FINAL%202021.pdf">https://www.ins.gov.co/buscador-eventos/Informesdeevento/VIOLENCIA%20DE%20GENERO%20E%20INTRAFAMILIAR%20INFORME%20FINAL%202021.pdf</a>.
+</div>
+<div id="ref-onu2021violencia" class="csl-entry">
+Naciones Unidas. 2021. <span>“Una de Cada Tres Mujeres En El Mundo Sufre
+Violencia Física o Sexual Desde Que Es Muy Joven.”</span> March 9, 2021.
+<a
+href="https://news.un.org/es/story/2021/03/1489292">https://news.un.org/es/story/2021/03/1489292</a>.
+</div>
+<div id="ref-onu2023violencia" class="csl-entry">
+———. 2023. <span>“La Violencia de Género Es Una de Las Violaciones Más
+Generalizadas de Los Derechos Humanos En El Mundo.”</span> June 17,
+2023. <a
+href="https://unric.org/es/la-violencia-de-genero-segun-la-onu/#:~:text=La%20violencia%20de%20g%C3%A9nero%20se,la%20existencia%20de%20normas%20da%C3%B1inas.">https://unric.org/es/la-violencia-de-genero-segun-la-onu/#:~:text=La%20violencia%20de%20g%C3%A9nero%20se,la%20existencia%20de%20normas%20da%C3%B1inas.</a>
+</div>
+<div id="ref-secretaria2024violencia" class="csl-entry">
+Salud y Ambiente, Secretaría de. 2024. <span>“04. Violencia de Género e
+Intrafamiliar de Enero 2015 a Marzo 2023.”</span> <a
+href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/04-Violencia-de-G-nero-e-intrafamiliar-de-enero-20/sq8q-pnf5/about_data">https://www.datos.gov.co/Salud-y-Protecci-n-Social/04-Violencia-de-G-nero-e-intrafamiliar-de-enero-20/sq8q-pnf5/about_data</a>.
+</div>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkludHJvZHVjY2nDs24geSBDb250ZXh0byBHZW5lcmFsIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIHRvYzogVFJVRQ0KICAgIHRvY19mbG9hdDogVFJVRQ0KICAgIGNvbGxhcHNlZDogVFJVRQ0KICAgIHNtb290aF9zY3JvbGw6IFRSVUUNCiAgICBjb2RlX2Rvd25sb2FkOiBUUlVFDQogICAgdGhlbWU6IGx1bWVuDQotLS0NCiMgMS5SZWxldmFuY2lhIHRlbcOhdGljYSB5IG9iamV0aXZvcyBkZSBlc3R1ZGlvIA0KDQo8YnI+DQo8ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBqdXN0aWZ5Ij4NClNpbiBkdWRhIGFsZ3VuYSwgbGEgZGVsaW5jdWVuY2lhIGVzIHVuYSBwcmVvY3VwYWNpw7NuIGRpYXJpYSBwYXJhIGxvcyBjb2xvbWJpYW5vcywgcHVlcyBub3RpY2lhcyBzb2JyZSBodXJ0b3MgeSBkZW3DoXMgYWN0b3MgZGVsaWN0aXZvcyBlc3TDoW4gYWwgb3JkZW4gZGVsIGTDrWEsIHRhbiBzb2xvIGhheSBxdWUgb2JzZXJ2YXIgbG9zIGRhdG9zIHB1YmxpY2Fkb3MgcG9yIFByb2JvZ290w6EgUmVnacOzbiBlbiAyMDIzLCBsb3MgY3VhbGVzIG1vc3RyYXJvbiBxdWUgbGEgZXh0b3JzacOzbiwgZWwgaHVydG8gYSBwZXJzb25hcywgZWwgaG9taWNpZGlvLCBlbCBodXJ0byBkZSBhdXRvbW90b3JlcyB5IGVsIGh1cnRvIGEgcmVzaWRlbmNpYXMgc29uIGRlbGl0b3MgZW4gY3JlY2ltaWVudG8gZW4gbGFzIGRpdmVyc2FzIHJlZ2lvbmVzIGRlbCBwYcOtcywgbG8gY3VhbCBzdXBvbmUgdW4gZ3JhbiBkZXNhZsOtbyBwYXJhIGxhcyBhdXRvcmlkYWRlcyB5IHVuYSBhbXBsaWEgcHJlb2N1cGFjacOzbiBwYXJhIGxvcyBjaXVkYWRhbm9zLiBQb3IgdGFudG8sIGFuYWxpemFyIHVuYSBiYXNlIGRlIGRhdG9zIHF1ZSBjb21wcmVuZGEgaW5mb3JtYWNpw7NuIHNvYnJlIGVzdGEgY3Vlc3Rpw7NuIHN1cG9uZSB1biBwdW50byBkZSBwYXJ0aWRhIGJlbmVmaWNpb3NvIHF1ZSBwdWVkZSBsbGVnYXIgYSBhcG9ydGFyIG1heW9yIGNvbXByZXNpw7NuIHNvYnJlIGxhcyBtb2RhbGlkYWRlcyBkZSBodXJ0byB5IGRlbGluY3VlbmNpYSBxdWUgcHJlZG9taW5hbiBlbiBlbCB0ZXJyaXRvcmlvIG5hY2lvbmFsIHkgcG9zaWJsZXMgc29sdWNpb25lcyBwYXJhIGRpc2lwYXIgbGEgcHJlc2VudGUgcHJvYmxlbcOhdGljYS4gDQo8ZGl2Lz4NCjxicj4NCjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGp1c3RpZnkiPg0KVGVuaWVuZG8gZW4gY3VlbnRhIGxvIGFudGVyaW9yLCBlbCBvYmpldGl2byBwcmluY2lwYWwgZGUgZXN0YSBwYWdpbmEgd2ViLCBlcyByZWFsaXphciB1biBhbsOhbGlzaXMgZXN0YWTDrXN0aWNvIGRlc2NyaXB0aXZvIGEgcGFydGlyIGRlbCBEYXRhc2V0ICoqaHVydG9zMi5jc3YqKiwgbWVkaWFudGUgbGEgcmVhbGl6YWNpw7NuIGRlIHRhYmxhcyBkZSBmcmVjdWVuY2lhcywgZ3LDoWZpY29zIGVzdGFkw61zdGljb3MgeSBhbsOhbGlzaXMgZGUgYXNpbWV0csOtYSB5IGRpc3BlcnNpw7NuIHF1ZSBwZXJtaXRhbiBvYnRlbmVyIGNvbmNsdXNpb25lcyBjb2hlcmVudGVzIHkgb2JqZXRpdmFzIGNvbiBsYSByZWFsaWRhZCBxdWUgZXhwb25lbiBsb3MgZGF0b3MuIA0KPGRpdi8+DQo8YnI+DQpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRX0NCiMjUHJveWVjdG8gZGUgZXN0YWTDrXN0aWNhIDMNCiMjTGVlciBDc3YNCmxpYnJhcnkoZ2dwbG90MikNCmxpYnJhcnkoc2YpDQpsaWJyYXJ5KGRwbHlyKQ0KbGlicmFyeShyZWFkeGwpDQpsaWJyYXJ5KGZkdGgpDQpsaWJyYXJ5KHBsb3RseSkNCmxpYnJhcnkocWNjKQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkobGVhZmxldCkNCmxpYnJhcnkoaHRtbHRvb2xzKQ0KbGlicmFyeShEVCkNCmxpYnJhcnkgKG1vZGVlc3QpDQpsaWJyYXJ5KG1vbWVudHMpDQpsaWJyYXJ5KGV4cGxvcmUpDQpsaWJyYXJ5KGxlc3NSKQ0KDQp2aW9sZW5jaWFfZ2VuZXJvIDwtIHJlYWRfY3N2KCJWaW9sZW5jaWFfZ2VuZXJvXzUuY3N2IikNCmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVFJVRSkgIA0KYGBgDQpgYGB7Y3NzLGVjaG89RkFMU0V9DQouY29sdW1uIHtkaXNwbGF5OmZsZXg7fQ0KaDF7Y29sb3I6cmdiKDI2LCA3MiwgMTEyKX0NCmgye2NvbG9yOnJnYigyNiwgNzIsIDExMil9DQpgYGANCg0KIyAyLiBEZXNjcmlwY2nDs24gdMOpY25pY2EgZGVsIGRhdGFzZXQgeSBjb250ZXh0dWFsaXphY2nDs24NCjxicj4NCjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGp1c3RpZnkiPg0KRXN0ZSBlc3R1ZGlvIHV0aWxpemEgdW5hIGJhc2UgZGUgZGF0b3Mgcm9idXN0YSB5IGRldGFsbGFkYSBzb2JyZSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlIGludHJhZmFtaWxpYXIgZW4gQ29sb21iaWEsIGFiYXJjYW5kbyBpbmNpZGVudGVzIHJlZ2lzdHJhZG9zIHNlbWFuYWxtZW50ZSBlbnRyZSBlbmVybyBkZSAyMDE1IHkgbWFyem8gZGUgMjAyMy4gRXN0YSBiYXNlIGRlIGRhdG9zLCBjb24gMTIsMTkzIHJlZ2lzdHJvcyB5IDMyIHZhcmlhYmxlcyBlbiBzdSB2ZXJzacOzbiBvcmlnaW5hbCwgY29uc3RpdHV5ZSB1biByZWN1cnNvIGludmFsdWFibGUgcGFyYSBlbCBhbsOhbGlzaXMgZGUgdW4gZmVuw7NtZW5vIGRlIGFsdGEgY29tcGxlamlkYWQgc29jaWFsIHkgcmVsZXZhbmNpYSwgcGVybWl0aWVuZG8gaW52ZXN0aWdhciBlbiBwcm9mdW5kaWRhZCBsb3MgZmFjdG9yZXMgZGVtb2dyw6FmaWNvcywgc29jaW9lY29uw7NtaWNvcyB5IGNvbnRleHR1YWxlcyBhc29jaWFkb3MgYSBsb3MgaW5jaWRlbnRlcyBkZSB2aW9sZW5jaWEgZGUgZ8OpbmVyby4gTGEgYW1wbGl0dWQgeSByaXF1ZXphIGRlIGxhcyB2YXJpYWJsZXMsIHF1ZSBpbmNsdXllbiBjYXJhY3RlcsOtc3RpY2FzIGRldGFsbGFkYXMgZGUgdsOtY3RpbWFzIHkgYWdyZXNvcmVzLCBsYSByZWxhY2nDs24gZW50cmUgYW1ib3MsIHkgbGFzIGNpcmN1bnN0YW5jaWFzIGVzcGVjw61maWNhcyBkZSBjYWRhIGV2ZW50bywgYXBvcnRhbiB1bmEgcGVyc3BlY3RpdmEgaW50ZWdyYWwgc29icmUgbG9zIHBlcmZpbGVzIHkgcGF0cm9uZXMgc3VieWFjZW50ZXMgZW4gZXN0b3MgY2Fzb3MuIFNpbiBlbWJhcmdvLCBhbGd1bmFzIHZhcmlhYmxlcyBzb24gcmVkdW5kYW50ZXMsIG90cmFzIHRpZW5lbiBiYWpvIHZhbG9yIGV4cGxpY2F0aXZvIHBhcmEgaWRlbnRpZmljYXIgcGF0cm9uZXMgZGUgdmlvbGVuY2lhIG8gcGVyZmlsZXMgZGUgcmllc2dvLGFsZ3VuYXMgY29sdW1uYXMgc2UgZW5jdWVudHJhbiBpbmNvbXBsZW50YXMgeSBhbGd1bmFzIGNvbnRpZW5lbiBkYXRvcyBhZG1pbmlzdHJhdGl2b3MgbyBjb250ZXh0dWFsZXMgcXVlIG5vIGNvbnRyaWJ1eWVuIGRlIG1hbmVyYSBzaWduaWZpY2F0aXZhIGFsIGFuw6FsaXNpcyBkZSBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlIGludHJhZmFtaWxpYXIuIFNpbXBsaWZpY2FyIGVsIGNvbmp1bnRvIGRlIGRhdG9zIHBlcm1pdGUgY29uY2VudHJhcnNlIGVuIGxhIGluZm9ybWFjacOzbiBlc2VuY2lhbCwgb3B0aW1pemFuZG8gbGEgY2xhcmlkYWQgeSBwcmVjaXNpw7NuIGFuYWzDrXRpY2EgcGFyYSByZXNwb25kZXIgYSBsYXMgcHJlZ3VudGFzIGRlIGludmVzdGlnYWNpw7NuIGRlIG1hbmVyYSBlZmljYXouDQo8ZGl2Lz4NCjxicj4NCjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGp1c3RpZnkiPg0KUGFyYSBtYXhpbWl6YXIgbGEgcmVsZXZhbmNpYSB5IGFwbGljYWJpbGlkYWQgZGUgbGEgYmFzZSBkZSBkYXRvcyBlbiBlbCBjb250ZXh0byBkZSBsb3Mgb2JqZXRpdm9zIHkgcHJlZ3VudGFzIGRlIGludmVzdGlnYWNpw7NuLCBzZSByZWFsaXrDsyB1bmEgZGVwdXJhY2nDs24gZXhoYXVzdGl2YSBkZSBsYXMgdmFyaWFibGVzLiBFc3RlIHByb2Nlc28gaW1wbGljw7MgbGEgZWxpbWluYWNpw7NuIGRlIGNvbHVtbmFzIHJlZHVuZGFudGVzIHkgZGUgYmFqYSBjb250cmlidWNpw7NuIGFuYWzDrXRpY2EsIHByZXNlcnZhbmRvIHNvbG8gYXF1ZWxsYXMgcXVlIHJlc3VsdGFuIGNyw610aWNhcyBwYXJhIGVsIGFuw6FsaXNpcy4gQWRlbcOhcywgc2UgdHJhbnNmb3JtYXJvbiBjb2RpZmljYWNpb25lcyBjb21wbGVqYXMgZW4gZXRpcXVldGFzIGRlc2NyaXB0aXZhcywgbWVqb3JhbmRvIGFzw60gbGEgYWNjZXNpYmlsaWRhZCB5IGNsYXJpZGFkIGludGVycHJldGF0aXZhIGRlIGxvcyBkYXRvcy4gRWwgY29uanVudG8gZGVwdXJhZG8sIGNvbXB1ZXN0byBhaG9yYSBwb3IgMTIsMTkzIHJlZ2lzdHJvcyB5IDE5IHZhcmlhYmxlcyBjbGF2ZSwgc2UgY2VudHJhIGVuIGxhIGluZm9ybWFjacOzbiBlc2VuY2lhbCBxdWUgcGVybWl0ZSB1bmEgZXhwbG9yYWNpw7NuIHByZWNpc2EgZGUgcGF0cm9uZXMsIGZhY3RvcmVzIGRlIHJpZXNnbywgeSBjb250ZXh0b3MgZGUgdmlvbGVuY2lhIGVuIGxvcyBkaXN0aW50b3MgaW5jaWRlbnRlcyByZWdpc3RyYWRvcy5BIGNvbnRpbnVhY2nDs24gc2UgZXhwb25lbiBsYXMgdmFyaWFibGVzIGEgZXN0dWRpYXIgZGUgbGEgYmFzZSBkZSBkYXRvcyBtb2RpZmljYWRhLCBsYXMgY3VhbGVzIHNlIGNvbmZpZ3VyYW4gY29tbyBwYXJhbWV0cm9zIGJham8gZXN0dWRpbyAgYmFqbyBlc3R1ZGlvIHF1ZSBjYXB0dXJhbiB1bmEgZ2FtYSBkZSBhc3BlY3RvcyBkZSBsb3MgaW5kaXZpZHVvcyB5IGxhcyBjaXJjdW5zdGFuY2lhcyBxdWUgcm9kZWFuIGNhZGEgaW5jaWRlbnRlIGRlIHZpb2xlbmNpYSBkZSBnw6luZXJvLCBwZXJtaXRpZW5kbyBleHBsb3JhciB0ZW1hcyBjb21vIGxvcyBwZXJmaWxlcyBzb2Npb2RlbW9ncsOhZmljb3MgZGUgdsOtY3RpbWFzIHkgYWdyZXNvcmVzLCBsYXMgY29uZGljaW9uZXMgeSBlc2NlbmFyaW9zIGRlIGxvcyBldmVudG9zLCB5IGVsIHJvbCBkZSBmYWN0b3JlcyBjb21vIGxhIHJlbGFjacOzbiBlbnRyZSB2w61jdGltYSB5IGFncmVzb3IsIGVsIGVudG9ybm8gZGVsIGluY2lkZW50ZSB5IGxhcyBjb25kaWNpb25lcyBkZSBzYWx1ZCB5IHNlZ3VyaWRhZCBzb2NpYWwgZGUgbG9zIGludm9sdWNyYWRvcy4gQWRlbcOhcywgc2UgaW5jbHV5ZSBpbmZvcm1hY2nDs24gY2xhdmUgc29icmUgYW50ZWNlZGVudGVzIGRlIGFncmVzacOzbiwgZXN0YWRvcyBkZSBjYXB0dXJhIHkgbGEgcHJlc2VuY2lhIGRlIHN1c3RhbmNpYXMsIGFwb3J0YW5kbyB1bmEgYmFzZSBpbnRlZ3JhbCBwYXJhIGVzdHVkaWFyIGxhIHZpb2xlbmNpYSBkZXNkZSBtw7psdGlwbGVzIGRpbWVuc2lvbmVzIHkgY29tcHJlbmRlciBzdXMgcGF0cm9uZXMgeSBkZXRlcm1pbmFudGVzOg0KPGRpdi8+DQo8YnI+DQpgYGB7cn0NCm5hbWVzKHZpb2xlbmNpYV9nZW5lcm8pICNOb21icmUgZGUgbGFzIGNvbHVtbmFzIHkgcG9yIHRhbnRvIGRlIGxhcyB2YXJpYWJsZXMNCmBgYA0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+DQpQb3Igb3RybyBsYWRvLCBjb21vIGJpZW4gc2UgbWVuY2lvbsOzLCBlbCBjb25qdW50byBkZSBkYXRvcyBhY3R1YWwgY3VlbnRhIGNvbiAxMiwxOTMgZmlsYXMsIHF1ZSBjb3JyZXNwb25kZW4gYWwgdG90YWwgZGUgb2JzZXJ2YWNpb25lcyBvIHVuaWRhZGVzIGV4cGVyaW1lbnRhbGVzIGVuIGVsIGRhdGFzZXQuIENhZGEgZmlsYSByZXByZXNlbnRhIHVuYSB1bmlkYWQgZXhwZXJpbWVudGFsLCBlcyBkZWNpciwgdW4gaW5jaWRlbnRlIGVzcGVjw61maWNvIGRlIHZpb2xlbmNpYSBkZSBnw6luZXJvIG8gaW50cmFmYW1pbGlhciwgZG9jdW1lbnRhZG8gY29uIGRhdG9zIGRldGFsbGFkb3MgZW4gY2FkYSB1bmEgZGUgbGFzIDE5IHZhcmlhYmxlcywgbG8gcXVlIHBlcm1pdGUgY29uc3RydWlyIHVuIHBlcmZpbCBleGhhdXN0aXZvIHF1ZSBpbmNsdXllIGNhcmFjdGVyw61zdGljYXMgZGVtb2dyw6FmaWNhcyBkZSBsYSB2w61jdGltYSB5IGVsIGFncmVzb3IsIGVsIGNvbnRleHRvIGRlbCBpbmNpZGVudGUgeSBvdHJvcyBmYWN0b3JlcyByZWxldmFudGVzLiBDb24gMTIsMTkzIHVuaWRhZGVzIGV4cGVyaW1lbnRhbGVzIHkgMTkgdmFyaWFibGVzLCBlbCBjb25qdW50byBkZSBkYXRvcyBjb250aWVuZSB1biB0b3RhbCBkZSAyMzEsNjY3IGVudHJhZGFzLCBsbyBjdWFsIGhhYmlsaXRhIHVuIGFuw6FsaXNpcyBlc3RhZMOtc3RpY28gdGFudG8gZGVzY3JpcHRpdm8gY29tbyBpbmZlcmVuY2lhbCBzb2JyZSBsb3MgcGF0cm9uZXMgeSBmYWN0b3JlcyBhc29jaWFkb3MgYSBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVyby4NCjxkaXYvPg0KPGJyPg0KYGBge3J9DQpudW1fcm93cyA8LSBucm93KHZpb2xlbmNpYV9nZW5lcm8pICNOw7ptZXJvIGRlIG9ic2VydmFjaW9uZXMgKGZpbGFzKQ0KbnVtX2NvbHVtcyA8LSBuY29sKHZpb2xlbmNpYV9nZW5lcm8pICNOw7ptZXJvIGRlIHZhcmlhYmxlcyAoY29sdW1uYXMpDQp0b3RhbF92YWx1ZXMgPC0gbnVtX3Jvd3MqbnVtX2NvbHVtcyAjVG90YWwgZGUgZGF0b3MgDQoNCm51bV9yb3dzDQpudW1fY29sdW1zDQp0b3RhbF92YWx1ZXMNCmBgYA0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+DQpMYSBkZXNjcmlwY2nDs24gdMOpY25pY2EgaW5pY2lhbCBkZSBudWVzdHJhIGJhc2UgZGUgZGF0b3MgbW9kaWZpY2FkYSBlcyByZWxldmFudGUgcG9ycXVlIGRlZmluZSBzdSBjYXBhY2lkYWQgeSBhbGNhbmNlIGVuIHTDqXJtaW5vcyBkZSBuw7ptZXJvIGRlIG9ic2VydmFjaW9uZXMgeSB2YXJpYWJsZXMuIENvbiAxMiwxOTMgb2JzZXJ2YWNpb25lcyB5IDE5IHZhcmlhYmxlcywgZXN0ZSBjb25qdW50byBkZSBkYXRvcyBvZnJlY2UgdW4gdm9sdW1lbiBhZGVjdWFkbyBwYXJhIHJlYWxpemFyIGFuw6FsaXNpcyBzaWduaWZpY2F0aXZvcyB5IHBlcm1pdGUgZXhwbG9yYXIgcGF0cm9uZXMsIHBlcmZpbGVzIHkgcmVsYWNpb25lcyBjbGF2ZSBlbiBlbCBjb250ZXh0byBkZSBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlIGludHJhZmFtaWxpYXIuIEVsIG7Dum1lcm8gZGUgb2JzZXJ2YWNpb25lcyBhc2VndXJhIHN1ZmljaWVudGUgcmVwcmVzZW50YXRpdmlkYWQgeSByb2J1c3RleiBlc3RhZMOtc3RpY2EsIG1pZW50cmFzIHF1ZSBsYSBzZWxlY2Npw7NuIGRlIHZhcmlhYmxlcyBwZXJtaXRlIHVuIGVuZm9xdWUgZGlyZWN0byBlbiBhc3BlY3RvcyBjcsOtdGljb3MgZGVsIGZlbsOzbWVubywgYWxpbmXDoW5kb3NlIGNvbiBsb3Mgb2JqZXRpdm9zIHkgbGFzIHByZWd1bnRhcyBkZSBpbnZlc3RpZ2FjacOzbiBkZWwgZXN0dWRpby4NCjxkaXYvPg0KPGJyPg0KDQojIDIuMSBDbGFzaWZpY2FjacOzbiBkZSB2YXJpYWJsZXMNCg0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+DQpQYXJhIHJlYWxpemFyIHVuIGFuw6FsaXNpcyBkZXNjcmlwdGl2byBhZGVjdWFkbyBkZWwgY29uanVudG8gZGUgZGF0b3Mgc2VsZWNjaW9uYWRvLCBlcyBlc2VuY2lhbCBjbGFzaWZpY2FyIGxhcyB2YXJpYWJsZXMgZW4gZnVuY2nDs24gZGUgc3UgdGlwby4gRXN0YSBiYXNlIGRlIGRhdG9zIHNvYnJlIHZpb2xlbmNpYSBkZSBnw6luZXJvIGluY2x1eWUgdGFudG8gdmFyaWFibGVzIGNhdGVnw7NyaWNhcyBjb21vIG51bcOpcmljYXMsIHVuYSBkaXN0aW5jacOzbiBmdW5kYW1lbnRhbCBwYXJhIHNlbGVjY2lvbmFyIGxhcyBoZXJyYW1pZW50YXMgeSBtw6l0b2RvcyBhbmFsw610aWNvcyBhcHJvcGlhZG9zLiBMYXMgdmFyaWFibGVzIGNhdGVnw7NyaWNhcyBwZXJtaXRlbiBleGFtaW5hciBsYSBkaXN0cmlidWNpw7NuIGRlIGZyZWN1ZW5jaWFzIGVuIGNhdGVnb3LDrWFzIGNsYXZlLCBjb21vIGVsIGfDqW5lcm8sIGVsIHBhcmVudGVzY28gZW50cmUgdsOtY3RpbWEgeSBhZ3Jlc29yLCB5IGVsIGVzY2VuYXJpbyBkZWwgaW5jaWRlbnRlLiBQb3Igc3UgcGFydGUsIGxhcyB2YXJpYWJsZXMgbnVtw6lyaWNhcyBzZSBhbmFsaXphbiBtZWRpYW50ZSBtZWRpZGFzIGRlIHRlbmRlbmNpYSBjZW50cmFsIHkgZGlzcGVyc2nDs24gKG1lZGlhLCBtZWRpYW5hIHkgZGVzdmlhY2nDs24gZXN0w6FuZGFyKSwgbG8gY3VhbCBmYWNpbGl0YSBsYSBjb21wcmVuc2nDs24gZGUgcGF0cm9uZXMgZW4gZmFjdG9yZXMgY29tbyBsYSBlZGFkIGRlIGxvcyBpbnZvbHVjcmFkb3MuIEVzdGEgY2xhc2lmaWNhY2nDs24gYXNlZ3VyYSBxdWUgbGFzIHTDqWNuaWNhcyBhbmFsw610aWNhcyBhcGxpY2FkYXMgc2VhbiBhZGVjdWFkYXMgcGFyYSBkZXNjcmliaXIgZGUgbWFuZXJhIHByZWNpc2EgbGFzIGNhcmFjdGVyw61zdGljYXMgeSBwYXRyb25lcyBwcmVzZW50ZXMgZW4gbG9zIGRhdG9zLiBBIGNvbnRpbnVhY2nDs24sIHNlIHByZXNlbnRhIGxhIGNsYXNpZmljYWNpw7NuIHByaW5jaXBhbCBkZSBsYXMgdmFyaWFibGVzOg0KPGRpdi8+DQo8YnI+DQpgYGB7ciBpbmNsdWRlPUZBTFNFLCBwYWdlZC5wcmludD1GQUxTRX0NClZpb2xlbmNpYWVfZGYgPC0gZGF0YS5mcmFtZSh2aW9sZW5jaWFfZ2VuZXJvKQ0KYGBgDQoNCmBgYHtyfQ0Kc3RyKFZpb2xlbmNpYWVfZGYpICNWaXN1YWxpemFjacOzbiBkZSBsYSBlc3RydWN0dXJhIGludGVybmEgZGVsIGNvbmp1bnRvIGRlIGRhdG9zDQpgYGANCjxicj4NCjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGp1c3RpZnkiPg0KTGEgZnVuY2nDs24gc3RyKCkgcmV2ZWxhIHF1ZSBlbCBjb25qdW50byBkZSBkYXRvcyBjb250aWVuZSBkb3MgdGlwb3MgcHJpbmNpcGFsZXMgZGUgdmFyaWFibGVzOiBjaGFyKCkgeSBudW0oKSwgY29ycmVzcG9uZGllbnRlcyBhIHZhcmlhYmxlcyBjdWFsaXRhdGl2YXMgeSBjdWFudGl0YXRpdmFzLCByZXNwZWN0aXZhbWVudGUuIEVzdGEgZGlzdGluY2nDs24gZ3XDrWEgZWwgdGlwbyBkZSBhbsOhbGlzaXMgcXVlIHB1ZWRlIHJlYWxpemFyc2UsIHlhIHF1ZSBsYXMgdmFyaWFibGVzIGN1YWxpdGF0aXZhcyAoY2hhcigpKSBzZSBwcmVzdGFuIGFsIGFuw6FsaXNpcyBkZSBmcmVjdWVuY2lhcyB5IGNhdGVnb3LDrWFzLCBtaWVudHJhcyBxdWUgbGFzIGN1YW50aXRhdGl2YXMgKG51bSgpKSBwZXJtaXRlbiBlbCB1c28gZGUgZXN0YWTDrXN0aWNhcyBkZSB0ZW5kZW5jaWEgY2VudHJhbCB5IGRpc3BlcnNpw7NuLg0KPGRpdi8+DQo8YnI+DQoNCiMjIDIuMS4xIFZhcmlhYmxlcyBDYXRlZ8OzcmljYXMNCjxicj4NCjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGp1c3RpZnkiPg0KTGFzIHZhcmlhYmxlcyBjdWFsaXRhdGl2YXMgZGVzY3JpYmVuIGNhcmFjdGVyw61zdGljYXMgbm8gbnVtw6lyaWNhcyB5IHBlcm1pdGVuIGNsYXNpZmljYXIgbG9zIGRhdG9zIGVuIGRpc3RpbnRhcyBjYXRlZ29yw61hcy4gU29uIGVzZW5jaWFsZXMgcGFyYSBjb21wcmVuZGVyIGxvcyBwZXJmaWxlcyB5IGNvbnRleHRvcyBlc3BlY8OtZmljb3MgZGUgY2FkYSBpbmNpZGVudGUgZGUgdmlvbGVuY2lhLiBFbiBlc3RlIGNvbmp1bnRvIGRlIGRhdG9zLCBlc3RhcyB2YXJpYWJsZXMgc2UgY2VudHJhbiBlbiBjYXJhY3RlcsOtc3RpY2FzIGRlIHViaWNhY2nDs24sIHJlbGFjacOzbiwgeSBjb25kaWNpb25lcyBkZSBsb3MgaW52b2x1Y3JhZG9zIHkgZWwgaW5jaWRlbnRlLiANCjxkaXYvPg0KPGJyPg0KDQogIC0gKipEZXBhcnRhbWVudG86Kio6IGVzIHVuYSAqKmV0aXF1ZXRhIGdlb2dyw6FmaWNhKiogcXVlIGNsYXNpZmljYSBlbCBsdWdhciBkb25kZSBvY3VycmnDsyBjYWRhIGluY2lkZW50ZSwgc2luIGFwb3J0YXIgdW4gdmFsb3IgY3VhbnRpdGF0aXZvLiBTdSBpbXBvcnRhbmNpYSByYWRpY2EgZW4gcGVybWl0aXIgbGEgaWRlbnRpZmljYWNpw7NuIGRlIHBhdHJvbmVzIHJlZ2lvbmFsZXMsIGxvIHF1ZSBlcyBjcnVjaWFsIHBhcmEgZW50ZW5kZXIgc2kgZXhpc3RlbiDDoXJlYXMgY29uIG1heW9yIGluY2lkZW5jaWEgZGUgdmlvbGVuY2lhIHksIHBvciB0YW50bywgcGFyYSBvcmllbnRhciBwb2zDrXRpY2FzIHkgcmVjdXJzb3MgZXNwZWPDrWZpY29zIGEgZXNhcyByZWdpb25lcy4NCiAgDQogIC0gKipDaWNsbyBkZSB2aWRhKio6IHJlcHJlc2VudGEgdW5hICoqY2F0ZWdvcsOtYSBkZSBldGFwYSBkZSB2aWRhKiogZGUgbGEgdsOtY3RpbWEsIGNvbW8gaW5mYW5jaWEsIGFkb2xlc2NlbmNpYSBvIGFkdWx0ZXouIEVzdGEgY2xhc2lmaWNhY2nDs24gcGVybWl0ZSBhbmFsaXphciBjw7NtbyBlbCByaWVzZ28gZGUgc3VmcmlyIHZpb2xlbmNpYSBwdWVkZSB2YXJpYXIgYSBsbyBsYXJnbyBkZSBkaXN0aW50YXMgZXRhcGFzLCBzaW4gcXVlIGVzdGFzIHRlbmdhbiB1biBvcmRlbiBudW3DqXJpY28uIEVzIHBhcnRpY3VsYXJtZW50ZSDDunRpbCBwYXJhIGVuZm9jYXIgbGFzIG1lZGlkYXMgZGUgcHJldmVuY2nDs24geSBhdGVuY2nDs24gZW4gZnVuY2nDs24gZGUgbGEgZWRhZCB5IGV0YXBhIGRlIGRlc2Fycm9sbG8gZGUgbGEgdsOtY3RpbWEuDQogIA0KICAtICoqU2V4byBkZSBsYSB2w61jdGltYSoqOiBlcyB1bmEgKipjYXRlZ29yw61hIGRlIGfDqW5lcm8qKiBxdWUgaWRlbnRpZmljYSBzaSBsYSB2w61jdGltYSBlcyBtYXNjdWxpbmEgbyBmZW1lbmluYS4gQ29tbyB2YXJpYWJsZSBjdWFsaXRhdGl2YSwgZXMgY2xhdmUgcGFyYSBhbmFsaXphciBjw7NtbyBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBzZSBkaXN0cmlidXllIGVudHJlIGRpZmVyZW50ZXMgZ8OpbmVyb3MsIGF5dWRhbmRvIGEgZW50ZW5kZXIgbGFzIGRpbsOhbWljYXMgeSBwYXJ0aWN1bGFyaWRhZGVzIGRlIGxhIHZpb2xlbmNpYSBjb250cmEgY2FkYSBnw6luZXJvLg0KICANCiAgLSAqKkVzdHJhdG8gc29jaW9lY29uw7NtaWNvKio6IHNlIHByZXNlbnRhIGVuIGxhIGJhc2UgZGUgZGF0b3MgY29tbyB1biBpbmRpY2Fkb3IgY2F0ZWfDs3JpY28gbnVtw6lyaWNvLiBBdW5xdWUgZXN0w6EgcmVnaXN0cmFkbyBjb24gdmFsb3JlcyBudW3DqXJpY29zIChwb3IgZWplbXBsbywgMSwgMiwgMyksIGVzdG9zIHZhbG9yZXMgbm8gaW1wbGljYW4gdW4gb3JkZW4gbyBtYWduaXR1ZCBjdWFudGl0YXRpdmEsIHNpbm8gcXVlIGZ1bmNpb25hbiBjb21vICoqZXRpcXVldGFzIHBhcmEgZGlmZXJlbnRlcyBuaXZlbGVzIHNvY2lvZWNvbsOzbWljb3MqKiAoYmFqbywgbWVkaW8sIGFsdG8sIGV0Yy4pLiBTdSBpbXBvcnRhbmNpYSByYWRpY2EgZW4gbGEgcG9zaWJpbGlkYWQgZGUgYW5hbGl6YXIgY8OzbW8gZWwgY29udGV4dG8gZWNvbsOzbWljbyBhZmVjdGEgbGEgdnVsbmVyYWJpbGlkYWQgeSBlbCByaWVzZ28gZGUgbGFzIHbDrWN0aW1hcyBkZSB2aW9sZW5jaWEsIHBlcm1pdGllbmRvIGlkZW50aWZpY2FyIHBhdHJvbmVzIGRlIGluY2lkZW5jaWEgZW4gZnVuY2nDs24gZGVsIG5pdmVsIHNvY2lvZWNvbsOzbWljbyB5IG9yaWVudGFyIHByb2dyYW1hcyBkZSBhcG95byBhIHNlY3RvcmVzIGVzcGVjw61maWNvcyBxdWUgcHVlZGFuIGVzdGFyIGVuIG1heW9yIHJpZXNnby4NCiAgDQogIC0gKipUaXBvIGRlIFNlZ3VyaWRhZCBTb2NpYWwgKio6IGVzIHVuYSB2YXJpYWJsZSBjdWFsaXRhdGl2YSBxdWUgY2xhc2lmaWNhIGVsIHRpcG8gZGUgY29iZXJ0dXJhIGRlIHNlZ3VyaWRhZCBzb2NpYWwgZGUgbGEgdsOtY3RpbWEsIGluZGljYW5kbyBzaSBwZXJ0ZW5lY2UgYSB1biBzaXN0ZW1hIGRlIGNvYmVydHVyYSBww7pibGljbyBvIHByaXZhZG8uIEVzdGEgZGlzdGluY2nDs24gZXMgZnVuZGFtZW50YWwsIHlhIHF1ZSBwZXJtaXRlIGV2YWx1YXIgc2kgZWwgdGlwbyBkZSBjb2JlcnR1cmEgaW5mbHV5ZSBlbiBlbCBhY2Nlc28gYSByZWN1cnNvcyBkZSBhdGVuY2nDs24geSBhcG95byB0cmFzIHVuIGluY2lkZW50ZSBkZSB2aW9sZW5jaWEsIGFzw60gY29tbyBlbiBsYSBjYWxpZGFkIHkgcmFwaWRleiBkZSBsYSByZXNwdWVzdGEgc2FuaXRhcmlhIHkgc29jaWFsIHF1ZSBsYSB2w61jdGltYSBwdWVkZSByZWNpYmlyLg0KICANCiAgLSAqKlBhY2llbnRlIGhvc3BpdGFsaXphZG8qKjogIGFjdMO6YSBjb21vIHVuICoqaW5kaWNhZG9yIGRlIGdyYXZlZGFkKiogZGVsIGluY2lkZW50ZSBhbCBzZcOxYWxhciBzaSBsYSB2w61jdGltYSByZXF1aXJpw7MgaG9zcGl0YWxpemFjacOzbiBjb21vIGNvbnNlY3VlbmNpYSBkZSBsYSBhZ3Jlc2nDs24uIEVzdGEgdmFyaWFibGUgYmluYXJpYSAoY29uIG9wY2lvbmVzIGRlICJzw60iIG8gIm5vIikgcGVybWl0ZSBkaWZlcmVuY2lhciBlbnRyZSBjYXNvcyBxdWUgbmVjZXNpdGFyb24gYXRlbmNpw7NuIG3DqWRpY2EgZGUgZW1lcmdlbmNpYSB5IGFxdWVsbG9zIHF1ZSBubywgcHJvcG9yY2lvbmFuZG8gaW5mb3JtYWNpw7NuIGVzZW5jaWFsIHNvYnJlIGxhIHNldmVyaWRhZCBkZWwgaW5jaWRlbnRlLiBTdSBhbsOhbGlzaXMgZXMgY3J1Y2lhbCBwYXJhIGV2YWx1YXIgZWwgaW1wYWN0byBkZSBsYSB2aW9sZW5jaWEgZW4gbGEgc2FsdWQgZsOtc2ljYSBkZSBsYXMgdsOtY3RpbWFzLCBhZGVtw6FzIGRlIHBlcm1pdGlyIGlkZW50aWZpY2FyIHBhdHJvbmVzIGVuIGxhIGludGVuc2lkYWQgZGUgbG9zIGluY2lkZW50ZXMgeSBsYXMgbmVjZXNpZGFkZXMgZGUgYXRlbmNpw7NuIG3DqWRpY2EgZGVyaXZhZGFzLi4NCiAgDQogIC0gKipDb25kaWNpw7NuIGZpbmFsKio6IGRlc2NyaWJlIGVsICoqZXN0YWRvIGRlIGxhIHbDrWN0aW1hKiogdHJhcyBlbCBpbmNpZGVudGUsIGNvbiBwb3NpYmxlcyB2YWxvcmVzIGNvbW8gInZpdm8iLCAibXVlcnRvIiBvICJkZXNjb25vY2lkbyIuIEVzdGEgdmFyaWFibGUgY3VhbGl0YXRpdmEgcHJvcG9yY2lvbmEgaW5mb3JtYWNpw7NuIGNsYXZlIHNvYnJlIGVsIGRlc2VubGFjZSBpbm1lZGlhdG8gZGUgY2FkYSBjYXNvLCBwZXJtaXRpZW5kbyBldmFsdWFyIGxhIGdyYXZlZGFkIGRlbCBpbmNpZGVudGUgZW4gdMOpcm1pbm9zIGRlIHJpZXNnbyBkZSBtb3J0YWxpZGFkLiBMYSBpbmNsdXNpw7NuIGRlIGxhIGNhdGVnb3LDrWEgImRlc2Nvbm9jaWRvIiB0YW1iacOpbiBpbmRpY2Egc2l0dWFjaW9uZXMgZG9uZGUgZWwgcmVzdWx0YWRvIG5vIGZ1ZSByZWdpc3RyYWRvIG8gZXMgaW5jaWVydG8sIGxvIGN1YWwgcHVlZGUgcmVmbGVqYXIgbGltaXRhY2lvbmVzIGVuIGVsIHNlZ3VpbWllbnRvIGRlbCBjYXNvIG8gZmFsdGEgZGUgaW5mb3JtYWNpw7NuLg0KICANCiAgLSAqKk5hdHVyYWxlemEgZGUgbGEgdmlvbGVuY2lhKio6ICBwcm9wb3JjaW9uYSB1bmEgKipjbGFzaWZpY2FjacOzbioqIGRldGFsbGFkYSBkZWwgdGlwbyBkZSB2aW9sZW5jaWEgZWplcmNpZGEgZW4gY2FkYSBpbmNpZGVudGUsIGNvbiBjYXRlZ29yw61hcyBjb21vICJmw61zaWNhIiwgInBzaWNvbMOzZ2ljYSIsICJzZXh1YWwiLCBlbnRyZSBvdHJhcy4gRXN0YSB2YXJpYWJsZSBjdWFsaXRhdGl2YSBlcyBmdW5kYW1lbnRhbCBwYXJhIGRlc2dsb3NhciB5IGVudGVuZGVyIGxvcyBkaWZlcmVudGVzIHRpcG9zIGRlIGFncmVzacOzbiBxdWUgZXhwZXJpbWVudGFuIGxhcyB2w61jdGltYXMsIHBlcm1pdGllbmRvIG9ic2VydmFyIGN1w6FsZXMgc29uIGxhcyBmb3JtYXMgZGUgdmlvbGVuY2lhIG3DoXMgcHJldmFsZW50ZXMgeSBjw7NtbyBzZSBkaXN0cmlidXllbiBlbnRyZSBsb3MgY2Fzb3MuDQogIA0KICAtICoqRGVzY3JpcGNpw7NuIGRlIG5hdHVyYWxlemEqKjogIHByb3BvcmNpb25hIHVuIGRldGFsbGUgZXNwZWPDrWZpY28gc29icmUgbG9zIGRhw7FvcyBvIGVmZWN0b3MgY29uY3JldG9zIGRlcml2YWRvcyBkZWwgYWN0byBkZSB2aW9sZW5jaWEsIGNvbW8gImFtZW5hemEiLCAibGVzacOzbiBmw61zaWNhIiwgImFidXNvIHBzaWNvbMOzZ2ljbyIsIGVudHJlIG90cm9zLiBBIGRpZmVyZW5jaWEgZGUgbGEgY2F0ZWdvcsOtYSBnZW5lcmFsIGRlICJOYXR1cmFsZXphIGRlIGxhIHZpb2xlbmNpYSIsIHF1ZSBjbGFzaWZpY2EgZWwgdGlwbyBhbXBsaW8gZGUgYWdyZXNpw7NuIChmw61zaWNhLCBwc2ljb2zDs2dpY2EsIGV0Yy4pLCBlc3RhIHZhcmlhYmxlIGN1YWxpdGF0aXZhIHBlcm1pdGUgcHJvZnVuZGl6YXIgZW4gZWwgcmVzdWx0YWRvIGRpcmVjdG8gbyBsYSBtYW5pZmVzdGFjacOzbiBlc3BlY8OtZmljYSBkZSBsYSB2aW9sZW5jaWEgZWplcmNpZGEuDQogIA0KICAtICoqU2V4byBkZWwgYWdyZXNvcioqOiAgZXMgdW5hIGNhdGVnb3LDrWEgZGUgZ8OpbmVybyBwYXJhIGVsIGFncmVzb3IgKG1hc2N1bGlubywgZmVtZW5pbm8saW50ZXJzZXh1YWwpLiBFcyBjbGF2ZSBlbiBlbCBhbsOhbGlzaXMgZGUgdmlvbGVuY2lhIGRlIGfDqW5lcm8sIHlhIHF1ZSBwZXJtaXRlIG9ic2VydmFyIGxvcyBwYXRyb25lcyBkZSBhZ3Jlc2nDs24gc2Vnw7puIGVsIGfDqW5lcm8gZGVsIGFncmVzb3IsIHByb3BvcmNpb25hbmRvIGRhdG9zIMO6dGlsZXMgcGFyYSBlc3RyYXRlZ2lhcyBkZSBwcmV2ZW5jacOzbiB5IHBlcmZpbGFtaWVudG8uDQogIA0KICAtICoqUGFyZW50ZXNjbyBjb24gbGEgdsOtY3RpbWEqKjogZXMgdW5hICoqY2F0ZWdvcsOtYSBkZSByZWxhY2nDs24qKiBxdWUgZGVmaW5lIGVsIHRpcG8gZGUgdsOtbmN1bG8gZW50cmUgbGEgdsOtY3RpbWEgeSBlbCBhZ3Jlc29yIChwYXJlamEsIGZhbWlsaWFyLCBkZXNjb25vY2lkbykuIEVzdG8gcGVybWl0ZSB1biBhbsOhbGlzaXMgZXNwZWPDrWZpY28gZGUgY8OzbW8gbG9zIGxhem9zIGZhbWlsaWFyZXMgbyBjZXJjYW5vcyBwdWVkZW4gaW5mbHVpciBlbiBsYSBkaW7DoW1pY2EgZGUgbGEgdmlvbGVuY2lhLCBhc3BlY3RvIGNydWNpYWwgcGFyYSBlbnRlbmRlciBsb3MgY29udGV4dG9zIGVuIGxvcyBxdWUgb2N1cnJlLg0KICANCiAgLSAqKkVzY2VuYXJpbyBkZWwgaW5jaWRlbnRlKio6IGRlc2NyaWJlIGVsICoqY29udGV4dG8gZsOtc2ljbyoqIGRlbCBpbmNpZGVudGUgKGhvZ2FyLCBlc3BhY2lvIHDDumJsaWNvKS4gRXN0YSB2YXJpYWJsZSBjdWFsaXRhdGl2YSBwZXJtaXRlIGlkZW50aWZpY2FyIGxvcyBsdWdhcmVzIG3DoXMgY29tdW5lcyBkb25kZSBvY3VycmUgbGEgdmlvbGVuY2lhLCBsbyBxdWUgZXMgaW1wb3J0YW50ZSBwYXJhIGRlc2Fycm9sbGFyIGVzdHJhdGVnaWFzIGRlIHByZXZlbmNpw7NuIHkgc2VndXJpZGFkIGFkYXB0YWRhcyBhIGVzb3MgZW50b3Jub3MuDQogIA0KICAtICoqQ2FwdHVyYSBkZWwgYWdyZXNvcioqOiAgZXMgdW4gKippbmRpY2Fkb3IgbGVnYWwqKiBxdWUgc2XDsWFsYSBzaSBlbCBhZ3Jlc29yIGZ1ZSBkZXRlbmlkbyB0cmFzIGVsIGluY2lkZW50ZSAoc8OtLCBubyBvIGRlc2Nvbm9jaWRvKS4gRXN0ZSBpbmRpY2Fkb3IgZXMgcmVsZXZhbnRlIHBhcmEgZXZhbHVhciBsYSByZXNwdWVzdGEgaW5zdGl0dWNpb25hbCBmcmVudGUgYSBsb3MgY2Fzb3MgZGUgdmlvbGVuY2lhLCBwZXJtaXRpZW5kbyBhbmFsaXphciBsYSBlZmVjdGl2aWRhZCB5IHJhcGlkZXogZGUgbGFzIGludGVydmVuY2lvbmVzIGxlZ2FsZXMuDQogIA0KICAtICoqQW50ZWNlZGVudGVzIGRlbCBhZ3Jlc29yKio6ICBlcyB1biAqKmhpc3RvcmlhbCBkZSBjb21wb3J0YW1pZW50byoqIHF1ZSBtdWVzdHJhIHNpIGVsIGFncmVzb3IgdGVuw61hIHVuIGhpc3RvcmlhbCBwcmV2aW8gZGUgdmlvbGVuY2lhLiBFc3RhIHZhcmlhYmxlIGN1YWxpdGF0aXZhIGVzIMO6dGlsIHBhcmEgZW50ZW5kZXIgcGF0cm9uZXMgZGUgcmVpbmNpZGVuY2lhLCBjb250cmlidXllbmRvIGEgbGEgaWRlbnRpZmljYWNpw7NuIGRlIHBlcmZpbGVzIGRlIHJpZXNnbyB5IGxhIG5lY2VzaWRhZCBkZSBtZWRpZGFzIHByZXZlbnRpdmFzIGVzcGVjw61maWNhcy4NCiAgDQogIC0gKipTdXN0YW5jaWFzIGVuIGxhIHbDrWN0aW1hKio6ICBTdXN0YW5jaWFzIGVuIGxhIHbDrWN0aW1hIGVzIHVuYSB2YXJpYWJsZSBjdWFsaXRhdGl2YSBxdWUgYWN0w7phIGNvbW8gdW4gKippbmRpY2Fkb3IgYmluYXJpbyBkZSBpbmZsdWVuY2lhIGRlIHN1c3RhbmNpYXMqKiBlbiBsYSB2w61jdGltYSBhbCBtb21lbnRvIGRlbCBpbmNpZGVudGUuIEF1bnF1ZSBlbiBsYSBiYXNlIGRlIGRhdG9zIGVzdMOhIGNvZGlmaWNhZGEgY29uIHZhbG9yZXMgbnVtw6lyaWNvcyAoMSBvIDIpLCBlc3RvcyByZXByZXNlbnRhbiBjYXRlZ29yw61hcyBjdWFsaXRhdGl2YXMgZG9uZGUgMSBpbmRpY2EgInPDrSIgKGxhIHbDrWN0aW1hIGVzdGFiYSBiYWpvIGxhIGluZmx1ZW5jaWEgZGUgc3VzdGFuY2lhcykgeSAyIGluZGljYSAibm8iIChsYSB2w61jdGltYSBubyBlc3RhYmEgYmFqbyBsYSBpbmZsdWVuY2lhIGRlIHN1c3RhbmNpYXMpLiBFc3RlIGluZGljYWRvciBlcyBpbXBvcnRhbnRlIHBhcmEgZXhwbG9yYXIgbGEgcG9zaWJsZSByZWxhY2nDs24gZW50cmUgZWwgY29uc3VtbyBkZSBzdXN0YW5jaWFzIHkgbGEgb2N1cnJlbmNpYSBkZSBpbmNpZGVudGVzIGRlIHZpb2xlbmNpYSwgYXl1ZGFuZG8gYSBpZGVudGlmaWNhciBmYWN0b3JlcyBkZSByaWVzZ28gYWRpY2lvbmFsZXMgZW4gZWwgcGVyZmlsYW1pZW50byBkZSBjYXNvcy4NCg0KIyMgMi4xLjIgVmFyaWFibGVzIEN1YW50aXRhdGl2YXMNCg0KICAtICoqQcOxbyoqOiBlcyB1bmEgKipkaW1lbnNpw7NuIHRlbXBvcmFsKiogcXVlIGluZGljYSBlbCBhw7FvIGVuIHF1ZSBvY3VycmnDsyBlbCBpbmNpZGVudGUuIEFsIHRyYXRhcnNlIGRlIHVuIHZhbG9yIG51bcOpcmljbywgcGVybWl0ZSBhbmFsaXphciBsYSBldm9sdWNpw7NuIGRlIGxvcyBjYXNvcyBhIGxvIGxhcmdvIGRlbCB0aWVtcG8geSBkZXRlY3RhciB0ZW5kZW5jaWFzIGVuIGxhIGZyZWN1ZW5jaWEgZGUgbG9zIGluY2lkZW50ZXMgZGUgdmlvbGVuY2lhLg0KICANCiAgLSAqKkVkYWQgZGUgbGEgdsOtY3RpbWEqKjogZXMgdW5hICoqbWVkaWRhIGRlIGVkYWQqKiBudW3DqXJpY2EgcXVlIHBlcm1pdGUgYW5hbGl6YXIgcGF0cm9uZXMgZGUgdmlvbGVuY2lhIHNlZ8O6biBsb3MgZGlmZXJlbnRlcyBncnVwb3MgZGUgZWRhZCBkZSBsYXMgdsOtY3RpbWFzLiBFc3RhIHZhcmlhYmxlIGVzIGVzZW5jaWFsIHBhcmEgaWRlbnRpZmljYXIgbG9zIHJhbmdvcyBldGFyaW9zIG3DoXMgdnVsbmVyYWJsZXMgeSBvcmllbnRhciBsYXMgaW50ZXJ2ZW5jaW9uZXMgcHJldmVudGl2YXMuDQogIA0KICAtICoqRWRhZCBkZWwgYWdyZXNvcioqOiB0YW1iacOpbiBlcyB1bmEgKiptZWRpZGEgZGUgZWRhZCoqIG51bcOpcmljYSwgZW4gZXN0ZSBjYXNvIGRlbCBhZ3Jlc29yLCB5IGVzIMO6dGlsIHBhcmEgb2JzZXJ2YXIgcGF0cm9uZXMgZGUgYWdyZXNpw7NuIGVuIGZ1bmNpw7NuIGRlIGxhIGVkYWQgZGVsIGFncmVzb3IuIEVzdGUgYW7DoWxpc2lzIGNvbnRyaWJ1eWUgYSBsYSBpZGVudGlmaWNhY2nDs24gZGUgcGVyZmlsZXMgZXRhcmlvcyBlc3BlY8OtZmljb3MgYXNvY2lhZG9zIGEgY29tcG9ydGFtaWVudG9zIHZpb2xlbnRvcy4NCiAgDQoNCiMgMi4yICBTdWJjbGFzaWZpY2FjacOzbiBkZSB2YXJpYWJsZXMgeSBlc2NhbGFzIGRlIG1lZGljacOzbg0KDQo8ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBqdXN0aWZ5Ij4NClNpIGJpZW4gbGFzIHZhcmlhYmxlcyBzZSBjbGFzaWZpY2FuIHByaW5jaXBhbG1lbnRlIGVuIGN1YWxpdGF0aXZhcyB5IGN1YW50aXRhdGl2YXMsIGVzdMOhcyB0YW1iacOpbiBzZSBwdWVkZW4gZGl2aWRpciBlbiBzdWJjYXRlZ29yw61hcyBkZXBlbmRpZW5kbyBzaSBzb24gbnVtw6lyaWNhcyBvIGNhdGVnw7NyaWNhcyB5LCBhZGVtw6FzLCBwdWVkZW4gYWRhcHRhciBkaXZlcnNhcyBlc2NhbGFzIGRlIG1lZGljacOzbi4gQSBjb250aW51YWNpw7NuLCBzZSBwcmVzZW50YW4gMiB0YWJsYXMgcXVlIHJlc3VtZW4gZXN0YSBpbmZvcm1hY2nDs24uIA0KPGRpdi8+DQoNCiMjIDIuMi4xIFZhcmlhYmxlcyBDYXRlZ8OzcmljYXMNCg0KPGNlbnRlcj4NCg0KIVtOb3RhOiBUYWJsYSBkZSBlbGFib3JhY2nDs24gcHJvcGlhXShWYXJpYWJsZV92aW9sZW5jaWExLnBuZyl7d2lkdGg9NzAwfQ0KDQo8L2NlbnRlcj4NCjxicj4NCjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGp1c3RpZnkiPiANCkxhcyB2YXJpYWJsZXMgY2F0ZWfDs3JpY2FzIGVuIGVzdGUgY29uanVudG8gZGUgZGF0b3Mgc2UgY2xhc2lmaWNhbiBlbiBub21pbmFsZXMgeSBvcmRpbmFsZXMsIGNhZGEgdW5hIGNvbiB1biByb2wgZXNwZWPDrWZpY28gZW4gZWwgYW7DoWxpc2lzIGRlIGxvcyBpbmNpZGVudGVzIGRlIHZpb2xlbmNpYSBkZSBnw6luZXJvLiBMYXMgdmFyaWFibGVzIG5vbWluYWxlcywgY29tbyAiRGVwYXJ0YW1lbnRvIiwgIlNleG8gZGUgbGEgdsOtY3RpbWEiLCAiVGlwbyBkZSBTZWd1cmlkYWQgU29jaWFsIiB5ICJFc2NlbmFyaW8gZGVsIGluY2lkZW50ZSIsIHBlcm1pdGVuIGFncnVwYXIgbG9zIGRhdG9zIGVuIGNhdGVnb3LDrWFzIHNpbiB1biBvcmRlbiBqZXLDoXJxdWljby4gRXN0YXMgdmFyaWFibGVzIHNvbiBlc2VuY2lhbGVzIHBhcmEgaWRlbnRpZmljYXIgcGF0cm9uZXMgZGUgZGlzdHJpYnVjacOzbiBnZW9ncsOhZmljYSwgcGVyZmlsZXMgZGUgZ8OpbmVybyB5IHRpcG9zIGRlIGNvYmVydHVyYSBzb2NpYWwgZW4gbG9zIGNhc29zLCBhZGVtw6FzIGRlIGFuYWxpemFyIGxvcyBjb250ZXh0b3MgZW4gbG9zIHF1ZSBvY3VycmVuIGxvcyBpbmNpZGVudGVzLiBMYSBuYXR1cmFsZXphIG5vbWluYWwgZGUgZXN0YXMgdmFyaWFibGVzIGZhY2lsaXRhIGVsIHVzbyBkZSBhbsOhbGlzaXMgZGUgZnJlY3VlbmNpYSB5IGRpc3RyaWJ1Y2nDs24sIHF1ZSBzb24gY3J1Y2lhbGVzIHBhcmEgZGVzY3JpYmlyIGPDs21vIHNlIGFncnVwYW4gbG9zIGluY2lkZW50ZXMgZW4gZnVuY2nDs24gZGUgZXN0b3MgYXRyaWJ1dG9zIHNpbiBhc3VtaXIgcHJvZ3Jlc2nDs24gbyBqZXJhcnF1w61hIGVudHJlIGxhcyBjYXRlZ29yw61hcy4NCjxkaXYvPg0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+IA0KUG9yIG90cm8gbGFkbywgbGFzIHZhcmlhYmxlcyBvcmRpbmFsZXMsIGNvbW8gIkNpY2xvIGRlIHZpZGEiLCAiRXN0cmF0byBzb2Npb2Vjb27Ds21pY28iIHkgIkNvbmRpY2nDs24gZmluYWwiLCBwb3NlZW4gdW4gb3JkZW4gaW1wbMOtY2l0byBxdWUgcGVybWl0ZSBqZXJhcnF1aXphciBsYXMgY2F0ZWdvcsOtYXMuIFBvciBlamVtcGxvLCAiQ2ljbG8gZGUgdmlkYSIgb3JnYW5pemEgYSBsYXMgdsOtY3RpbWFzIGVuIGV0YXBhcyBjb21vIGluZmFuY2lhLCBhZG9sZXNjZW5jaWEgeSBhZHVsdGV6LCBsbyBxdWUgZmFjaWxpdGEgZWwgYW7DoWxpc2lzIGRlIGPDs21vIGVsIHJpZXNnbyBkZSB2aW9sZW5jaWEgcHVlZGUgdmFyaWFyIGVuIGZ1bmNpw7NuIGRlIGxhIGV0YXBhIGRlIGRlc2Fycm9sbG8uIERlIG1hbmVyYSBzaW1pbGFyLCAiRXN0cmF0byBzb2Npb2Vjb27Ds21pY28iIGNhdGVnb3JpemEgZWwgbml2ZWwgZWNvbsOzbWljbyBlbiBuaXZlbGVzIGRlIG1lbm9yIGEgbWF5b3IsIHBlcm1pdGllbmRvIGVzdHVkaWFyIGxhIHJlbGFjacOzbiBlbnRyZSBlbCBlc3RhdHVzIHNvY2lvZWNvbsOzbWljbyB5IGxhIHZ1bG5lcmFiaWxpZGFkIGFudGUgbGEgdmlvbGVuY2lhLiBBdW5xdWUgZXN0YXMgdmFyaWFibGVzIG5vIGN1YW50aWZpY2FuIGxhIGRpc3RhbmNpYSBleGFjdGEgZW50cmUgbGFzIGNhdGVnb3LDrWFzLCBlbCBvcmRlbiBqZXLDoXJxdWljbyBwZXJtaXRlIHJlYWxpemFyIGFuw6FsaXNpcyBkZSB0ZW5kZW5jaWFzIHkgY29tcGFyYWNpb25lcyByZWxhdGl2YXMsIHByb3BvcmNpb25hbmRvIHVuYSB2aXNpw7NuIGRlIGPDs21vIGNpZXJ0b3MgZmFjdG9yZXMgc29jaWFsZXMgeSBlY29uw7NtaWNvcyBzZSBjb3JyZWxhY2lvbmFuIGNvbiBsYSBpbmNpZGVuY2lhIGRlIGxhIHZpb2xlbmNpYS4NCjxkaXYvPg0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+IA0KTGEgZGlzdGluY2nDs24gZW50cmUgdmFyaWFibGVzIG5vbWluYWxlcyB5IG9yZGluYWxlcyBlcyBlc2VuY2lhbCBwYXJhIGFwbGljYXIgbcOpdG9kb3MgZXN0YWTDrXN0aWNvcyBhZGVjdWFkb3MgeSBwYXJhIG9idGVuZXIgY29uY2x1c2lvbmVzIHNpZ25pZmljYXRpdmFzIHNvYnJlIGxvcyBwZXJmaWxlcyB5IGZhY3RvcmVzIGRlIHJpZXNnbyBlbiBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlIGludHJhZmFtaWxpYXIuIExhcyBub21pbmFsZXMgcGVybWl0ZW4gaWRlbnRpZmljYXIgcGF0cm9uZXMgZ2VuZXJhbGVzIGRlIHBlcnRlbmVuY2lhLCBtaWVudHJhcyBxdWUgbGFzIG9yZGluYWxlcyBvZnJlY2VuIHVuYSBiYXNlIHBhcmEgZWwgYW7DoWxpc2lzIGRlIGplcmFycXXDrWFzIHkgdGVuZGVuY2lhcywgYW1ib3MgYXNwZWN0b3MgZnVuZGFtZW50YWxlcyBwYXJhIHVuYSBjb21wcmVuc2nDs24gaW50ZWdyYWwgZGUgbG9zIGRhdG9zLg0KPGRpdi8+DQo8YnI+DQoNCiMjIDIuMi4yIFZhcmlhYmxlcyBDdWFudGl0YXRpdmFzDQoNCjxjZW50ZXI+DQohW05vdGE6IFRhYmxhIGRlIGVsYWJvcmFjacOzbiBwcm9waWFdKHZhcmlhYmxlX3Zpb2xlbmNpYTIucG5nKXt3aWR0aD03MDB9DQoNCjwvY2VudGVyPg0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+IA0KTGFzIHZhcmlhYmxlcyBjdWFudGl0YXRpdmFzIGVuIGVzdGUgY29uanVudG8gZGUgZGF0b3Mgc2UgZGl2aWRlbiBlbiBkaXNjcmV0YXMgeSBzZSBtaWRlbiBlbiBlc2NhbGFzIGFkZWN1YWRhcyBwYXJhIGVsIGFuw6FsaXNpcyBkZSBwYXRyb25lcyB0ZW1wb3JhbGVzIHkgZGVtb2dyw6FmaWNvcyBlbiBlbCBjb250ZXh0byBkZSB2aW9sZW5jaWEgZGUgZ8OpbmVyby4gTGFzIHZhcmlhYmxlcyBFZGFkIGRlIGxhIHbDrWN0aW1hIHkgRWRhZCBkZWwgYWdyZXNvciBzb24gZGlzY3JldGFzLCB5YSBxdWUgc2UgbWlkZW4gZW4gYcOxb3MgZW50ZXJvcywgc2luIGRlY2ltYWxlcywgeSBlc3TDoW4gY2xhc2lmaWNhZGFzIGVuIHVuYSBlc2NhbGEgZGUgcmF6w7NuLiBFc3RhIGVzY2FsYSBjdWVudGEgY29uIHVuIGNlcm8gYWJzb2x1dG8gcXVlIHJlcHJlc2VudGEgbGEgYXVzZW5jaWEgZGUgZWRhZCwgcGVybWl0aWVuZG8gY29tcGFyYWNpb25lcyBwcm9wb3JjaW9uYWxlcywgY29tbyBkZWNpciBxdWUgdW5hIHBlcnNvbmEgZGUgNDAgYcOxb3MgZXMgZWwgZG9ibGUgZGUgbWF5b3IgcXVlIGFsZ3VpZW4gZGUgMjAgYcOxb3MuIEVzdGUgdGlwbyBkZSBhbsOhbGlzaXMgZmFjaWxpdGEgbGEgaWRlbnRpZmljYWNpw7NuIGRlIHBhdHJvbmVzIGRlIGVkYWQgZW4gdsOtY3RpbWFzIHkgYWdyZXNvcmVzLCBheXVkYW5kbyBhIGV4cGxvcmFyIGPDs21vIGVsIHJpZXNnbyBvIGxhIHRlbmRlbmNpYSBhIGNvbXBvcnRhbWllbnRvcyB2aW9sZW50b3MgcHVlZGVuIHZhcmlhciBjb24gbGEgZWRhZC4NCjxkaXYvPg0KPGJyPg0KPGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeSI+IA0KUG9yIG90cm8gbGFkbywgbGEgdmFyaWFibGUgQcOxbyB0YW1iacOpbiBlcyBkaXNjcmV0YSwgeWEgcXVlIHNlIHJlZ2lzdHJhIGVuIGHDsW9zIGVzcGVjw61maWNvcywgcGVybyBzZSBjbGFzaWZpY2EgZW4gdW5hIGVzY2FsYSBkZSBpbnRlcnZhbG8uIEF1bnF1ZSBwZXJtaXRlIGNhbGN1bGFyIGxhIGRpZmVyZW5jaWEgZW50cmUgYcOxb3MgcGFyYSBvYnNlcnZhciB0ZW5kZW5jaWFzIHRlbXBvcmFsZXMsIG5vIHRpZW5lIHVuIGNlcm8gYWJzb2x1dG8gcXVlIGluZGlxdWUgYXVzZW5jaWEgZGUgdGllbXBvOyBlbCBhw7FvICIwIiBlcyBzaW1wbGVtZW50ZSB1biBwdW50byBkZSByZWZlcmVuY2lhIGVuIGxhIGNyb25vbG9nw61hLCBubyB1bmEgYXVzZW5jaWEgZGUgdGllbXBvLiBFc3RhIGVzY2FsYSBkZSBpbnRlcnZhbG8gcGVybWl0ZSBhbmFsaXphciBsYSBldm9sdWNpw7NuIGRlIGxvcyBpbmNpZGVudGVzIGEgbG8gbGFyZ28gZGUgbG9zIGHDsW9zLCBpZGVudGlmaWNhbmRvIHBhdHJvbmVzIHRlbXBvcmFsZXMgeSBjYW1iaW9zIGVuIGxhIGluY2lkZW5jaWEgZGUgdmlvbGVuY2lhLg0KPGRpdi8+DQo8YnI+DQo8ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBqdXN0aWZ5Ij4gDQpFc3RhIGNsYXNpZmljYWNpw7NuIGVudHJlIGVzY2FsYSBkZSByYXrDs24geSBlc2NhbGEgZGUgaW50ZXJ2YWxvIGVzIGVzZW5jaWFsIHBhcmEgYXBsaWNhciB0w6ljbmljYXMgYW5hbMOtdGljYXMgYXByb3BpYWRhcy4gTGFzIHZhcmlhYmxlcyBkZSByYXrDs24gKGVkYWQpIHBlcm1pdGVuIGPDoWxjdWxvcyBwcm9wb3JjaW9uYWxlcyB5IGRldGFsbGFkb3MgYW7DoWxpc2lzIGRlbW9ncsOhZmljb3MsIG1pZW50cmFzIHF1ZSBsYSB2YXJpYWJsZSBkZSBpbnRlcnZhbG8gKGHDsW8pIGZhY2lsaXRhIGVsIGVzdHVkaW8gZGUgdGVuZGVuY2lhcyB5IHBhdHJvbmVzIGEgbG8gbGFyZ28gZGVsIHRpZW1wbywgcHJvcG9yY2lvbmFuZG8gdW5hIHZpc2nDs24gaW50ZWdyYWwgc29icmUgY8OzbW8gbGEgdmlvbGVuY2lhIGRlIGfDqW5lcm8gZSBpbnRyYWZhbWlsaWFyIHNlIHJlbGFjaW9uYSB0YW50byBjb24gZmFjdG9yZXMgZGVtb2dyw6FmaWNvcyBjb21vIHRlbXBvcmFsZXMuDQo8ZGl2Lz4NCjxicj4=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkludHJvZHVjY2nDs24geSBDb250ZXh0byBHZW5lcmFsIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIHRvYzogdHJ1ZQ0KICAgIHRvY19mbG9hdDoNCiAgICAgIGNvbGxhcHNlZDogdHJ1ZQ0KICAgICAgc21vb3RoX3Njcm9sbDogdHJ1ZQ0KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiAgICB0aGVtZTogbHVtZW4NCiAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUNCiAgICBjc3M6IHN0eWxlcy5jc3MNCmJpYmxpb2dyYXBoeTogImJpYmxpby5iaWIiDQojIGNzbDogYXBhLmNzbC50eHQgICAjIFNpIG5vIG5lY2VzaXRhcyB1c2FyIGVsIGFyY2hpdm8gQ1NMLCBwdWVkZXMgZGVqYXIgZXN0YSBsw61uZWEgY29tZW50YWRhDQoNCi0tLQ0KIyBSZWxldmFuY2lhIHRlbcOhdGljYSB5IG9iamV0aXZvcyBkZSBlc3R1ZGlvIA0KDQpMYSB2aW9sZW5jaWEgZGUgZ8OpbmVybywgZW50ZW5kaWRhIGNvbW8gY3VhbHF1aWVyIGFjdG8gcXVlIGNhdXNlIGRhw7FvIGbDrXNpY28sIHBzaWNvbMOzZ2ljbyBvIHNleHVhbCBhIHVuYSBwZXJzb25hIGRlYmlkbyBhIHN1IGfDqW5lcm8sIHJlcHJlc2VudGEgdW5hIGRlIGxhcyBwcm9ibGVtw6F0aWNhcyBtw6FzIHVyZ2VudGVzIHkgY29tcGxlamFzIGEgbml2ZWwgbXVuZGlhbCwgcHVlcyBlc3RlIHRpcG8gZGUgdmlvbGVuY2lhLCBxdWUgYWJhcmNhIGFidXNvcyBmw61zaWNvcywgcHNpY29sw7NnaWNvcywgc2V4dWFsZXMgeSBlY29uw7NtaWNvcywgZXN0w6EgcHJvZnVuZGFtZW50ZSBsaWdhZG8gYSBsYXMgZGVzaWd1YWxkYWRlcyBkZSBwb2RlciB5IGxvcyBlc3RlcmVvdGlwb3MgZGUgZ8OpbmVybyBlbiBsYSBzb2NpZWRhZCwgcGVycGV0dWFuZG8gY2ljbG9zIGRlIHN1ZnJpbWllbnRvIHkgZXhjbHVzacOzbiBwYXJhIHF1aWVuZXMgbGEgcGFkZWNlbltAb251MjAyM3Zpb2xlbmNpYV0uIFNlZ8O6biBsYSBPcmdhbml6YWNpw7NuIE11bmRpYWwgZGUgbGEgU2FsdWQgKE9NUyksIGFwcm94aW1hZGFtZW50ZSB1bmEgZGUgY2FkYSB0cmVzIG11amVyZXMsIG8gZWwgMzAlLCBoYSBzdWZyaWRvIHZpb2xlbmNpYSBmw61zaWNhIG8gc2V4dWFsIHBvciBwYXJ0ZSBkZSBzdSBwYXJlamEgZW4gYWxnw7puIG1vbWVudG8gZGUgc3UgdmlkYSwgbG8gcXVlIHN1YnJheWEgbGEgZ3JhdmVkYWQgZGUgZXN0YSBjcmlzaXMgZW4gdMOpcm1pbm9zIGRlIHNhbHVkIHDDumJsaWNhIHkgZGVyZWNob3MgaHVtYW5vcyBbQG9udTIwMjF2aW9sZW5jaWFdLg0KDQpFbiBBbcOpcmljYSBMYXRpbmEsIGxhIHNpdHVhY2nDs24gZXMgaWd1YWxtZW50ZSBhbGFybWFudGUuIExhIENvbWlzacOzbiBFY29uw7NtaWNhIHBhcmEgQW3DqXJpY2EgTGF0aW5hIHkgZWwgQ2FyaWJlIChDRVBBTCkgaW5mb3Jtw7MgcXVlIGVuIDIwMjIgYWwgbWVub3MgNC4wNTAgbXVqZXJlcyBmdWVyb24gdsOtY3RpbWFzIGRlIGZlbWljaWRpbyBvIGZlbWluaWNpZGlvIGVuIDI2IHBhw61zZXMgeSB0ZXJyaXRvcmlvcyBkZSBsYSByZWdpw7NuLCBsbyBxdWUgZXF1aXZhbGUgYSB1bmEgbXVqZXIgYXNlc2luYWRhIHBvciByYXpvbmVzIGRlIGfDqW5lcm8gY2FkYSBkb3MgaG9yYXMgW0BjZXBhbDIwMjNmZW1pY2lkaW9dLiBBdW5xdWUgbGEgdmlvbGVuY2lhIGRlIGfDqW5lcm8gYWZlY3RhIGRlc3Byb3BvcmNpb25hZGFtZW50ZSBhIGxhcyBtdWplcmVzLCBsb3MgaG9tYnJlcyB0YW1iacOpbiBzb24gdsOtY3RpbWFzLCBlc3BlY2lhbG1lbnRlIGVuIGNvbnRleHRvcyBpbnRyYWZhbWlsaWFyZXM7IHNpbiBlbWJhcmdvLCBlc3RvcyBjYXNvcyBzdWVsZW4gcmVjaWJpciBtZW5vcyB2aXNpYmlsaWRhZCB5IGF0ZW5jacOzbiBlbiBsb3MgZXN0dWRpb3MgeSBwb2zDrXRpY2FzW0BpbnMyMDIxdmlvbGVuY2lhXS4gDQoNCkVuIENvbG9tYmlhLCBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlcyBjb25zaWRlcmFkYSB1bmEgZGUgbGFzIG1heW9yZXMgcHJlb2N1cGFjaW9uZXMgZW4gdMOpcm1pbm9zIGRlIHNhbHVkIHDDumJsaWNhIHkgZGVzYXJyb2xsbyBzb2NpYWwuIFNlZ8O6biBlbCBJbnN0aXR1dG8gTmFjaW9uYWwgZGUgTWVkaWNpbmEgTGVnYWwgeSBDaWVuY2lhcyBGb3JlbnNlcywgZW4gMjAyMSBzZSByZWdpc3RyYXJvbiAxMTYuMzAyIGNhc29zIGRlIHZpb2xlbmNpYSBkZSBnw6luZXJvIGUgaW50cmFmYW1pbGlhciwgZGUgZXN0b3MsIGVsIDc5LDElICg5Mi4wMjAgY2Fzb3MpIGNvcnJlc3BvbmRpZXJvbiBhIG11amVyZXMsIG1pZW50cmFzIHF1ZSBlbCAyMCw5JSAoMjQuMjgyIGNhc29zKSBjb3JyZXNwb25kaWVyb24gYSBob21icmVzIFtAaW5zMjAyMXZpb2xlbmNpYV0uIEVzdGFzIGNpZnJhcyBldmlkZW5jaWFuIHF1ZSwgYXVucXVlIGxhIHZpb2xlbmNpYSBkZSBnw6luZXJvIGFmZWN0YSBwcmluY2lwYWxtZW50ZSBhIG11amVyZXMsIG5vIGVzIGV4Y2x1c2l2YSBkZSBlbGxhcywgeSBhZmVjdGEgdGFtYmnDqW4gYSB1bmEgcHJvcG9yY2nDs24gc2lnbmlmaWNhdGl2YSBkZSBob21icmVzLCBsbyBxdWUgcmVzYWx0YSBsYSBuZWNlc2lkYWQgZGUgdW4gZW5mb3F1ZSBpbmNsdXNpdm8geSBhbXBsaW8gcGFyYSBhYm9yZGFyIGVzdGEgcHJvYmxlbcOhdGljYS4NCg0KQWRlbcOhcyBkZSBjYXVzYXIgc3VmcmltaWVudG8gZGlyZWN0byBhIGxhcyB2w61jdGltYXMsIGxhIHZpb2xlbmNpYSBkZSBnw6luZXJvIGdlbmVyYSBlZmVjdG9zIHByb2Z1bmRvcyBlbiBlbCBjb25qdW50byBkZSBsYSBzb2NpZWRhZCwgdGFudG8gZW4gdMOpcm1pbm9zIGVjb27Ds21pY29zIGNvbW8gc29jaWFsZXMuIFNlZ8O6biBlbCBCYW5jbyBJbnRlcmFtZXJpY2FubyBkZSBEZXNhcnJvbGxvIChCSUQpLCBlbCBpbXBhY3RvIGVjb27Ds21pY28gZGUgbGEgdmlvbGVuY2lhIGRlIGfDqW5lcm8gZW4gQW3DqXJpY2EgTGF0aW5hIGFsY2FuemEgaGFzdGEgZWwgMy40NCUgIGRlbCBQSUIgZGUgbGEgcmVnacOzbiwgZGViaWRvIGEgbG9zIGVsZXZhZG9zIGNvc3RvcyBlbiBzZXJ2aWNpb3MgZGUgc2FsdWQsIGp1c3RpY2lhIHkgbGEgcMOpcmRpZGEgZGUgcHJvZHVjdGl2aWRhZCBhc29jaWFkYSBhIGxhcyBzZWN1ZWxhcyBkZSBlc3RhIHZpb2xlbmNpYSBbQGJpZDIwMjRjb3N0b3NdLiBFbiBDb2xvbWJpYSwgZXN0b3MgZWZlY3RvcyBzZSB2ZW4gYWdyYXZhZG9zIHBvciBmYWN0b3JlcyBjb21vIGVsIGNvbmZsaWN0byBhcm1hZG8sIGxhIGRlc2lndWFsZGFkIGVjb27Ds21pY2EgeSBsb3MgZXN0ZXJlb3RpcG9zIGRlIGfDqW5lcm8sIHF1ZSBpbmNyZW1lbnRhbiBsYSBwcmV2YWxlbmNpYSBkZSBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlbiBzdXMgZGl2ZXJzYXMgbWFuaWZlc3RhY2lvbmVzLCBzZWfDum4gc2XDsWFsYSBlbCBNaW5pc3RlcmlvIGRlIFNhbHVkIHkgUHJvdGVjY2nDs24gU29jaWFsIFtAY2VwYWwyMDIwYnJlY2hhc10uIA0KDQpQb3IgdGFudG8sIHBhcmEgYWJvcmRhciBkZSBtYW5lcmEgaW50ZWdyYWwgbGEgdmlvbGVuY2lhIGRlIGfDqW5lcm8gZW4gQ29sb21iaWEgeSBkZXNhcnJvbGxhciBpbnRlcnZlbmNpb25lcyBlZmVjdGl2YXMsIGVzIGZ1bmRhbWVudGFsIGJhc2Fyc2UgZW4gdW4gYW7DoWxpc2lzIGRldGFsbGFkbyBkZSBsb3MgZGF0b3MgZGlzcG9uaWJsZXMuIEVuIGVzdGUgY29udGV4dG8sIGVsIHByZXNlbnRlIGVzdHVkaW8gc2UgY2VudHJhIGVuIGVsIGFuw6FsaXNpcyBkZSBsb3MgZGF0b3Mgc29icmUgdmlvbGVuY2lhIGRlIGfDqW5lcm8gZW4gQ29sb21iaWEgZW50cmUgMjAxNSB5IDIwMjMsIGNvbiBlbCBvYmpldGl2byBnZW5lcmFsIGRlICoqaWRlbnRpZmljYXIgbG9zIHBlcmZpbGVzIGRlIHJpZXNnbyBkZSB2w61jdGltYXMgeSBhZ3Jlc29yZXMsIGFzw60gY29tbyBsb3MgZmFjdG9yZXMgc2l0dWFjaW9uYWxlcyBhc29jaWFkb3MgYSBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlIGludHJhZmFtaWxpYXIgZW4gZWwgcGHDrXMsIHBhcmEgY29tcHJlbmRlciBsb3MgcGF0cm9uZXMgZGVtb2dyw6FmaWNvcyB5IGNvbnRleHR1YWxlcyBxdWUgYXVtZW50YW4gbGEgcHJvYmFiaWxpZGFkIGRlIGVzdG9zIGluY2lkZW50ZXMqKi4gQSB0cmF2w6lzIGRlIGVzdGUgZXN0dWRpbywgc2UgcGxhbnRlYSByZXNwb25kZXIgYSBsYSBwcmVndW50YSBkZSBpbnZlc3RpZ2FjacOzbjogwr9DdcOhbGVzIHNvbiBsb3MgcGVyZmlsZXMgZGUgcmllc2dvIGRlbW9ncsOhZmljb3MgeSBzaXR1YWNpb25hbGVzIGFzb2NpYWRvcyBhIGxhcyB2w61jdGltYXMgeSBhZ3Jlc29yZXMgZW4gbG9zIGNhc29zIGRlIHZpb2xlbmNpYSBkZSBnw6luZXJvIGVuIENvbG9tYmlhIGVudHJlIDIwMTUgeSAyMDIzPyBQYXJhIHJlc3BvbmRlciBhIGVzdGEgY3Vlc3Rpw7NuLCBzZSBlc3RhYmxlY2VuIGxvcyBzaWd1aWVudGVzIG9iamV0aXZvcyBlc3BlY8OtZmljb3M6DQoNCiAgKiotKiogSWRlbnRpZmljYXIgbG9zIHBlcmZpbGVzIGRlIHJpZXNnbyBzb2Npb2RlbW9ncsOhZmljb3MgZGUgbGFzIHbDrWN0aW1hcyBkZSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlbiBDb2xvbWJpYSwgZXZhbHVhbmRvIGZhY3RvcmVzIGNvbW8gZWRhZCwgc2V4bywgY2ljbG8gZGUgdmlkYSB5IG90cm9zIGVsZW1lbnRvcyBxdWUgaW5kaXF1ZW4gbG9zIGdydXBvcyBtw6FzIHZ1bG5lcmFibGVzLg0KDQogICoqLSoqIERlZmluaXIgbG9zIHBlcmZpbGVzIGRlIHJpZXNnbyBkZSBsb3MgYWdyZXNvcmVzLCBhbmFsaXphbmRvIGVkYWQsIHNleG8sIGNpY2xvIGRlIHZpZGEsIHBhcmVudGVzY28gY29uIGxhIHbDrWN0aW1hLCBhbnRlY2VkZW50ZXMgZGUgdmlvbGVuY2lhIHkgZXN0YWRvIGRlIGNhcHR1cmEuDQogIA0KICAqKi0qKiBFeGFtaW5hciBmYWN0b3JlcyBzaXR1YWNpb25hbGVzIGRlIGxvcyBpbmNpZGVudGVzLCBjb21vIGVsIGx1Z2FyIHkgbGEgaW5mbHVlbmNpYSBkZWwgY29uc3VtbyBkZSBzdXN0YW5jaWFzIGVuIGxhcyB2w61jdGltYXMsIHBhcmEgaWRlbnRpZmljYXIgZW50b3Jub3MgeSBjaXJjdW5zdGFuY2lhcyBkZSBtYXlvciByaWVzZ28uDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0KIyNQcm95ZWN0byBkZSBlc3RhZMOtc3RpY2EgMw0KIyNMZWVyIENzdg0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShzZikNCmxpYnJhcnkoZHBseXIpDQpsaWJyYXJ5KHJlYWR4bCkNCmxpYnJhcnkoZmR0aCkNCmxpYnJhcnkocGxvdGx5KQ0KbGlicmFyeShxY2MpDQpsaWJyYXJ5KHJlYWRyKQ0KbGlicmFyeShsZWFmbGV0KQ0KbGlicmFyeShodG1sdG9vbHMpDQpsaWJyYXJ5KERUKQ0KbGlicmFyeSAobW9kZWVzdCkNCmxpYnJhcnkobW9tZW50cykNCmxpYnJhcnkoZXhwbG9yZSkNCmxpYnJhcnkobGVzc1IpDQoNCnZpb2xlbmNpYV9nZW5lcm8gPC0gcmVhZF9jc3YoIlZpb2xlbmNpYV9nZW5lcm9fNi5jc3YiKQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKSAgDQpgYGANCmBgYHtjc3MsZWNobz1GQUxTRX0NCi5jb2x1bW4ge2Rpc3BsYXk6ZmxleDt9DQpoMXtjb2xvcjpyZ2IoMjYsIDcyLCAxMTIpfQ0KaDJ7Y29sb3I6cmdiKDI2LCA3MiwgMTEyKX0NCmgze2NvbG9yOnJnYigyNiwgNzIsIDExMil9DQpgYGANCg0KIyBEZXNjcmlwY2nDs24gdMOpY25pY2EgZGVsIGRhdGFzZXQgeSBjb250ZXh0dWFsaXphY2nDs24NCg0KRXN0ZSBlc3R1ZGlvIHV0aWxpemEgdW5hIGJhc2UgZGUgZGF0b3Mgcm9idXN0YSB5IGRldGFsbGFkYSBzb2JyZSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBlbiBDb2xvbWJpYSwgYWJhcmNhbmRvIGluY2lkZW50ZXMgcmVnaXN0cmFkb3Mgc2VtYW5hbG1lbnRlIGVudHJlIGVuZXJvIGRlIDIwMTUgeSBtYXJ6byBkZSAyMDIzLiBFc3RhIGJhc2UgZGUgZGF0b3MgdG9tYWRhIGRlIGRhdG9zIGFiaWVydG9zIENvbG9tYmlhLCBjb24gMTIsMTkzIHJlZ2lzdHJvcyB5IDMyIHZhcmlhYmxlcyBlbiBzdSB2ZXJzacOzbiBvcmlnaW5hbCwgY29uc3RpdHV5ZSB1biByZWN1cnNvIGludmFsdWFibGUgcGFyYSBlbCBhbsOhbGlzaXMgZGUgdW4gZmVuw7NtZW5vIGRlIGFsdGEgY29tcGxlamlkYWQgc29jaWFsIHkgcmVsZXZhbmNpYSwgcGVybWl0aWVuZG8gaW52ZXN0aWdhciBlbiBwcm9mdW5kaWRhZCBsb3MgZmFjdG9yZXMgZGVtb2dyw6FmaWNvcywgc29jaW9lY29uw7NtaWNvcyB5IGNvbnRleHR1YWxlcyBhc29jaWFkb3MgYSBsb3MgaW5jaWRlbnRlcyBkZSB2aW9sZW5jaWEgZGUgZ8OpbmVyby4gTGEgYW1wbGl0dWQgeSByaXF1ZXphIGRlIGxhcyB2YXJpYWJsZXMsIHF1ZSBpbmNsdXllbiBjYXJhY3RlcsOtc3RpY2FzIGRldGFsbGFkYXMgZGUgdsOtY3RpbWFzIHkgYWdyZXNvcmVzLCBsYSByZWxhY2nDs24gZW50cmUgYW1ib3MsIHkgbGFzIGNpcmN1bnN0YW5jaWFzIGVzcGVjw61maWNhcyBkZSBjYWRhIGV2ZW50bywgYXBvcnRhbiB1bmEgcGVyc3BlY3RpdmEgaW50ZWdyYWwgc29icmUgbG9zIHBlcmZpbGVzIHkgcGF0cm9uZXMgc3VieWFjZW50ZXMgZW4gZXN0b3MgY2Fzb3MgW0BzZWNyZXRhcmlhMjAyNHZpb2xlbmNpYV0uIFNpbiBlbWJhcmdvLCBhbGd1bmFzIHZhcmlhYmxlcyBkZSBsYSBiYXNlIGRlIGRhdG9zIG9yaWdpbmFsIHNvbiByZWR1bmRhbnRlcywgb3RyYXMgdGllbmVuIGJham8gdmFsb3IgZXhwbGljYXRpdm8gcGFyYSBpZGVudGlmaWNhciBwYXRyb25lcyBkZSB2aW9sZW5jaWEgbyBwZXJmaWxlcyBkZSByaWVzZ28sIGFsZ3VuYXMgY29sdW1uYXMgc2UgZW5jdWVudHJhbiBpbmNvbXBsZXRhcyB5IGFsZ3VuYXMgY29udGllbmVuIGRhdG9zIGFkbWluaXN0cmF0aXZvcyBvIGNvbnRleHR1YWxlcyBxdWUgbm8gY29udHJpYnV5ZW4gZGUgbWFuZXJhIHNpZ25pZmljYXRpdmEgYWwgYW7DoWxpc2lzIGRlIGxhIHZpb2xlbmNpYSBkZSBnw6luZXJvLiANCg0KUG9yIGVuZGUsIHBhcmEgbWF4aW1pemFyIGxhIHJlbGV2YW5jaWEgeSBhcGxpY2FiaWxpZGFkIGRlIGxhIGJhc2UgZGUgZGF0b3MgZW4gZWwgY29udGV4dG8gZGUgbG9zIG9iamV0aXZvcyB5IHByZWd1bnRhcyBkZSBpbnZlc3RpZ2FjacOzbiwgc2UgcmVhbGl6w7MgdW5hIGRlcHVyYWNpw7NuIGV4aGF1c3RpdmEgZGUgbGFzIHZhcmlhYmxlcy4gRXN0ZSBwcm9jZXNvIGltcGxpY8OzIGxhIGVsaW1pbmFjacOzbiBkZSBjb2x1bW5hcyByZWR1bmRhbnRlcyB5IGRlIGJhamEgY29udHJpYnVjacOzbiBhbmFsw610aWNhLCBwcmVzZXJ2YW5kbyBzb2xvIGFxdWVsbGFzIHF1ZSByZXN1bHRhbiBjcsOtdGljYXMgcGFyYSBlbCBhbsOhbGlzaXMuIEFkZW3DoXMsIHNlIHRyYW5zZm9ybWFyb24gY29kaWZpY2FjaW9uZXMgY29tcGxlamFzIGVuIGV0aXF1ZXRhcyBkZXNjcmlwdGl2YXMsIG1lam9yYW5kbyBhc8OtIGxhIGFjY2VzaWJpbGlkYWQgeSBjbGFyaWRhZCBpbnRlcnByZXRhdGl2YSBkZSBsb3MgZGF0b3MuIEVsIGNvbmp1bnRvIGRlcHVyYWRvLCBjb21wdWVzdG8gYWhvcmEgcG9yIDEyLDE5MyByZWdpc3Ryb3MgeSAxOSB2YXJpYWJsZXMgY2xhdmUsIHNlIGNlbnRyYSBlbiBsYSBpbmZvcm1hY2nDs24gZXNlbmNpYWwgcXVlIHBlcm1pdGUgdW5hIGV4cGxvcmFjacOzbiBwcmVjaXNhIGRlIHBhdHJvbmVzLCBmYWN0b3JlcyBkZSByaWVzZ28sIHkgY29udGV4dG9zIGRlIHZpb2xlbmNpYSBlbiBsb3MgZGlzdGludG9zIGluY2lkZW50ZXMgcmVnaXN0cmFkb3MuIA0KDQpBIGNvbnRpbnVhY2nDs24gc2UgZXhwb25lbiBsYXMgdmFyaWFibGVzIGEgZXN0dWRpYXIgZGUgbGEgYmFzZSBkZSBkYXRvcyBtb2RpZmljYWRhLCBsYXMgY3VhbGVzIHNlIGNvbmZpZ3VyYW4gY29tbyBwYXLDoW1ldHJvcyBiYWpvIGVzdHVkaW8gIGJham8gZXN0dWRpbyBxdWUgY2FwdHVyYW4gdW5hIGdhbWEgZGUgYXNwZWN0b3MgZGUgbG9zIGluZGl2aWR1b3MgeSBsYXMgY2lyY3Vuc3RhbmNpYXMgcXVlIHJvZGVhbiBjYWRhIGluY2lkZW50ZSBkZSB2aW9sZW5jaWEgZGUgZ8OpbmVybywgcGVybWl0aWVuZG8gZXhwbG9yYXIgdGVtYXMgY29tbyBsb3MgcGVyZmlsZXMgc29jaW9kZW1vZ3LDoWZpY29zIGRlIHbDrWN0aW1hcyB5IGFncmVzb3JlczoNCg0KYGBge3J9DQpuYW1lcyh2aW9sZW5jaWFfZ2VuZXJvKSAjTm9tYnJlIGRlIGxhcyBjb2x1bW5hcyB5IHBvciB0YW50byBkZSBsYXMgdmFyaWFibGVzDQpgYGANCg0KUG9yIG90cm8gbGFkbywgY29tbyBiaWVuIHNlIG1lbmNpb27DsywgZWwgY29uanVudG8gZGUgZGF0b3MgYWN0dWFsIGN1ZW50YSBjb24gMTIsMTkzIGZpbGFzLCBxdWUgY29ycmVzcG9uZGVuIGFsIHRvdGFsIGRlIG9ic2VydmFjaW9uZXMgbyB1bmlkYWRlcyBleHBlcmltZW50YWxlcyBlbiBlbCBkYXRhc2V0LiBDYWRhIGZpbGEgcmVwcmVzZW50YSB1bmEgdW5pZGFkIGV4cGVyaW1lbnRhbCwgZXMgZGVjaXIsIHVuIGluY2lkZW50ZSBlc3BlY8OtZmljbyBkZSB2aW9sZW5jaWEgZGUgZ8OpbmVybyBvIGludHJhZmFtaWxpYXIsIGRvY3VtZW50YWRvIGNvbiBkYXRvcyBkZXRhbGxhZG9zIGVuIGNhZGEgdW5hIGRlIGxhcyAxOSB2YXJpYWJsZXMsIGxvIHF1ZSBwZXJtaXRlIGNvbnN0cnVpciB1biBwZXJmaWwgZXhoYXVzdGl2byBxdWUgaW5jbHV5ZSBjYXJhY3RlcsOtc3RpY2FzIGRlbW9ncsOhZmljYXMgZGUgbGEgdsOtY3RpbWEgeSBlbCBhZ3Jlc29yLCBlbCBjb250ZXh0byBkZWwgaW5jaWRlbnRlIHkgb3Ryb3MgZmFjdG9yZXMgcmVsZXZhbnRlcy4gQ29uIDEyLDE5MyB1bmlkYWRlcyBleHBlcmltZW50YWxlcyB5IDE5IHZhcmlhYmxlcywgZWwgY29uanVudG8gZGUgZGF0b3MgY29udGllbmUgdW4gdG90YWwgZGUgMjMxLDY2NyBlbnRyYWRhcywgbG8gY3VhbCBoYWJpbGl0YSB1biBhbsOhbGlzaXMgZXN0YWTDrXN0aWNvIHRhbnRvIGRlc2NyaXB0aXZvIGNvbW8gaW5mZXJlbmNpYWwgc29icmUgbG9zIHBhdHJvbmVzIHkgZmFjdG9yZXMgYXNvY2lhZG9zIGEgbGEgdmlvbGVuY2lhIGRlIGfDqW5lcm8uDQoNCmBgYHtyfQ0KbnVtX3Jvd3MgPC0gbnJvdyh2aW9sZW5jaWFfZ2VuZXJvKSAjTsO6bWVybyBkZSBvYnNlcnZhY2lvbmVzIChmaWxhcykNCm51bV9jb2x1bXMgPC0gbmNvbCh2aW9sZW5jaWFfZ2VuZXJvKSAjTsO6bWVybyBkZSB2YXJpYWJsZXMgKGNvbHVtbmFzKQ0KdG90YWxfdmFsdWVzIDwtIG51bV9yb3dzKm51bV9jb2x1bXMgI1RvdGFsIGRlIGRhdG9zIA0KDQpudW1fcm93cw0KbnVtX2NvbHVtcw0KdG90YWxfdmFsdWVzDQpgYGANCg0KIyMgQ2xhc2lmaWNhY2nDs24gZGUgdmFyaWFibGVzDQoNClBhcmEgdW4gYW7DoWxpc2lzIGRlc2NyaXB0aXZvIGFkZWN1YWRvLCBlcyBjcnVjaWFsIGNsYXNpZmljYXIgbGFzIHZhcmlhYmxlcyBlbiBmdW5jacOzbiBkZSBzdSB0aXBvLiBFbiBlc3RhIGJhc2UgZGUgZGF0b3Mgc29icmUgdmlvbGVuY2lhIGRlIGfDqW5lcm8sIHNlIGRpc3Rpbmd1ZW4gdmFyaWFibGVzIGNhdGVnw7NyaWNhcyB5IG51bcOpcmljYXMsIGxvIGN1YWwgZmFjaWxpdGEgbGEgZWxlY2Npw7NuIGRlIG3DqXRvZG9zIGFuYWzDrXRpY29zIGVzcGVjw61maWNvcy4gTGFzIHZhcmlhYmxlcyBjYXRlZ8OzcmljYXMgc2UgYW5hbGl6YW4gbWVkaWFudGUgZGlzdHJpYnVjaW9uZXMgZGUgZnJlY3VlbmNpYSBlbiBhc3BlY3RvcyBjb21vIGfDqW5lcm8sIHBhcmVudGVzY28geSBlc2NlbmFyaW8gZGVsIGluY2lkZW50ZS4gTGFzIHZhcmlhYmxlcyBudW3DqXJpY2FzLCBlbiBjYW1iaW8sIHNlIGRlc2NyaWJlbiB1c2FuZG8gbWVkaWRhcyBkZSB0ZW5kZW5jaWEgY2VudHJhbCB5IGRpc3BlcnNpw7NuIChtZWRpYSwgbWVkaWFuYSwgZGVzdmlhY2nDs24gZXN0w6FuZGFyKSwgbG8gcXVlIGF5dWRhIGEgaWRlbnRpZmljYXIgcGF0cm9uZXMgZW4gbGEgZWRhZCBkZSBsb3MgaW52b2x1Y3JhZG9zLiBFc3RhIGNsYXNpZmljYWNpw7NuIGFzZWd1cmEgbGEgcHJlY2lzacOzbiBlbiBsYSBkZXNjcmlwY2nDs24gZGUgY2FyYWN0ZXLDrXN0aWNhcyB5IHBhdHJvbmVzIGVuIGxvcyBkYXRvcy4NCg0KIyMjIFZhcmlhYmxlcyBDYXRlZ8OzcmljYXMNCg0KU29uIGVzZW5jaWFsZXMgcGFyYSBjb21wcmVuZGVyIGxvcyBwZXJmaWxlcyB5IGNvbnRleHRvcyBlc3BlY8OtZmljb3MgZGUgY2FkYSBpbmNpZGVudGUgZGUgdmlvbGVuY2lhLiBFbiBlc3RlIGNvbmp1bnRvIGRlIGRhdG9zLCBlc3RhcyB2YXJpYWJsZXMgc2UgY2VudHJhbiBlbiBjYXJhY3RlcsOtc3RpY2FzIGRlIHViaWNhY2nDs24sIHJlbGFjacOzbiwgeSBjb25kaWNpb25lcyBkZSBsb3MgaW52b2x1Y3JhZG9zIHkgZWwgaW5jaWRlbnRlLiANCg0KICAtICoqRGVwYXJ0YW1lbnRvOioqOiBlcyB1bmEgKipldGlxdWV0YSBnZW9ncsOhZmljYSoqIHF1ZSBpZGVudGlmaWNhIGxhIHViaWNhY2nDs24gZGUgY2FkYSBpbmNpZGVudGUsIHBlcm1pdGllbmRvIGFuYWxpemFyIHBhdHJvbmVzIHJlZ2lvbmFsZXMgZGUgdmlvbGVuY2lhIHkgZW5mb2NhciByZWN1cnNvcyBlbiDDoXJlYXMgY29uIG1heW9yIGluY2lkZW5jaWEuDQoNCiAgLSAqKkNpY2xvIGRlIHZpZGEqKjogcmVwcmVzZW50YSB1bmEgKipjYXRlZ29yw61hIGRlIGV0YXBhIGRlIHZpZGEqKiBxdWUgaW5kaWNhIGxhIGV0YXBhIGRlIHZpZGEgZGUgbGEgdsOtY3RpbWEgKGluZmFuY2lhLCBhZG9sZXNjZW5jaWEsIGFkdWx0ZXopLCBheXVkYW5kbyBhIGVudGVuZGVyIGPDs21vIHZhcsOtYSBlbCByaWVzZ28gZGUgdmlvbGVuY2lhIHNlZ8O6biBsYSBlZGFkIHkgZGVzYXJyb2xsby4NCiAgDQogIC0gKipTZXhvIGRlIGxhIHbDrWN0aW1hKio6IGVzIHVuYSAqKmNhdGVnb3LDrWEgZGUgZ8OpbmVybyoqIHF1ZSBpZGVudGlmaWNhIHNpIGxhIHbDrWN0aW1hIGVzIG1hc2N1bGluYSBvIGZlbWVuaW5hLCBlcyBjbGF2ZSBwYXJhIGFuYWxpemFyIGEgZGlzdHJpYnVjacOzbiB5IGRpbsOhbWljYSBkZSBsYSB2aW9sZW5jaWEgZW50cmUgZ8OpbmVyb3MuDQogIA0KICAtICoqRXN0cmF0byBzb2Npb2Vjb27Ds21pY28qKjogICoqZXRpcXVldGFzIHBhcmEgZGlmZXJlbnRlcyBuaXZlbGVzIHNvY2lvZWNvbsOzbWljb3MqKiAoYmFqbywgbWVkaW8sIGFsdG8sIGV0Yy4pIHF1ZSBwZXJtaXRlIGFuYWxpemFyIGPDs21vIGVsIGNvbnRleHRvIGVjb27Ds21pY28gYWZlY3RhIGxhIHZ1bG5lcmFiaWxpZGFkIHkgZWwgcmllc2dvIGRlIGxhcyB2w61jdGltYXMgZGUgdmlvbGVuY2lhLg0KICANCiAgLSAqKlRpcG8gZGUgU2VndXJpZGFkIFNvY2lhbCAqKjogSW5kaWNhIGVsIHNpc3RlbWEgZGUgY29iZXJ0dXJhIChww7pibGljbyBvIHByaXZhZG8pIGRlIGxhIHbDrWN0aW1hLCBsbyBjdWFsIGF5dWRhIGEgZW50ZW5kZXIgZWwgYWNjZXNvIGEgcmVjdXJzb3MgZGUgYXRlbmNpw7NuIHkgY2FsaWRhZCBkZSByZXNwdWVzdGEuDQogIA0KICAtICoqUGFjaWVudGUgaG9zcGl0YWxpemFkbyoqOiAgYWN0w7phIGNvbW8gdW4gKippbmRpY2Fkb3IgZGUgZ3JhdmVkYWQqKiBkZWwgaW5jaWRlbnRlIGFsIHNlw7FhbGFyIHNpIGxhIHbDrWN0aW1hIHJlcXVpcmnDsyBob3NwaXRhbGl6YWNpw7NuIGNvbW8gY29uc2VjdWVuY2lhIGRlIGxhIGFncmVzacOzbiwgc2XDsWFsYW5kbyBsYSBncmF2ZWRhZCBkZWwgaW5jaWRlbnRlIHkgcHJvcG9yY2lvbmFuZG8gaW5mb3JtYWNpw7NuIHNvYnJlIGxhIHNldmVyaWRhZCBkZWwgY2Fzby4NCiAgDQogIC0gKipDb25kaWNpw7NuIGZpbmFsKio6IERlc2NyaWJlIGVsIGVzdGFkbyBkZSBsYSB2w61jdGltYSB0cmFzIGVsIGluY2lkZW50ZSAoInZpdm8iLCAibXVlcnRvIiwgImRlc2Nvbm9jaWRvIiksIHBlcm1pdGllbmRvIGV2YWx1YXIgZWwgcmllc2dvIGRlIG1vcnRhbGlkYWQgeSBsaW1pdGFjaW9uZXMgZW4gZWwgc2VndWltaWVudG8gZGUgY2Fzb3MuDQogIA0KICAtICoqTmF0dXJhbGV6YSBkZSBsYSB2aW9sZW5jaWEqKjogIENsYXNpZmljYSBlbCB0aXBvIGRlIHZpb2xlbmNpYSAoZsOtc2ljYSwgcHNpY29sw7NnaWNhLCBzZXh1YWwpLCBmdW5kYW1lbnRhbCBwYXJhIGVudGVuZGVyIGxhcyBmb3JtYXMgbcOhcyBjb211bmVzIGRlIGFncmVzacOzbi4NCiAgDQogIC0gKipEZXNjcmlwY2nDs24gZGUgbmF0dXJhbGV6YSoqOiAgRGV0YWxsYSBsb3MgZWZlY3RvcyBlc3BlY8OtZmljb3MgZGUgbGEgdmlvbGVuY2lhIChsZXNpw7NuLCBhYnVzbyBwc2ljb2zDs2dpY28pLCBwcm9mdW5kaXphbmRvIGVuIGxhcyBtYW5pZmVzdGFjaW9uZXMgZGlyZWN0YXMgZGVsIGRhw7FvLg0KICANCiAgLSAqKlNleG8gZGVsIGFncmVzb3IqKjogIGVzIHVuYSBjYXRlZ29yw61hIGRlIGfDqW5lcm8gcGFyYSBlbCBhZ3Jlc29yIChtYXNjdWxpbm8sIGZlbWVuaW5vLGludGVyc2V4dWFsKSwgbGEgY3VhbCBwZXJtaXRlIG9ic2VydmFyIGxvcyBwYXRyb25lcyBkZSBhZ3Jlc2nDs24gc2Vnw7puIGVsIGfDqW5lcm8gZGVsIGFncmVzb3IsIHByb3BvcmNpb25hbmRvIGRhdG9zIMO6dGlsZXMgcGFyYSBlc3RyYXRlZ2lhcyBkZSBwcmV2ZW5jacOzbiB5IHBlcmZpbGFtaWVudG8uDQogIA0KICAtICoqUGFyZW50ZXNjbyBjb24gbGEgdsOtY3RpbWEqKjogZXMgdW5hICoqY2F0ZWdvcsOtYSBkZSByZWxhY2nDs24qKiBxdWUgZGVmaW5lIGVsIHRpcG8gZGUgdsOtbmN1bG8gZW50cmUgbGEgdsOtY3RpbWEgeSBlbCBhZ3Jlc29yIChwYXJlamEsIGZhbWlsaWFyLCBkZXNjb25vY2lkbylsbyBjdWFsIHBlcm1pdGUgZW50ZW5kZXIgY8OzbW8gbG9zIGxhem9zIGZhbWlsaWFyZXMgbyBjZXJjYW5vcyBwdWVkZW4gaW5mbHVpciBlbiBsYSBkaW7DoW1pY2EgZGUgbGEgdmlvbGVuY2lhLCBhc3BlY3RvIGNydWNpYWwgcGFyYSBlbnRlbmRlciBsb3MgY29udGV4dG9zIGVuIGxvcyBxdWUgb2N1cnJlLg0KICANCiAgLSAqKkVzY2VuYXJpbyBkZWwgaW5jaWRlbnRlKio6IGRlc2NyaWJlIGVsICoqY29udGV4dG8gZsOtc2ljbyoqIGRlbCBpbmNpZGVudGUgKGhvZ2FyLCBlc3BhY2lvIHDDumJsaWNvKSwgbGEgY3VhbCBwZXJtaXRlIGlkZW50aWZpY2FyIGxvcyBsdWdhcmVzIG3DoXMgY29tdW5lcyBkb25kZSBvY3VycmUgbGEgdmlvbGVuY2lhLCBsbyBxdWUgZXMgaW1wb3J0YW50ZSBwYXJhIGRlc2Fycm9sbGFyIGVzdHJhdGVnaWFzIGRlIHByZXZlbmNpw7NuIHkgc2VndXJpZGFkIGFkYXB0YWRhcyBhIGVzb3MgZW50b3Jub3MuDQogIA0KICAtICoqQ2FwdHVyYSBkZWwgYWdyZXNvcioqOiAgZXMgdW4gKippbmRpY2Fkb3IgbGVnYWwqKiBxdWUgc2XDsWFsYSBzaSBlbCBhZ3Jlc29yIGZ1ZSBkZXRlbmlkbyB0cmFzIGVsIGluY2lkZW50ZSAoc8OtLCBubyBvIGRlc2Nvbm9jaWRvKSwgZWwgY3VhbCBlcyByZWxldmFudGUgcGFyYSBldmFsdWFyIGxhIHJlc3B1ZXN0YSBpbnN0aXR1Y2lvbmFsIGZyZW50ZSBhIGxvcyBjYXNvcyBkZSB2aW9sZW5jaWEsIHBlcm1pdGllbmRvIGFuYWxpemFyIGxhIGVmZWN0aXZpZGFkIHkgcmFwaWRleiBkZSBsYXMgaW50ZXJ2ZW5jaW9uZXMgbGVnYWxlcy4NCiAgDQogIC0gKipBbnRlY2VkZW50ZXMgZGVsIGFncmVzb3IqKjogIGVzIHVuICoqaGlzdG9yaWFsIGRlIGNvbXBvcnRhbWllbnRvKiogcXVlIG11ZXN0cmEgc2kgZWwgYWdyZXNvciB0ZW7DrWEgdW4gaGlzdG9yaWFsIHByZXZpbyBkZSB2aW9sZW5jaWEsIMO6dGlsIHBhcmEgZW50ZW5kZXIgcGF0cm9uZXMgZGUgcmVpbmNpZGVuY2lhLCBjb250cmlidXllbmRvIGEgbGEgaWRlbnRpZmljYWNpw7NuIGRlIHBlcmZpbGVzIGRlIHJpZXNnby4NCiAgDQogIC0gKipTdXN0YW5jaWFzIGVuIGxhIHbDrWN0aW1hKio6ICBTdXN0YW5jaWFzIGVuIGxhIHbDrWN0aW1hIGVzIHVuYSB2YXJpYWJsZSBjdWFsaXRhdGl2YSBxdWUgYWN0w7phIGNvbW8gdW4gKippbmRpY2Fkb3IgYmluYXJpbyBkZSBpbmZsdWVuY2lhIGRlIHN1c3RhbmNpYXMqKiBlbiBsYSB2w61jdGltYSBhbCBtb21lbnRvIGRlbCBpbmNpZGVudGUsIGxvIGN1YWwgYXl1ZGEgYSBleHBsb3JhciBsYSByZWxhY2nDs24gZW50cmUgY29uc3VtbyB5IHZpb2xlbmNpYSwgYXBvcnRhbmRvIGFsIHBlcmZpbCBkZSByaWVzZ28uDQoNCiMjIyBWYXJpYWJsZXMgQ3VhbnRpdGF0aXZhcw0KDQogIC0gKipBw7FvKio6IGVzIHVuYSAqKmRpbWVuc2nDs24gdGVtcG9yYWwqKiBxdWUgaW5kaWNhIGVsIGHDsW8gZW4gcXVlIG9jdXJyacOzIGVsIGluY2lkZW50ZS4gQWwgdHJhdGFyc2UgZGUgdW4gdmFsb3IgbnVtw6lyaWNvLCBwZXJtaXRlIGFuYWxpemFyIGxhIGV2b2x1Y2nDs24gZGUgbG9zIGNhc29zIGEgbG8gbGFyZ28gZGVsIHRpZW1wbyB5IGRldGVjdGFyIHRlbmRlbmNpYXMgZW4gbGEgZnJlY3VlbmNpYSBkZSBsb3MgaW5jaWRlbnRlcyBkZSB2aW9sZW5jaWEuDQogIA0KICAtICoqRWRhZCBkZSBsYSB2w61jdGltYSoqOiBlcyB1bmEgKiptZWRpZGEgZGUgZWRhZCoqIG51bcOpcmljYSBxdWUgcGVybWl0ZSBhbmFsaXphciBwYXRyb25lcyBkZSB2aW9sZW5jaWEgc2Vnw7puIGxvcyBkaWZlcmVudGVzIGdydXBvcyBkZSBlZGFkIGRlIGxhcyB2w61jdGltYXMuIEVzdGEgdmFyaWFibGUgZXMgZXNlbmNpYWwgcGFyYSBpZGVudGlmaWNhciBsb3MgcmFuZ29zIGV0YXJpb3MgbcOhcyB2dWxuZXJhYmxlcyB5IG9yaWVudGFyIGxhcyBpbnRlcnZlbmNpb25lcyBwcmV2ZW50aXZhcy4NCiAgDQogIC0gKipFZGFkIGRlbCBhZ3Jlc29yKio6IHRhbWJpw6luIGVzIHVuYSAqKm1lZGlkYSBkZSBlZGFkKiogbnVtw6lyaWNhLCBlbiBlc3RlIGNhc28gZGVsIGFncmVzb3IsIHkgZXMgw7p0aWwgcGFyYSBvYnNlcnZhciBwYXRyb25lcyBkZSBhZ3Jlc2nDs24gZW4gZnVuY2nDs24gZGUgbGEgZWRhZCBkZWwgYWdyZXNvci4gRXN0ZSBhbsOhbGlzaXMgY29udHJpYnV5ZSBhIGxhIGlkZW50aWZpY2FjacOzbiBkZSBwZXJmaWxlcyBldGFyaW9zIGVzcGVjw61maWNvcyBhc29jaWFkb3MgYSBjb21wb3J0YW1pZW50b3MgdmlvbGVudG9zLg0KICANCg0KIyMgU3ViY2xhc2lmaWNhY2nDs24gZGUgdmFyaWFibGVzIHkgZXNjYWxhcyBkZSBtZWRpY2nDs24NCg0KU2kgYmllbiBsYXMgdmFyaWFibGVzIHNlIGNsYXNpZmljYW4gcHJpbmNpcGFsbWVudGUgZW4gY3VhbGl0YXRpdmFzIHkgY3VhbnRpdGF0aXZhcywgZXN0w6FzIHRhbWJpw6luIHNlIHB1ZWRlbiBkaXZpZGlyIGVuIHN1YmNhdGVnb3LDrWFzIGRlcGVuZGllbmRvIHNpIHNvbiBudW3DqXJpY2FzIG8gY2F0ZWfDs3JpY2FzIHksIGFkZW3DoXMsIHB1ZWRlbiBhZGFwdGFyIGRpdmVyc2FzIGVzY2FsYXMgZGUgbWVkaWNpw7NuLiBBIGNvbnRpbnVhY2nDs24sIHNlIHByZXNlbnRhbiAyIHRhYmxhcyBxdWUgcmVzdW1lbiBlc3RhIGluZm9ybWFjacOzbi4gDQoNCiMjIyBWYXJpYWJsZXMgQ2F0ZWfDs3JpY2FzDQoNCjxjZW50ZXI+DQoNCiFbTm90YTogVGFibGEgZGUgZWxhYm9yYWNpw7NuIHByb3BpYV0oVmFyaWFibGVfdmlvbGVuY2lhMS5wbmcpe3dpZHRoPTcwMH0NCjwvY2VudGVyPg0KDQoNCkxhcyB2YXJpYWJsZXMgY2F0ZWfDs3JpY2FzIGVuIGVzdGUgY29uanVudG8gZGUgZGF0b3Mgc2UgZGl2aWRlbiBlbiBub21pbmFsZXMgeSBvcmRpbmFsZXMsIGNhZGEgdW5hIGNvbiB1biByb2wgZW4gZWwgYW7DoWxpc2lzIGRlIHZpb2xlbmNpYSBkZSBnw6luZXJvLiBMYXMgdmFyaWFibGVzIG5vbWluYWxlcyAoIkRlcGFydGFtZW50byIsICJTZXhvIGRlIGxhIHbDrWN0aW1hIiwgIlRpcG8gZGUgU2VndXJpZGFkIFNvY2lhbCIsICJFc2NlbmFyaW8gZGVsIGluY2lkZW50ZSIpIHBlcm1pdGVuIGFncnVwYXIgZGF0b3Mgc2luIHVuIG9yZGVuIGVzcGVjw61maWNvLCBzaWVuZG8gY2xhdmUgcGFyYSBvYnNlcnZhciBwYXRyb25lcyBkZSBkaXN0cmlidWNpw7NuIGdlb2dyw6FmaWNhLCBnw6luZXJvIHkgY29udGV4dG9zIGRlIGxvcyBpbmNpZGVudGVzIG1lZGlhbnRlIGFuw6FsaXNpcyBkZSBmcmVjdWVuY2lhLiBFbiBjYW1iaW8sIGxhcyB2YXJpYWJsZXMgb3JkaW5hbGVzICgiQ2ljbG8gZGUgdmlkYSIsICJFc3RyYXRvIHNvY2lvZWNvbsOzbWljbyIsICJDb25kaWNpw7NuIGZpbmFsIikgdGllbmVuIHVuIG9yZGVuIGltcGzDrWNpdG8gcXVlIHBlcm1pdGUgamVyYXJxdWl6YXIgY2F0ZWdvcsOtYXMsIGZhY2lsaXRhbmRvIGVsIGFuw6FsaXNpcyBkZSB0ZW5kZW5jaWFzIHkgbGEgcmVsYWNpw7NuIGVudHJlIGVsIG5pdmVsIHNvY2lvZWNvbsOzbWljbyBvIGxhIGV0YXBhIGRlIHZpZGEgeSBsYSB2dWxuZXJhYmlsaWRhZCBhbnRlIGxhIHZpb2xlbmNpYS4gRGlzdGluZ3VpciBlbnRyZSBub21pbmFsZXMgeSBvcmRpbmFsZXMgZXMgY3J1Y2lhbCBwYXJhIGFwbGljYXIgYW7DoWxpc2lzIGVzdGFkw61zdGljb3MgYWRlY3VhZG9zIHkgb2J0ZW5lciBjb25jbHVzaW9uZXMgc2lnbmlmaWNhdGl2YXMgc29icmUgbG9zIHBlcmZpbGVzIGRlIHJpZXNnbyBlbiB2aW9sZW5jaWEgZGUgZ8OpbmVyby4NCg0KDQojIyMgVmFyaWFibGVzIEN1YW50aXRhdGl2YXMNCg0KPGNlbnRlcj4NCiFbTm90YTogVGFibGEgZGUgZWxhYm9yYWNpw7NuIHByb3BpYV0odmFyaWFibGVfdmlvbGVuY2lhMi5wbmcpe3dpZHRoPTcwMH0NCg0KPC9jZW50ZXI+DQoNCg0KTGFzIHZhcmlhYmxlcyBjdWFudGl0YXRpdmFzIGVuIGVzdGUgY29uanVudG8gc29uIGRpc2NyZXRhcyB5IMO6dGlsZXMgcGFyYSBhbmFsaXphciBwYXRyb25lcyB0ZW1wb3JhbGVzIHkgZGVtb2dyw6FmaWNvcy4gTGEgRWRhZCBkZSBsYSB2w61jdGltYSB5IEVkYWQgZGVsIGFncmVzb3Igc2UgbWlkZW4gZW4gYcOxb3MgZW50ZXJvcyBlbiB1bmEgZXNjYWxhIGRlIHJhesOzbiwgcGVybWl0aWVuZG8gY29tcGFyYWNpb25lcyBwcm9wb3JjaW9uYWxlcyAocG9yIGVqZW1wbG8sIHVuYSBwZXJzb25hIGRlIDQwIGHDsW9zIGVzIGVsIGRvYmxlIGRlIG1heW9yIHF1ZSBhbGd1aWVuIGRlIDIwKSwgbG8gcXVlIGF5dWRhIGEgaWRlbnRpZmljYXIgcGF0cm9uZXMgZGUgZWRhZCBlbiB2aW9sZW5jaWEuIExhIHZhcmlhYmxlIEHDsW8gdGFtYmnDqW4gZXMgZGlzY3JldGEsIHBlcm8gZW4gdW5hIGVzY2FsYSBkZSBpbnRlcnZhbG8uIEVzdG8gcGVybWl0ZSBvYnNlcnZhciBjYW1iaW9zIGEgbG8gbGFyZ28gZGVsIHRpZW1wbywgYXVucXVlIHNpbiB1biAiY2VybyBhYnNvbHV0byIgZGUgdGllbXBvLCDDunRpbCBwYXJhIGFuYWxpemFyIHRlbmRlbmNpYXMgYW51YWxlcyBlbiBsYSB2aW9sZW5jaWEgZGUgZ8OpbmVyby4gRGlzdGluZ3VpciBlbnRyZSBlc2NhbGEgZGUgcmF6w7NuIHkgZGUgaW50ZXJ2YWxvIHBlcm1pdGUgYXBsaWNhciB0w6ljbmljYXMgYW5hbMOtdGljYXMgcHJlY2lzYXM6IGVkYWQgcGFyYSBhbsOhbGlzaXMgcHJvcG9yY2lvbmFsZXMgeSBhw7FvIHBhcmEgZXN0dWRpYXIgcGF0cm9uZXMgdGVtcG9yYWxlcywgcHJvcG9yY2lvbmFuZG8gdW5hIHZpc2nDs24gY29tcGxldGEgZGUgbG9zIGZhY3RvcmVzIGRlIHJpZXNnbyBlbiB2aW9sZW5jaWEgZGUgZ8OpbmVyby4NCg0KIyBCaWJsaW9ncmFmw61hDQo=</div>
 
 
 </div>
@@ -980,7 +917,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
