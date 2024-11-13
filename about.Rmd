@@ -529,7 +529,7 @@ Por otro lado, en el caso de "Negligencia y abandono," la distribución entre g�
 
 Si traducimos lo anterior a términos probabilísticos, considerando la etapa de vida de las víctimas, su sexo y los tres tipos de violencia de género más reportados, podemos obtener los siguientes hallazgos: 
 
-```{r,echo=FALSE,warning=FALSE}
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
 
 library(dplyr)
 library(DT)
@@ -1497,7 +1497,7 @@ La gráfica de distribución de agresores por género revela una notable diferen
 
 ### Análisis de la relación entre el género  y los intervalos de edad del agresor
 
-```{r, echo=FALSE, warning=FALSE}
+```{r, echo=FALSE, warning=FALSE, results='hide'}
 library(dplyr)
 library(kableExtra)
 
@@ -1570,7 +1570,7 @@ En general, esta distribución sugiere una marcada diferencia de género en la p
 
 a continuación se presenta una tabla que presenta las probabilidades condicionales de que un agresor, en función de su género, se encuentre en un intervalo de edad específico dado el tipo de violencia que ejerce, considerando únicamente los 3 casos de violencia más registrados para facilidad del análisis. Al analizar estos datos, se pueden identificar patrones de riesgo asociados a ciertos tipos de violencia según las características demográficas de los agresores, lo que permite una comprensión más precisa de los perfiles comunes en cada tipo de agresión.
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
+```{r,echo=FALSE,warning=FALSE, message=FALSE, results='hide'}
 library(dplyr)
 library(DT)
 
@@ -1760,235 +1760,7 @@ La probabilidad de que un agresor no sea capturado, P(Captura = No), es de 0.353
 
 # Otros análisis descriptivos relevantes sobre factores situacionales de los casos de violencia de género 
 
-En este apartado, se presentan análisis descriptivos adicionales sobre factores situacionales en casos de violencia de género. Estos factores incluyen características como el tipo de seguridad social de la víctima, el consumo de sustancias al momento del incidente, los daños resultantes de la agresión y la gravedad de la situación en términos de necesidad de hospitalización. Examinar estos elementos proporciona una visión más completa del contexto en el que ocurren estos casos y ayuda a identificar patrones que pueden ser clave para intervenciones más efectivas y focalizadas en la protección de las víctimas.
-
-
-## Consecuencias posteriores al hecho de violencia registradas por las víctimas
-
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
-library(ggplot2)
-library(dplyr)
-
-# Agrupar y contar casos por tipo de violencia en la columna 'naturaleza'
-casos_por_naturaleza <- violencia_genero %>%
-  count(naturaleza) %>%
-  arrange(naturaleza)
-
-# Crear el diagrama de barras
-ggplot(casos_por_naturaleza, aes(x = reorder(naturaleza, -n), y = n)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
-  geom_text(aes(label = n), vjust = -0.2, color = "black", size = 3.5) +
-  labs(
-    title = "Frecuencia de Casos de Violencia por consecuencias del acto",
-    x = "Consecuencia del Acto",
-    y = "Casos Registrados"
-  ) +
-  theme_classic() +
-  theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
-    axis.title.x = element_text(face = "bold", size = 12),
-    axis.title.y = element_text(face = "bold", size = 12),
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 10), # Inclina las etiquetas para mejorar legibilidad
-    axis.text.y = element_text(size = 10),
-    axis.line = element_line(color = "gray50", size = 0.5),
-    panel.grid.major.y = element_line(color = "gray80", size = 0.3),
-    panel.grid.minor = element_blank()
-  ) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.1)))
-
-```
-
-La gráfica muestra la frecuencia de casos de violencia según las consecuencias del acto, proporcionando una visión de los efectos directos que estas agresiones tienen en las víctimas. Destaca que el "Daño psicológico o emocional" es la consecuencia más común, con 4,208 casos registrados, lo cual refleja el profundo impacto emocional y mental que acompaña a la violencia, muchas veces con repercusiones a largo plazo. Esto sugiere la necesidad de atención psicológica como una prioridad en las intervenciones de apoyo. Le sigue el grupo de casos clasificados como "Desconocida" con 3,318, lo cual indica una limitación en el registro de las consecuencias, probablemente por falta de información detallada o reticencia de las víctimas a declarar los efectos sufridos. Las "Lesiones físicas leves" también son frecuentes, con 3,215 casos, lo que resalta la presencia de violencia física de menor gravedad.
-
-En menor proporción, pero no menos significativos, están los casos de "Violencia sexual" (953 casos) y "Lesiones físicas graves" (358 casos), que representan formas de violencia severa con implicaciones tanto para la salud física como emocional de las víctimas. Por último, "Otros tipos de lesiones o daños" presentan una incidencia baja (141 casos), sugiriendo que estos casos pueden ser menos comunes o menos reportados.
-
-Esta distribución destaca la diversidad en las consecuencias de la violencia y sugiere que los programas de apoyo deben ser multidimensionales, abarcando tanto el apoyo psicológico como el tratamiento médico. Además, subraya la importancia de mejorar el registro de datos para obtener un panorama más completo de las secuelas de la violencia en las víctimas. Lo anterior traducido a términos probabilísticos se resumiría de la siguiente forma:
-
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
-library(dplyr)
-library(DT)
-
-naturaleza_counts <- violencia_genero %>%
-  count(naturaleza, name = "cantidad")
-
-total_casos_natu <- sum(naturaleza_counts$cantidad)
-
-tabla_probabilidades_naturaleza <- naturaleza_counts %>%
-  mutate(
-    probabilidad = round(cantidad / total_casos_natu, 4),
-    porcentaje = paste0(round(probabilidad * 100, 2), "%"),
-    enunciado = paste0("P(<sub><b><i>", naturaleza, "</i></b></sub>)")
-  ) %>%
-  select(enunciado, probabilidad, porcentaje)
-
-datatable(tabla_probabilidades_naturaleza, 
-          escape = FALSE,  # Permitir HTML en las celdas para estilos personalizados
-          colnames = c("Enunciado", "Probabilidad", "Porcentaje"),
-          caption = "Probabilidades de Cada Tipo de Naturaleza del Acto Violento",
-          options = list(pageLength = 10, 
-                         scrollX = TRUE, 
-                         dom = 'tpi', 
-                         columnDefs = list(list(className = 'dt-center', targets = "_all")), 
-                         initComplete = JS(
-                           "function(settings, json) {",
-                           "$(this.api().table().header()).css({'background-color': '#d0e4f5', 'color': '#000'});",
-                           "}")),
-          class = "cell-border stripe") %>%  
-  formatRound(columns = c("probabilidad"), digits = 4)
-
-
-```
-
-La tabla muestra la distribución de probabilidad de las diversas consecuencias de actos violentos en términos de su frecuencia relativa. Observamos que el evento "daño psicológico o emocional" presenta una probabilidad marginal de 0.3451, lo que sugiere que en aproximadamente el 34.51% de los casos, la consecuencia de un acto violento será un daño de esta naturaleza. Este valor indica una probabilidad alta, lo cual resalta la urgencia de enfoques preventivos enfocados en el bienestar mental y emocional.
-
-La segunda mayor probabilidad condicional, en casos donde la consecuencia es desconocida, es de 0.2721, lo que indica que un 27.21% de los casos no especifican la naturaleza del daño. Este alto valor en la categoría "desconocida" podría introducir sesgo en la distribución y sugiere una limitación en la calidad de los datos recopilados.Para el evento de "lesión física leve", la probabilidad marginal es de 0.2637, lo que implica que en el 26.37% de los casos, la consecuencia resulta en lesiones de menor gravedad. Por otro lado, el evento de "lesión física grave" tiene una probabilidad de solo 0.0294, lo que sugiere una menor frecuencia de daños severos como resultado de actos violentos.
-
-La probabilidad marginal de "violencia sexual" es de 0.0782, lo que indica que aproximadamente un 7.82% de los actos violentos llevan a consecuencias sexuales, aunque en comparación con otros tipos de consecuencias, este valor es relativamente bajo. Finalmente, la probabilidad de "otros tipos de lesiones o daños" es de 0.0116, la más baja de todas, lo cual refleja su ocurrencia esporádica en la distribución general. En términos de modelado probabilístico, estos valores permiten identificar la frecuencia relativa de cada tipo de consecuencia, lo cual es clave para la estimación de riesgos y para definir estrategias de intervención focalizadas, optimizando así los recursos en función de la probabilidad de ocurrencia de cada consecuencia.
-
-Ahora bien, si analizamos la relación entre las consecuencias de los actos de violencia con relación al género de la víctima obtendremos los siguientes hallazgos: 
-
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
-library(ggplot2)
-library(dplyr)
-
-violencia_genero$naturaleza <- factor(violencia_genero$naturaleza)
-violencia_genero$sexo_victima <- factor(violencia_genero$sexo_victima, levels = c("Masculino", "Femenino"))
-
-datos_violencia_sexo <- violencia_genero %>%
-  group_by(naturaleza, sexo_victima) %>%
-  summarise(total_casos = n(), .groups = 'drop')
-
-ggplot(datos_violencia_sexo, aes(x = naturaleza, y = total_casos, fill = sexo_victima)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9), width = 0.8) +
-  geom_text(aes(label = total_casos), vjust = -0.3, position = position_dodge(width = 0.9), size = 3) +
-  scale_fill_manual(values = c("#1f78b4", "#a6cee3")) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
-  labs(
-    title = "Distribución de Víctimas por Naturaleza del Acto y Sexo",
-    x = "Naturaleza del Acto",
-    y = "Número de Casos",
-    fill = "Sexo de la Víctima"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.line.x = element_line(color = "black"),
-    axis.line.y = element_line(color = "black"),
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    plot.margin = margin(10, 5, 5, 15)  
-  )
-
-```
-El daño psicológico o emocional es la categoría más alta, con un total de 4,208 casos, donde las mujeres presentan una ligera predominancia (2,541) en comparación con los hombres (2,045). Esto sugiere que, independientemente del género, este tipo de afectación es el más común, lo que podría estar vinculado a las secuelas emocionales duraderas que dejan muchos tipos de violencia. Otro aspecto relevante es el número significativo de casos con consecuencia lesión física leve, en la cual las mujeres son afectadas en mayor medida (2,465 casos frente a 750 en hombres). Esta diferencia podría indicar que las mujeres son más propensas a sufrir violencia que resulta en este tipo de lesiones menores o, alternativamente, que las agresiones hacia las mujeres son registradas más detalladamente cuando implican lesiones físicas.
-
-En el caso de la violencia sexual, se observa una marcada diferencia, con 834 casos reportados para mujeres y solo 119 para hombres. Esto resalta el enfoque de género en la violencia sexual, donde las mujeres son desproporcionadamente más afectadas, una tendencia comúnmente documentada en estudios sobre violencia de género. Existen otras consecuencias de menor prevalencia, como la lesión física grave y otros tipos de lesiones o daños, que presentan cifras más bajas pero mantienen la tendencia de mayor incidencia en mujeres. Los casos etiquetados como desconocida alcanzan los 2,163 para mujeres y 777 para hombres, lo cual introduce un elemento de incertidumbre en el análisis, ya que estos datos limitan una interpretación completa sobre la naturaleza real de las consecuencias en estos casos.
-
-En conclusión, la gráfica demuestra una tendencia clara: las mujeres no solo experimentan una mayor frecuencia en la mayoría de los tipos de consecuencias violentas, sino que también muestran una mayor vulnerabilidad en categorías específicas, como la violencia sexual y el daño emocional.Este análisis subraya la importancia de incluir la perspectiva de género en el diseño de políticas y programas de intervención para reducir los efectos de la violencia de género y brindar una respuesta adecuada y específica a las distintas formas de victimización que enfrentan hombres y mujeres. Lo anterior, se puede resumir en la siguiente tabla de probabilidades: 
-
-Ahora bien, si analizamos la relación de las consecuencias posteriores al acto violento con la etapa de vida del la víctima para añadir un mayor perfilamiento, obtendriamos los siquientes datos:  
-
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
-library(ggplot2)
-library(dplyr)
-
-niveles_ciclo_vida <- c("Primera infancia", "Infancia", "Adolescencia", "Juventud", "Adultez", "Persona Mayor")
-
-violencia_genero <- violencia_genero %>%
-  mutate(`Ciclo de vida` = factor(`Ciclo de vida`, levels = niveles_ciclo_vida))
-
-total_por_genero_ciclo <- violencia_genero %>%
-  group_by(sexo_victima, `Ciclo de vida`) %>%
-  summarise(total_casos = n(), .groups = 'drop')
-
-conteo_violencia_vi <- violencia_genero %>%
-  group_by(sexo_victima, `Ciclo de vida`, naturaleza) %>%
-  summarise(frecuencia = n(), .groups = 'drop')
-
-datos_probabilidades <- conteo_violencia %>%
-  left_join(total_por_genero_ciclo, by = c("sexo_victima", "Ciclo de vida")) %>%
-  mutate(probabilidad = frecuencia / total_casos) %>%
-  select(sexo_victima, `Ciclo de vida`, naturaleza, probabilidad) %>%
-  arrange(`Ciclo de vida`)  # Organizar por ciclo de vida
-
-ggplot(datos_probabilidades, aes(x = naturaleza, y = probabilidad, fill = naturaleza)) +
-  geom_bar(stat = "identity", width = 0.8) +
-  geom_text(aes(label = scales::percent(probabilidad, accuracy = 0.1)), vjust = -0.3, size = 3) +
-  scale_fill_manual(values = c("#1f78b4", "#6baed6", "#a6cee3", "#c6dbef", "#e0f3ff", "gray")) +
-  scale_y_continuous(labels = scales::percent_format(), expand = c(0, 0.05)) +  
-  labs(
-    title = "Probabilidad de Sufrir Diferentes Tipos de Daño\npor Género y Ciclo de Vida",
-    x = "Naturaleza del Acto Violento",
-    y = "Probabilidad",
-    fill = "Naturaleza"
-  ) +
-  facet_grid(`Ciclo de vida` ~ sexo_victima) +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_blank(),
-    axis.title.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.line.y = element_line(color = "black"),
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    strip.text = element_text(face = "bold", size = 10)
-  )
-
-```
-
-La gráfica evidencia que el daño psicológico o emocional y las consecuencias desconocidas son las consecuencias violentas más comunes a lo largo de las diferentes etapas de la vida de las víctimas. Sin embargo, también destaca la violencia sexual, especialmente en la Primera infancia y la Adolescencia, lo cual subraya un patrón de vulnerabilidad en estas etapas. En Primera infancia, el "daño psicológico o emocional" es la consecuencia más frecuente, con 701 casos, seguido de las consecuencias "desconocidas" con 439 casos. Sin embargo, la violencia sexual también es significativamente alta en esta etapa, con 234 casos, lo que apunta a una alarmante vulnerabilidad de los más jóvenes a este tipo de violencia.
-
-En Infancia, las tendencias se mantienen similares, aunque con una leve reducción en la frecuencia de violencia sexual comparado con la primera infancia. En Adolescencia, el "daño psicológico o emocional" es nuevamente la consecuencia más común, con 909 casos, pero también se registra un incremento en las consecuencias de "lesión física leve" y "violencia sexual", esta última con 355 casos, indicando una mayor exposición a agresiones físicas y sexuales durante esta etapa. Para la Juventud, los casos de consecuencias "desconocidas" alcanzan su punto máximo, con 1,044 registros, mientras que el "daño psicológico o emocional" continúa siendo prominente. En las etapas de Adultez y Persona Mayor, el "daño psicológico o emocional" y las consecuencias "desconocidas" siguen siendo prevalentes, aunque la violencia sexual se reduce considerablemente. En resumen, la gráfica revela patrones preocupantes: la violencia sexual es alarmantemente elevada en Primera infancia y Adolescencia, mientras que el daño psicológico es una consecuencia común en todas las etapas de la vida, lo que sugiere la necesidad de enfoques de prevención específicos adaptados a la vulnerabilidad emocional de cada grupo etario. 
-
-Si traducimos la relación entre esta variable situacional y las dos variables demográficas a términos de probabilidad, obtendríamos lo siguiente:
-
-```{r,echo=FALSE, warning=FALSE,message=FALSE}
-library(dplyr)
-library(DT)
-
-ciclos_de_vida_ordenados <- c("Primera infancia", "Infancia", "Adolescencia", "Juventud", "Adultez", "Persona Mayor")
-
-tabla_conteo_ji <- data_filtrada %>%
-  group_by(sexo_victima, `Ciclo de vida`, naturaleza) %>%
-  summarise(casos = n(), .groups = 'drop')  # Se usa .groups = 'drop' para evitar advertencias
-
-total_ciclo_genero_ji <- data_filtrada %>%
-  group_by(sexo_victima, `Ciclo de vida`) %>%
-  summarise(total = n(), .groups = 'drop')
-
-tabla_probabilidades_ji <- tabla_conteo_ji %>%
-  left_join(total_ciclo_genero_ji, by = c("sexo_victima", "Ciclo de vida")) %>%
-  mutate(probabilidad = round(casos / total, 4),
-         porcentaje = paste0(round(probabilidad * 100, 2), "%"),
-         enunciado = paste0("P(", naturaleza, " | ", sexo_victima, " ∩ ", `Ciclo de vida`, ")")) %>%
-  arrange(factor(naturaleza, levels = unique(data_filtrada$naturaleza)),  
-          factor(`Ciclo de vida`, levels = ciclos_de_vida_ordenados)) %>% 
-  select(enunciado, probabilidad, porcentaje)
-
-datatable(tabla_probabilidades_ji, 
-          colnames = c("Enunciado", "Probabilidad", "Porcentaje"),
-          caption = "Probabilidades Condicionales de Ser Víctima de un Tipo de Violencia por Ciclo de Vida",
-          options = list(pageLength = 10, 
-                         scrollX = TRUE, 
-                         dom = 'tpi', 
-                         columnDefs = list(list(className = 'dt-center', targets = "_all")), 
-                         initComplete = JS(
-                           "function(settings, json) {",
-                           "$(this.api().table().header()).css({'background-color': '#d0e4f5', 'color': '#000'});",
-                           "}")),
-          class = "cell-border stripe") %>%  
-  formatRound(columns = c("probabilidad"), digits = 2)
-
-
-
-```
-
-En daño psicológico o emocional, las probabilidades son más altas en Primera Infancia y Infancia, especialmente en hombres y mujeres, con más del 70%. Esto refleja una gran vulnerabilidad en los primeros años de vida. Las probabilidades disminuyen en la Adolescencia y la Adultez, lo que podría indicar que, con el tiempo, las víctimas se adaptan mejor a las adversidades psicológicas, o que el daño no es tan evidente en estas etapas.Para lesiones físicas leves, la probabilidad de victimización aumenta en la Adolescencia y sigue siendo alta en la Juventud y Adultez, especialmente en hombres, con más del 70%. Esto sugiere que las dinámicas sociales y los conflictos interpersonales durante la adolescencia y adultez son factores importantes para la prevalencia de este tipo de violencia.
-
-En cuanto a la violencia sexual, se observa que el pico más alto ocurre en la Adolescencia, particularmente en mujeres, con una probabilidad de aproximadamente el 36%. Este es el momento en el que las adolescentes son más vulnerables a este tipo de violencia. En contraste, las probabilidades son mucho más bajas en Adultez y Persona Mayor, lo que refleja una disminución de la violencia sexual en estas etapas.Finalmente, la categoría de "Desconocido" muestra una alta prevalencia en la Adolescencia y Juventud, lo que podría indicar que muchos casos no son reportados o no se identifican debido a miedo o falta de confianza en los servicios de salud o autoridades.
-
-En resumen, las víctimas de violencia sexual tienen su mayor probabilidad de victimización en la Adolescencia, especialmente las mujeres, mientras que las lesiones físicas leves y daño psicológico son más prevalentes en Juventud y Adultez, reflejando las tensiones sociales y familiares en esas etapas. Además, la alta proporción de casos desconocidos en adolescentes sugiere la necesidad de mejorar la detección y el apoyo a las víctimas en este grupo etario.
+En este apartado, se presentan análisis descriptivos adicionales sobre factores situacionales en casos de violencia de género. Estos factores incluyen características como el tipo de seguridad social de la víctima, el consumo de sustancias al momento del incidente y la gravedad de la situación en términos de necesidad de hospitalización. Examinar estos elementos proporciona una visión más completa del contexto en el que ocurren estos casos y ayuda a identificar patrones que pueden ser clave para intervenciones más efectivas y focalizadas en la protección de las víctimas.
 
 ## Acceso a seguridad social de las víctimas registradas por violencia de género 
 
@@ -2062,78 +1834,6 @@ Como se observa, la mayoría de los casos de víctimas con seguridad social subs
 
 Otros tipos de seguridad social, como el sistema "Especial" y el de "Excepción," tienen una representación muy baja en todos los estratos, lo que indica que son menos comunes entre las víctimas de violencia de género en esta muestra. En el caso de las personas no afiliadas al sistema de seguridad social, se observa una prevalencia notable en los estratos más bajos, especialmente en el estrato 1, lo cual evidencia una situación de alta vulnerabilidad: sin acceso a mecanismos de protección social, estas personas están aún más expuestas a las consecuencias negativas de la violencia.En conjunto, esta gráfica refleja cómo la situación socioeconómica y el tipo de seguridad social están vinculados a la prevalencia de casos de violencia de género. Los grupos de menores ingresos y con seguridad social subsidiada o sin afiliación se presentan como los más vulnerables, lo que subraya la necesidad de políticas públicas que enfoquen sus esfuerzos en estos sectores para prevenir la violencia y brindarles un mejor acceso a sistemas de apoyo y protección social.
 
-## Casos de hospitalización de la víctima
-
-```{r,echo=FALSE, warning=FALSE}
-
-library(ggplot2)
-library(dplyr)
-
-datos_resumidos_naturaleza_hos <- violencia_genero %>%
-  group_by(naturaleza, `pac_hos_`) %>%
-  summarise(total_casos = n(), .groups = 'drop')
-
-ggplot(datos_resumidos_naturaleza_hos, aes(x = pac_hos_, y = total_casos, fill = pac_hos_)) +
-  geom_bar(stat = "identity", width = 0.8) +
-  geom_hline(yintercept = 0, color = "black", size = 0.5) +
-  geom_text(aes(label = total_casos), vjust = -0.3, size = 3) +
-  scale_fill_manual(values = c("#1f78b4", "#6baed6", "gray", "gray", "#e0f3ff", "gray")) +
-  scale_y_continuous(limits = c(0, 10000), expand = c(0, 0.05)) +  
-  labs(
-    title = "Distribución de Consecuencias Violentas\npor Naturaleza y Ciclo de Vida",
-    x = "Naturaleza del Acto Violento",
-    y = "Número de Casos",
-    fill = "Víctima hospitalizada"
-  ) +
-  facet_wrap(~ naturaleza) +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_blank(),
-    axis.title.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    axis.line.y = element_line(color = "black"),
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    strip.text = element_text(face = "bold", size = 7)
-  )
-
-```
-
-El daño psicológico o emocional afecta a muchas personas, con 2,558 víctimas no hospitalizadas, lo que sugiere que no buscan atención médica debido a la falta de lesiones visibles o el miedo a represalias. En el caso de las lesiones físicas leves, aunque hay 2,832 casos no hospitalizados, solo 3 víctimas buscaron atención médica, lo que podría reflejar la normalización del abuso o el miedo a la exposición. La mayoría de las víctimas de violencia sexual y lesiones físicas graves no buscan atención médica. En abuso sexual, 609 víctimas no recibieron ayuda, mientras que 343 sí lo hicieron, lo que podría explicarse por vergüenza o miedo al estigma. En lesiones físicas graves, 327 víctimas no fueron hospitalizadas, mientras que solo 30 lo hicieron, lo que sugiere que factores como el temor a represalias o la falta de acceso a atención médica influyen en la decisión de no buscar ayuda.En resumen, los altos números de víctimas no hospitalizadas reflejan posibles barreras sociales, emocionales y económicas que impiden la búsqueda de atención médica, especialmente para víctimas de violencia psicológica, emocional y sexual, quienes son particularmente vulnerables a no recibir el tratamiento necesario. Ahora bien si relacionamos este factor de riesgo, con el regimen contributivo de la víctima, tendríamos el siguiente resultado: 
-
-```{r, echo=FALSE, warning=FALSE}
-library(ggplot2)
-library(dplyr)
-
-datos_resumidos <- violencia_genero %>%
-  group_by(`Tipo de Seguridad Social`, `Estado de Hospitalización` = pac_hos_) %>%
-  summarise(total_casos = n(), .groups = 'drop')
-
-ggplot(datos_resumidos, aes(x = `Tipo de Seguridad Social`, y = total_casos, fill = `Estado de Hospitalización`)) +
-  geom_bar(stat = "identity", position = "stack", width = 0.8) +
-  scale_fill_manual(values = c("#2171b5", "#6baed6", "#bdd7e7")) +  
-  scale_y_continuous(expand = c(0, 0)) +
-  labs(
-    title = "Distribución de Casos de Violencia por Régimen de Seguridad Social \n y Estado de Hospitalización",
-    x = "Régimen de Seguridad Social de la Víctima",
-    y = "Número de Casos",
-    fill = "Estado de Hospitalización"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 10),  # Cambia 'size' para ajustar el tamaño del título
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    axis.line = element_line(color = "black"),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    plot.margin = margin(10, 10, 5, 10)
-  )
-
-
-```
-
-La gráfica muestra que la mayoría de los casos de violencia provienen del régimen contributivo, pero la mayoría no fue hospitalizada, lo que puede reflejar barreras emocionales o sociales. El régimen subsidiado, que corresponde a personas con menos recursos, muestra también una alta proporción de víctimas no hospitalizadas, lo que podría indicar limitaciones en el acceso a atención médica debido a factores socioeconómicos. Esto sugiere que la falta de recursos y el acceso limitado a servicios de salud afectan la capacidad de las víctimas para buscar ayuda. En general, el análisis sugiere que el régimen de seguridad social influye en la probabilidad de recibir atención hospitalaria tras un incidente de violencia, destacando las limitaciones para los grupos más vulnerables.
-
 ## Presencia de alcohol u otras sustancias en la víctima durante el acto de violencia de género
 
 ```{r,echo=FALSE, warning=FALSE}
@@ -2165,7 +1865,7 @@ if (length(sust_vic_count) > 0) {
 
 ```
 
-La gráfica muestra que, en el 98% de los casos de violencia de género, la víctima no había consumido alcohol u otras sustancias al momento del ataque, mientras que solo el 2% presentaba consumo de alguna sustancia. Esto sugiere una alta probabilidad (0.98) de que las víctimas se encuentren sobrias durante el incidente, lo que podría ofrecer información relevante sobre el contexto de estos casos y descartar el consumo de sustancias como un factor común entre las víctimas en la mayoría de los eventos de violencia.Estos resultados sugieren que el consumo de sustancias en las víctimas no es un factor determinante en la mayoría de los incidentes de violencia de género. La ausencia de influencia de sustancias en las víctimas podría indicar que estos actos no están necesariamente asociados con la vulnerabilidad inducida por el consumo, sino que pueden ocurrir en cualquier contexto. Como recomendación, sería útil incluir datos sobre el consumo de sustancias en el agresor, ya que este factor situacional podría influir en la ocurrencia y gravedad de los incidentes. Incorporar esta información permitiría identificar patrones de riesgo y diseñar estrategias de prevención más efectivas.
+La gráfica muestra que, en el 98% de los casos de violencia de género, la víctima no había consumido alcohol u otras sustancias al momento del ataque, mientras que solo el 2% presentaba consumo de alguna sustancia. Esto sugiere una alta probabilidad (0.98) de que las víctimas se encuentren sobrias durante el incidente, lo que podría ofrecer información relevante sobre el contexto de estos casos y descartar el consumo de sustancias como un factor común entre las víctimas en la mayoría de los eventos de violencia. Estos resultados sugieren que el consumo de sustancias en las víctimas no es un factor determinante en la mayoría de los incidentes de violencia de género. La ausencia de influencia de sustancias en las víctimas podría indicar que estos actos no están necesariamente asociados con la vulnerabilidad inducida por el consumo de estas sustancias, sino que pueden ocurrir en cualquier contexto. Como recomendación, sería útil incluir datos sobre el consumo de sustancias en el agresor, ya que este factor situacional podría influir en la ocurrencia y gravedad de los incidentes. Incorporar esta información permitiría identificar patrones de riesgo y diseñar estrategias de prevención más efectivas.
 
 
 

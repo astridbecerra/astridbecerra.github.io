@@ -51,7 +51,7 @@ library(moments)
 library(explore)
 library(lessR)
 
-violencia_genero <- read_csv("Violencia_genero_6.csv")
+violencia_genero <- read_csv("Base_Violencia.csv")
 knitr::opts_chunk$set(echo = TRUE)  
 ```
 ```{css,echo=FALSE}
@@ -73,7 +73,7 @@ A continuación se exponen las variables a estudiar de la base de datos modifica
 names(violencia_genero) #Nombre de las columnas y por tanto de las variables
 ```
 
-Por otro lado, como bien se mencionó, el conjunto de datos actual cuenta con 12,193 filas, que corresponden al total de observaciones o unidades experimentales en el dataset. Cada fila representa una unidad experimental, es decir, un incidente específico de violencia de género o intrafamiliar, documentado con datos detallados en cada una de las 19 variables, lo que permite construir un perfil exhaustivo que incluye características demográficas de la víctima y el agresor, el contexto del incidente y otros factores relevantes. Con 12,193 unidades experimentales y 19 variables, el conjunto de datos contiene un total de 231,667 entradas, lo cual habilita un análisis estadístico tanto descriptivo como inferencial sobre los patrones y factores asociados a la violencia de género.
+Por otro lado, como bien se mencionó, el conjunto de datos actual cuenta con 12,193 filas, que corresponden al total de observaciones o unidades experimentales en el dataset. Cada fila representa una unidad experimental, es decir, un incidente específico de violencia de género o intrafamiliar, documentado con datos detallados en cada una de las 19 variables, lo que permite construir un perfil exhaustivo que incluye características demográficas de la víctima y el agresor, el contexto del incidente y otros factores relevantes. Con 12,193 unidades experimentales y 19 variables, el conjunto de datos contiene un total de 195,088 entradas, lo cual habilita un análisis estadístico tanto descriptivo como inferencial sobre los patrones y factores asociados a la violencia de género.
 
 ```{r}
 num_rows <- nrow(violencia_genero) #Número de observaciones (filas)
@@ -103,13 +103,9 @@ Son esenciales para comprender los perfiles y contextos específicos de cada inc
   
   - **Tipo de Seguridad Social **: Indica el sistema de cobertura (público o privado) de la víctima, lo cual ayuda a entender el acceso a recursos de atención y calidad de respuesta.
   
-  - **Paciente hospitalizado**:  actúa como un **indicador de gravedad** del incidente al señalar si la víctima requirió hospitalización como consecuencia de la agresión, señalando la gravedad del incidente y proporcionando información sobre la severidad del caso.
-  
   - **Condición final**: Describe el estado de la víctima tras el incidente ("vivo", "muerto", "desconocido"), permitiendo evaluar el riesgo de mortalidad y limitaciones en el seguimiento de casos.
   
   - **Naturaleza de la violencia**:  Clasifica el tipo de violencia (física, psicológica, sexual), fundamental para entender las formas más comunes de agresión.
-  
-  - **Descripción de naturaleza**:  Detalla los efectos específicos de la violencia (lesión, abuso psicológico), profundizando en las manifestaciones directas del daño.
   
   - **Sexo del agresor**:  es una categoría de género para el agresor (masculino, femenino,intersexual), la cual permite observar los patrones de agresión según el género del agresor, proporcionando datos útiles para estrategias de prevención y perfilamiento.
   
@@ -140,7 +136,7 @@ Si bien las variables se clasifican principalmente en cualitativas y cuantitativ
 
 <center>
 
-![Nota: Tabla de elaboración propia](Variable_violencia1.png){width=700}
+![Nota: Tabla de elaboración propia](tabla_oficial.png){width=700}
 </center>
 
 
