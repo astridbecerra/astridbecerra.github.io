@@ -18,7 +18,7 @@ output:
     highlight: tango
     toc: true                
     toc_float: false          
-    toc_depth: 2              
+    toc_depth: 4             
     css: styles.css          
     include:
       ##after_body: footer.html
