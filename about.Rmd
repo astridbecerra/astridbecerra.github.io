@@ -1636,10 +1636,8 @@ Finalmente, en "Abuso sexual", es interesante notar que la probabilidad se distr
 ### Análisis del parentezco del agresor con la víctima
 
 ```{r,echo=FALSE,warning=FALSE}
-library(ggplot2)
-library(dplyr)
-
 parentesco_counts <- violencia_genero %>%
+  filter(!is.na(parentezco_vict)) %>%
   count(parentezco_vict) %>%
   arrange(desc(n))
 
@@ -1647,9 +1645,11 @@ ggplot(parentesco_counts, aes(x = reorder(parentezco_vict, n), y = n)) +
   geom_bar(stat = "identity", fill = "steelblue") +
   geom_text(aes(label = n), hjust = -0.2, color = "black", size = 3.5) + 
   coord_flip() +
-  labs(title = "Frecuencia de casos de violencia por parentesco del agresor con la víctima",
-       x = "Parentesco con la Víctima",
-       y = "Casos Registrados") +
+  labs(
+    title = "Frecuencia de casos de violencia por\nparentesco del agresor con la víctima",
+    x = "Parentesco con la Víctima",
+    y = "Casos Registrados"
+  ) +
   theme_classic() +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
@@ -1659,7 +1659,7 @@ ggplot(parentesco_counts, aes(x = reorder(parentezco_vict, n), y = n)) +
     axis.text.y = element_text(size = 10),
     axis.line = element_line(color = "gray50", size = 0.5), 
     panel.grid.major.x = element_line(color = "gray80", size = 0.3), 
-    panel.grid.minor = element_blank() 
+    panel.grid.minor = element_blank()
   ) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.1)))
 
