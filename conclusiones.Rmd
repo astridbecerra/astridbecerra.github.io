@@ -1,5 +1,5 @@
 ---
-title: "Conclusiones y recomendaciones"
+title: "Conclusiones del Análisis de Violencia de Género en Colombia (2015-2023)"
 output:
   html_document:
     toc: TRUE
@@ -10,9 +10,52 @@ output:
     theme: lumen
 
 ---
-Son conclusiones son las siguientes: 
 
-<div style="text-align: justify">
-- Este análisis estadístico realizado puede ser una herramienta que ofrece un panorama a la situación de los hurtos en Colombia, sin embargo, en la base de datos proporcionada hay una falta de cobertura geográfica lo que puede traer como consecuencia sesgos a la hora de analizar el fenómeno. Para poder ofrecer una visión más precisa recae la necesidad de recolectar más datos donde se incluyan más regiones y más municipios, esto con el fin de comprender mejor las dinámicas de hurto del país y esto recae en la responsabilidad de conocer completamente la diversidad de los datos en estos entornos sociales. 
-<div/>
-<br>
+```{css,echo=FALSE}
+.column {display:flex;}
+h1{color:rgb(26, 72, 112)}
+h2{color:rgb(26, 72, 112)}
+h3{color:rgb(26, 72, 112)}
+```
+
+El análisis detallado de los casos de violencia de género en Colombia entre 2015 y 2023 proporciona una visión amplia de las características demográficas de las víctimas y agresores, así como de las circunstancias que rodean estos incidentes. Este análisis permite observar patrones estructurales que revelan cómo las dinámicas familiares, el género, y la situación socioeconómica son determinantes en la exposición a la violencia de género en el país. Con base en esta información, se pueden identificar perfiles específicos para las víctimas y los agresores, además de factores contextuales que ayudan a entender mejor la complejidad de esta problemática. Las conclusiones aquí presentadas sintetizan estos hallazgos y proponen recomendaciones sustentadas en el análisis de los datos, para guiar futuras estrategias de prevención y políticas de intervención más efectivas.
+
+# Perfil de la Víctima
+
+El perfil de las víctimas de violencia de género en Colombia presenta una marcada vulnerabilidad en mujeres y personas jóvenes, en particular niños, adolescentes, y jóvenes adultos. Las dinámicas de dependencia y poder, unidas a factores socioeconómicos, ubican a estos grupos en un mayor riesgo de victimización. Esta tendencia es evidente en los datos que muestran cómo las mujeres y los jóvenes concentran los incidentes de violencia, reflejando patrones que trascienden factores individuales y apuntan hacia problemas estructurales.
+
+-**Edad y Ciclo de Vida:** Los datos revelan que las personas en la infancia y adolescencia son las principales víctimas de violencia de género, con un 65.72% de los casos concentrados en menores de 20 años. El grupo de 0-10 años sobresale como el más afectado, representando el 38.72% de las víctimas totales, seguido del grupo de 10-20 años, con un 27.0%. Este patrón resalta la vulnerabilidad de los más jóvenes, particularmente en incidentes de negligencia, abandono y abuso sexual, tipos de violencia que tienen un impacto devastador y que sugieren una carencia crítica de protección para los menores en el entorno familiar.
+
+-**Género y Tipo de Violencia:** Las mujeres constituyen el 69.1% de las víctimas, lo cual confirma una exposición mucho mayor en comparación con los hombres. Esta tendencia es más pronunciada en tipos de violencia como el abuso sexual, donde las mujeres y las adolescentes son desproporcionadamente afectadas. En contraste, aunque los hombres también son víctimas de ciertos tipos de violencia, su prevalencia es mucho menor, con su victimización concentrada en incidentes de negligencia y abandono. La diferencia de género en estos datos subraya la necesidad de políticas específicas que protejan especialmente a las mujeres y niñas, quienes enfrentan mayores niveles de vulnerabilidad en el hogar y en espacios públicos.
+
+-**Factores Socioeconómicos:** La violencia de género afecta principalmente a personas en los estratos más bajos, especialmente en los estratos 1 y 2, que representan la mayoría de los casos. Estos grupos, con recursos limitados, enfrentan desafíos adicionales para acceder a redes de apoyo y servicios de protección, lo cual incrementa su vulnerabilidad a incidentes de violencia. En términos probabilísticos, los datos sugieren que las personas en estratos bajos tienen una probabilidad mucho mayor de ser víctimas de negligencia y violencia física, debido a las condiciones de precariedad económica y la falta de acceso a sistemas de apoyo adecuados.
+
+-**Escenarios de Violencia:** El hogar es el principal lugar donde ocurren los incidentes de violencia de género, concentrando el 66.69% de los casos. La prevalencia de violencia en el entorno doméstico es particularmente notable en situaciones de negligencia y violencia física, donde los menores y las mujeres suelen ser las principales víctimas. Los espacios públicos también representan un escenario de riesgo, especialmente en casos de violencia física y actos sexuales. Esto indica que, aunque el hogar sigue siendo el entorno de mayor riesgo, la exposición a la violencia de género también ocurre en la vía pública, reflejando patrones de inseguridad tanto en espacios privados como públicos.
+
+# Perfil del Agresor
+
+El perfil del agresor de violencia de género en Colombia muestra una predominancia masculina, con un 58.6% de los casos, aunque también se observa una participación femenina importante en ciertos tipos de violencia, como la negligencia y el abandono. Los agresores tienden a estar en rangos de edad de mayor actividad social y laboral, lo cual refleja patrones de conducta que pueden estar vinculados con la presión social, las dinámicas de poder y los roles culturales en el país.
+
+-**Edad y Ciclo de Vida:** Los datos muestran que el grupo de agresores más numeroso se encuentra entre los 20 y 30 años, seguido por el rango de 30 a 40 años, lo que representa el 41.3% de los casos de agresión en conjunto. Esta alta incidencia en adultos jóvenes y de mediana edad puede estar asociada a factores de agresividad vinculados a la convivencia y las relaciones de pareja en edades productivas. Además, la violencia física y el abuso sexual presentan una mayor prevalencia en estos rangos de edad, lo cual sugiere una propensión a comportamientos violentos en la juventud y adultez temprana, etapas marcadas por una mayor exposición a interacciones sociales y sentimentales.
+
+-**Género y Tipo de Violencia:** Los hombres predominan como agresores en tipos de violencia que implican un contacto físico directo, como el abuso sexual y la violencia física, con un 87.8% y un 75.5% de participación masculina, respectivamente. Esto indica un patrón de violencia masculino en comportamientos agresivos y abusivos. Sin embargo, en casos de negligencia y abandono, las mujeres constituyen la mayoría de los agresores, con un 60.1% de los casos, reflejando su rol en el cuidado y la crianza en el contexto familiar. Esta distribución por género evidencia que el tipo de violencia ejercida tiene una relación con los roles sociales y culturales, donde los hombres tienden a perpetuar la violencia física, y las mujeres, en situaciones de descuido o negligencia.
+
+-**Parentesco con la Víctima:** Las relaciones familiares cercanas y de pareja son las más comunes entre los agresores, lo cual revela la naturaleza íntima y de poder en muchos casos de violencia de género. La figura materna aparece como el vínculo más frecuente en casos de negligencia y abandono (32.58%), mientras que las parejas y exparejas son responsables de la mayor parte de la violencia física y psicológica. Este patrón destaca cómo la proximidad emocional y la dependencia económica son factores críticos que aumentan el riesgo de violencia en las relaciones familiares y sentimentales.
+
+-**Antecedentes y Captura:** Los datos muestran que un 41% de los agresores tiene antecedentes de violencia, lo cual sugiere una tendencia a la reincidencia en estos comportamientos. Sin embargo, solo el 32% de los agresores han sido capturados, lo cual indica una alta probabilidad de impunidad. Este bajo nivel de aprehensión refleja posibles fallas en el sistema judicial y una necesidad urgente de fortalecer los mecanismos de denuncia y seguimiento en casos de violencia de género.
+
+# Factores Situacionales
+
+Los factores contextuales, como el acceso a la seguridad social y la situación económica, también juegan un papel crucial en el perfil de los casos de violencia de género.
+
+-**Seguridad Social:** La mayoría de las víctimas están afiliadas a regímenes de seguridad social (contributivo y subsidiado), lo que muestra que las personas en diversos contextos socioeconómicos están expuestas a la violencia de género. Sin embargo, el 6.54% de las víctimas no cuentan con afiliación alguna, lo cual incrementa su vulnerabilidad, especialmente en el acceso a servicios de salud y apoyo en situaciones de emergencia. La falta de afiliación es particularmente prevalente en los estratos más bajos, lo que sugiere una relación entre la precariedad económica y la desprotección social.
+
+-**Consumo de Sustancias:** En el 98% de los casos, las víctimas no estaban bajo la influencia de alcohol u otras sustancias, lo cual indica que la violencia de género en Colombia responde más a factores estructurales, culturales y de poder que a condiciones de consumo. Esto también sugiere que las intervenciones para reducir la violencia de género deben enfocarse más en factores de convivencia y educación que en el consumo de sustancias.
+
+# Recomendaciones
+
+Fortalecer la intervención familiar y comunitaria es esencial; se deben implementar programas educativos en manejo de conflictos y comunicación no violenta en comunidades y escuelas para prevenir la violencia en el hogar y fomentar relaciones saludables desde temprana edad. También resulta vital ampliar las redes de apoyo en sectores vulnerables, mejorando el acceso a servicios de salud, apoyo psicológico y protección en comunidades de bajos ingresos, de modo que quienes enfrentan situaciones difíciles cuenten con el respaldo necesario y se reduzca su vulnerabilidad.
+
+Además, es crucial reforzar el sistema judicial para prevenir tanto el subregistro como la reincidencia de la violencia. Para ello, deben facilitarse los canales de denuncia, asegurando que sean accesibles y seguros, acompañados de campañas que reduzcan la estigmatización de las víctimas. A su vez, un seguimiento efectivo a agresores reincidentes, a través de programas de rehabilitación y monitoreo, ayudaría a frenar estos patrones repetitivos.
+
+Por último, invertir en educación sobre relaciones saludables y gestión emocional dirigida a jóvenes es una acción fundamental. Estos programas enfocados en relaciones sanas, igualdad de género y manejo emocional contribuirán a disminuir los comportamientos violentos en las próximas generaciones y promoverán una cultura de respeto y empatía.

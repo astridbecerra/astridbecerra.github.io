@@ -11,7 +11,7 @@ output:
     number_sections: true
     css: styles.css
 bibliography: "biblio.bib"
-# csl: apa.csl.txt   # Si no necesitas usar el archivo CSL, puedes dejar esta línea comentada
+# csl: apa.csl.txt   
 
 ---
 # Relevancia temática y objetivos de estudio 
@@ -65,7 +65,7 @@ h3{color:rgb(26, 72, 112)}
 
 Este estudio utiliza una base de datos robusta y detallada sobre violencia de género en Colombia, abarcando incidentes registrados semanalmente entre enero de 2015 y marzo de 2023. Esta base de datos tomada de datos abiertos Colombia, con 12,193 registros y 32 variables en su versión original, constituye un recurso invaluable para el análisis de un fenómeno de alta complejidad social y relevancia, permitiendo investigar en profundidad los factores demográficos, socioeconómicos y contextuales asociados a los incidentes de violencia de género. La amplitud y riqueza de las variables, que incluyen características detalladas de víctimas y agresores, la relación entre ambos, y las circunstancias específicas de cada evento, aportan una perspectiva integral sobre los perfiles y patrones subyacentes en estos casos [@secretaria2024violencia]. Sin embargo, algunas variables de la base de datos original son redundantes, otras tienen bajo valor explicativo para identificar patrones de violencia o perfiles de riesgo, algunas columnas se encuentran incompletas y algunas contienen datos administrativos o contextuales que no contribuyen de manera significativa al análisis de la violencia de género. 
 
-Por ende, para maximizar la relevancia y aplicabilidad de la base de datos en el contexto de los objetivos y preguntas de investigación, se realizó una depuración exhaustiva de las variables. Este proceso implicó la eliminación de columnas redundantes y de baja contribución analítica, preservando solo aquellas que resultan críticas para el análisis. Además, se transformaron codificaciones complejas en etiquetas descriptivas, mejorando así la accesibilidad y claridad interpretativa de los datos. El conjunto depurado, compuesto ahora por 12,193 registros y 19 variables clave, se centra en la información esencial que permite una exploración precisa de patrones, factores de riesgo, y contextos de violencia en los distintos incidentes registrados. 
+Por ende, para maximizar la relevancia y aplicabilidad de la base de datos en el contexto de los objetivos y preguntas de investigación, se realizó una depuración exhaustiva de las variables. Este proceso implicó la eliminación de columnas redundantes y de baja contribución analítica, preservando solo aquellas que resultan críticas para el análisis. Además, se transformaron codificaciones complejas en etiquetas descriptivas, mejorando así la accesibilidad y claridad interpretativa de los datos. El conjunto depurado, compuesto ahora por 12,193 registros y 17 variables clave, se centra en la información esencial que permite una exploración precisa de patrones, factores de riesgo, y contextos de violencia en los distintos incidentes registrados. 
 
 A continuación se exponen las variables a estudiar de la base de datos modificada, las cuales se configuran como parámetros bajo estudio  bajo estudio que capturan una gama de aspectos de los individuos y las circunstancias que rodean cada incidente de violencia de género, permitiendo explorar temas como los perfiles sociodemográficos de víctimas y agresores:
 
@@ -73,7 +73,7 @@ A continuación se exponen las variables a estudiar de la base de datos modifica
 names(violencia_genero) #Nombre de las columnas y por tanto de las variables
 ```
 
-Por otro lado, como bien se mencionó, el conjunto de datos actual cuenta con 12,193 filas, que corresponden al total de observaciones o unidades experimentales en el dataset. Cada fila representa una unidad experimental, es decir, un incidente específico de violencia de género o intrafamiliar, documentado con datos detallados en cada una de las 19 variables, lo que permite construir un perfil exhaustivo que incluye características demográficas de la víctima y el agresor, el contexto del incidente y otros factores relevantes. Con 12,193 unidades experimentales y 19 variables, el conjunto de datos contiene un total de 195,088 entradas, lo cual habilita un análisis estadístico tanto descriptivo como inferencial sobre los patrones y factores asociados a la violencia de género.
+Por otro lado, como bien se mencionó, el conjunto de datos actual cuenta con 12,193 filas, que corresponden al total de observaciones o unidades experimentales en el dataset. Cada fila representa una unidad experimental, es decir, un incidente específico de violencia de género o intrafamiliar, documentado con datos detallados en cada una de las 16 variables, lo que permite construir un perfil exhaustivo que incluye características demográficas de la víctima y el agresor, el contexto del incidente y otros factores relevantes. Con 12,193 unidades experimentales y 16 variables, el conjunto de datos contiene un total de 195,088 entradas, lo cual habilita un análisis estadístico tanto descriptivo como inferencial sobre los patrones y factores asociados a la violencia de género.
 
 ```{r}
 num_rows <- nrow(violencia_genero) #Número de observaciones (filas)
@@ -90,8 +90,6 @@ total_values
 Para un análisis descriptivo adecuado, es crucial clasificar las variables en función de su tipo. En esta base de datos sobre violencia de género, se distinguen variables categóricas y numéricas, lo cual facilita la elección de métodos analíticos específicos. Las variables categóricas se analizan mediante distribuciones de frecuencia en aspectos como género, parentesco y escenario del incidente. Las variables numéricas, en cambio, se describen usando medidas de tendencia central y dispersión (media, mediana, desviación estándar), lo que ayuda a identificar patrones en la edad de los involucrados. Esta clasificación asegura la precisión en la descripción de características y patrones en los datos.
 
 ### Variables Categóricas
-
-Son esenciales para comprender los perfiles y contextos específicos de cada incidente de violencia. En este conjunto de datos, estas variables se centran en características de ubicación, relación, y condiciones de los involucrados y el incidente. 
 
   - **Departamento:**: es una **etiqueta geográfica** que identifica la ubicación de cada incidente, permitiendo analizar patrones regionales de violencia y enfocar recursos en áreas con mayor incidencia.
 

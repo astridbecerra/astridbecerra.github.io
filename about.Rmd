@@ -1568,7 +1568,7 @@ El grupo intersexual muestra una baja representación en todos los tipos de viol
 
 En general, esta distribución sugiere una marcada diferencia de género en la participación en distintos tipos de violencia. Los hombres tienden a ser los principales agresores en la mayoría de los tipos de violencia de género, especialmente aquellos que involucran contacto físico directo. La excepción significativa es la negligencia y abandono, donde las mujeres representan la mayoría. Esta información es fundamental para el diseño de políticas y programas de prevención enfocados en abordar los factores de riesgo específicos asociados con cada tipo de violencia y género.
 
-a continuación se presenta una tabla que presenta las probabilidades condicionales de que un agresor, en función de su género, se encuentre en un intervalo de edad específico dado el tipo de violencia que ejerce, considerando únicamente los 3 casos de violencia más registrados para facilidad del análisis. Al analizar estos datos, se pueden identificar patrones de riesgo asociados a ciertos tipos de violencia según las características demográficas de los agresores, lo que permite una comprensión más precisa de los perfiles comunes en cada tipo de agresión.
+A continuación se presenta una tabla que expone las probabilidades condicionales de que un agresor, en función de su género, se encuentre en un intervalo de edad específico dado el tipo de violencia que ejerce, considerando únicamente los 3 casos de violencia más registrados para facilidad del análisis. Al analizar estos datos, se pueden identificar patrones de riesgo asociados a ciertos tipos de violencia según las características demográficas de los agresores, lo que permite una comprensión más precisa de los perfiles comunes en cada tipo de agresión.
 
 ```{r,echo=FALSE,warning=FALSE, message=FALSE, results='hide'}
 library(dplyr)
@@ -1760,7 +1760,7 @@ La probabilidad de que un agresor no sea capturado, P(Captura = No), es de 0.353
 
 # Otros análisis descriptivos relevantes sobre factores situacionales de los casos de violencia de género 
 
-En este apartado, se presentan análisis descriptivos adicionales sobre factores situacionales en casos de violencia de género. Estos factores incluyen características como el tipo de seguridad social de la víctima, el consumo de sustancias al momento del incidente y la gravedad de la situación en términos de necesidad de hospitalización. Examinar estos elementos proporciona una visión más completa del contexto en el que ocurren estos casos y ayuda a identificar patrones que pueden ser clave para intervenciones más efectivas y focalizadas en la protección de las víctimas.
+En este apartado, se presentan análisis descriptivos adicionales sobre factores situacionales en casos de violencia de género. Estos factores incluyen características como el tipo de seguridad social de la víctima y el consumo de sustancias al momento del incidente. Examinar estos elementos proporciona una visión más completa del contexto en el que ocurren estos casos y ayuda a identificar patrones que pueden ser clave para intervenciones más efectivas y focalizadas en la protección de las víctimas.
 
 ## Acceso a seguridad social de las víctimas registradas por violencia de género 
 
