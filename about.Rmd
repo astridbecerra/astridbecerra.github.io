@@ -141,7 +141,7 @@ ggplot(violencia_por_ano, aes(x = as.factor(año), y = n)) +
 
 ```
 
-# Análisis descriptivos demográficos generales de víctimas de violencia de género en colombia entre los años 2015-2023
+# Análisis descriptivos demográficos generales de víctimas de violencia de género en Colombia entre los años 2015-2023
 
 Esta sección presenta un análisis descriptivo de los casos de violencia de género en Colombia durante el periodo 2015-2023. Se examinan las características demográficas de las víctimas, incluyendo edad, sexo y tipo de violencia experimentada, con el fin de identificar tendencias y patrones significativos. El análisis se basa en técnicas estadísticas que permiten obtener una comprensión integral de la situación actual de la violencia de género en el país, destacando las variaciones a lo largo del tiempo y entre diferentes grupos demográficos. 
 
@@ -1263,7 +1263,7 @@ En cuanto a la negligencia y abandono, las probabilidades son más altas en los 
 En general, la violencia física es más prevalente en los estratos bajos para ambos sexos, pero afecta particularmente a las mujeres desde la infancia hasta la adultez, con picos significativos en la juventud y adultez. Por otro lado, el abuso sexual es más prevalente entre las adolescentes mujeres en estratos bajos, destacándose como un tipo de violencia que afecta gravemente a este grupo, mientras que los adolescentes masculinos también son vulnerables, aunque en menor medida. La negligencia y abandono afecta principalmente a los niños pequeños y personas mayores en estratos bajos, lo que subraya la necesidad urgente de políticas de protección y apoyo para estos grupos vulnerables.
 
 
-# Análisis descriptivos demográficos generales de los agresores de violencia de género en colombia entre los años 2015-2023
+# Análisis descriptivos demográficos generales de los agresores de violencia de género en Colombia entre los años 2015-2023
 
 En este apartado se presenta un análisis descriptivo de las características demográficas de los agresores de violencia de género en Colombia entre 2015 y 2023, abordando aspectos clave como la edad, género, antecedentes, parentesco con la víctima y si se registró su captura. Estos factores ofrecen una visión integral sobre el perfil de los agresores, lo que resulta fundamental para entender los patrones de violencia y orientar estrategias preventivas. La relevancia de este análisis radica en su potencial para identificar factores de riesgo específicos y contribuir a políticas de intervención más efectivas en la prevención y reducción de la violencia de género.
 
@@ -1497,7 +1497,7 @@ pie(genero_agresores_count, labels = labels, col = colors,
 
 La gráfica de distribución de agresores por género revela una notable diferencia en la representación de cada grupo. La mayoría de los agresores se identifican como masculinos, con un 58.6% (7,141 casos), lo cual destaca una clara tendencia de predominio masculino en los actos de violencia. En contraste, el grupo femenino representa el 41.3% (5,040 casos), indicando que, aunque es menor, también tiene una presencia significativa en los registros de agresores. Es importante señalar que la proporción de personas identificadas como intersexuales es extremadamente baja, con solo un 0.1% (12 casos), lo cual podría deberse tanto a factores de subregistro como a la baja prevalencia de esta identificación de género en la base de datos. Esta distribución de género de los agresores sugiere que las intervenciones preventivas y de educación deben tener en cuenta la predominancia masculina, pero sin dejar de lado la relevancia de otros géneros, ya que ambos tienen una presencia notable en la perpetuación de la violencia. Este análisis también resalta la importancia de una mejor recolección de datos que incluya a todos los géneros, para proporcionar una visión completa del perfil de los agresores y poder diseñar políticas de prevención efectivas y específicas.
 
-### Análisis de la relación entre el género  y los intervalos de edad del agresor
+### Análisis de la relación entre el género y los intervalos de edad del agresor
 
 ```{r, echo=FALSE, warning=FALSE, results='hide'}
 library(dplyr)
@@ -1633,7 +1633,7 @@ Para agresores masculinos en el mismo tipo de violencia, las probabilidades más
 Finalmente, en "Abuso sexual", es interesante notar que la probabilidad se distribuye de manera que los hombres mayores (en el rango de 40 a 50 años y en adelante) presentan una probabilidad más elevada, alcanzando hasta un 20.06% en algunos intervalos. Este dato subraya la prevalencia de agresores masculinos en edades avanzadas en este tipo de violencia, lo cual puede estar influenciado por factores individuales y contextuales que persisten con la edad.
 
 
-### Análisis del parentezco del agresor con la víctima
+### Análisis del parentesco del agresor con la víctima
 
 ```{r,echo=FALSE,warning=FALSE}
 parentesco_counts <- violencia_genero %>%
